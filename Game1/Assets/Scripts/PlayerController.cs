@@ -9,21 +9,39 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float jumpSpeed = 10;
     private CapsuleCollider2D bodyCollider;
     BoxCollider2D feetCollider;
+    private Animator anim;
 
     private void Awake() 
     {
         body = GetComponent<Rigidbody2D>();
         bodyCollider = GetComponent<CapsuleCollider2D>();
         feetCollider = GetComponent<BoxCollider2D>();
+        anim = GetComponent<Animator>();
     }
 
     private void Update() 
     {
-        body.velocity = new Vector2(Input.GetAxis("Horizontal") * runSpeed, body.velocity.y);
+        float horizontalInput = Input.GetAxis("Horizontal");
+        body.velocity = new Vector2(horizontalInput * runSpeed, body.velocity.y);
+        
+        // Player Flip to left or right
+        if(horizontalInput > 0.01f)
+        {
+            transform.localScale = Vector3.one;
+        }
+        else if(horizontalInput < -0.01f)
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+        }
 
+        
+        // Jumping
         if (feetCollider.IsTouchingLayers(LayerMask.GetMask("groundLayer")) && Input.GetKey(KeyCode.Space))
         {
             body.velocity = new Vector2(body.velocity.x, jumpSpeed);
         }
+        
+        // Run animation
+        anim.SetBool("Run", horizontalInput != 0);
     }
 }
