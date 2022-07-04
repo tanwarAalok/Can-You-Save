@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     BoxCollider2D feetCollider;
     private Animator anim;
 
+
     private void Awake() 
     {
         body = GetComponent<Rigidbody2D>();
@@ -39,7 +40,10 @@ public class PlayerController : MonoBehaviour
         if (feetCollider.IsTouchingLayers(LayerMask.GetMask("groundLayer")) && Input.GetKey(KeyCode.Space))
         {
             body.velocity = new Vector2(body.velocity.x, jumpSpeed);
+            anim.Play("Jump");
         }
+
+
         
         // Run animation
         anim.SetBool("Run", horizontalInput != 0);
