@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     private CapsuleCollider2D bodyCollider;
     BoxCollider2D feetCollider;
     private Animator anim;
+    SpriteRenderer sprite;
 
 
     private void Awake() 
@@ -18,6 +19,7 @@ public class PlayerController : MonoBehaviour
         bodyCollider = GetComponent<CapsuleCollider2D>();
         feetCollider = GetComponent<BoxCollider2D>();
         anim = GetComponent<Animator>();
+        sprite = GetComponent<SpriteRenderer>();
     }
 
     private void Update() 
@@ -27,13 +29,36 @@ public class PlayerController : MonoBehaviour
         Run();
         Jump();
         FlipSprite();
+        Attack();
+        ChangeColor();
     }
+
+
+    void ChangeColor()
+    {
+        if (bodyCollider.IsTouchingLayers(LayerMask.GetMask("Water")))
+        {
+            sprite.color = new Color(1, 1, 1, 0.6f);
+        }
+        else sprite.color = new Color(1,1,1,1);
+    }
+
+    void Attack()
+    {
+        if(Input.GetKey(KeyCode.LeftControl))
+        {
+
+            anim.Play("attack");
+        }
+    }
+
     void Run()
     {
         // Run animation
         bool hasHorizontalSpeed = Mathf.Abs(body.velocity.x) > Mathf.Epsilon;
         anim.SetBool("Run", hasHorizontalSpeed);
     }
+
     void Jump()
     {
         // Jumping
@@ -43,6 +68,7 @@ public class PlayerController : MonoBehaviour
             anim.Play("Jump");
         }
     }
+
     void FlipSprite()
     {
         bool hasHorizontalSpeed = Mathf.Abs(body.velocity.x) > Mathf.Epsilon;
