@@ -45,7 +45,9 @@ public class PlayerController : MonoBehaviour
 
     void Attack()
     {
-        if(Input.GetKey(KeyCode.LeftControl))
+        bool hasHorizontalSpeed = Mathf.Abs(body.velocity.x) > Mathf.Epsilon;
+
+        if(Input.GetKey(KeyCode.LeftControl) && !hasHorizontalSpeed)
         {
 
             anim.Play("attack");
