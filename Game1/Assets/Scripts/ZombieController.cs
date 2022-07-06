@@ -4,12 +4,19 @@ using UnityEngine;
 
 public class ZombieController : MonoBehaviour
 {
-    public int maxHealth = 100;
-    public int currentHealth;
-    public HealthBar healthBar;
-    public GameObject player;
+    int maxHealth = 100;
+    [SerializeField] int currentHealth;
+    [SerializeField] HealthBar healthBar;
+    [SerializeField] GameObject player;
+    [SerializeField] float distanceFromPlayer;
+    Animator zombieAnimator;
+    Canvas zombieCanvas;
+    bool isDead;
+
     void Start()
     {
+        zombieCanvas = GetComponentInChildren<Canvas>();
+        zombieAnimator = GetComponent<Animator>();
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
     }
@@ -17,14 +24,16 @@ public class ZombieController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float distanceFromPlayer = transform.position.x - player.transform.position.x;
-        if(distanceFromPlayer < 2 && Input.GetKeyDown(KeyCode.LeftControl))
+        distanceFromPlayer = transform.position.x - player.transform.position.x;
+        if(distanceFromPlayer < 2 && Input.GetKeyDown(KeyCode.LeftControl) && !isDead)
         {
             StartCoroutine(TakeDamage(20));
         }
 
         if(currentHealth <= 0){
-            Destroy(this.gameObject);
+            zombieCanvas.enabled = false;
+            zombieAnimator.Play("dead");
+            isDead = true;
         }
     }
 
