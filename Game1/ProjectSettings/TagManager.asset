@@ -50,6 +50,9 @@ TagManager:
   - name: Platform
     uniqueID: 1356271531
     locked: 0
+  - name: Zombie
+    uniqueID: 1034898069
+    locked: 0
   - name: Player
     uniqueID: 114663867
     locked: 0

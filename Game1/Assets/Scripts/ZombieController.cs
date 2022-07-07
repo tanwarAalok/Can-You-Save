@@ -13,6 +13,10 @@ public class ZombieController : MonoBehaviour
     Animator zombieAnimator;
     Canvas zombieCanvas;
     bool isDead;
+    [SerializeField]float range = 10f;
+    [SerializeField]float speed = 10f;
+    Rigidbody2D body;
+    
 
     void Start()
     {
@@ -21,12 +25,14 @@ public class ZombieController : MonoBehaviour
         zombieAnimator = GetComponent<Animator>();
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
+        body = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        distanceFromPlayer = transform.position.x - player.transform.position.x;
+        // range = transform.position.x - player.transform.position.x;
+        distanceFromPlayer = Mathf.Abs(transform.position.x - player.transform.position.x);
         if(distanceFromPlayer < 2 && !isDead && playerController.Attack())
         {
             StartCoroutine(TakeDamage(20));
@@ -36,6 +42,50 @@ public class ZombieController : MonoBehaviour
             zombieCanvas.enabled = false;
             zombieAnimator.Play("dead");
             isDead = true;
+            StartCoroutine(isDying());
+        }
+
+        
+        if(!isDead)
+        {
+            AttackPlayer();
+
+            if(distanceFromPlayer < range && distanceFromPlayer > 1.9)
+            {
+                MoveZombie();
+                zombieAnimator.Play("walk");
+            }
+        }
+    }
+
+    IEnumerator isDying()
+    {
+        yield return new WaitForSeconds(1.3f);
+        Destroy(gameObject);
+    }
+
+    void MoveZombie()
+    {
+
+
+        if (player.transform.position.x < transform.position.x)
+        {
+            transform.localScale = new Vector2(-1f, 1f);
+            body.velocity = new Vector2(-speed, 0);
+        }
+        else
+        {
+            transform.localScale = new Vector2(1, 1);
+            body.velocity = new Vector2(speed, 0);
+        }
+    }
+
+
+    void AttackPlayer()
+    {
+        if(distanceFromPlayer < 2)
+        {
+            zombieAnimator.Play("attack");
         }
     }
 
