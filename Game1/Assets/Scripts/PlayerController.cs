@@ -43,15 +43,16 @@ public class PlayerController : MonoBehaviour
         else sprite.color = new Color(1,1,1,1);
     }
 
-    void Attack()
+    public bool Attack()
     {
         bool hasHorizontalSpeed = Mathf.Abs(body.velocity.x) > Mathf.Epsilon;
 
-        if(Input.GetKeyDown(KeyCode.LeftControl) && !hasHorizontalSpeed)
+        if (Input.GetKeyDown(KeyCode.LeftControl) && !hasHorizontalSpeed)
         {
-
             anim.Play("attack");
+            return true;
         }
+        return false;
     }
 
     void Run()

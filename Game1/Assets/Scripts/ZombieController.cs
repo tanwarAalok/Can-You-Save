@@ -8,6 +8,7 @@ public class ZombieController : MonoBehaviour
     [SerializeField] int currentHealth;
     [SerializeField] HealthBar healthBar;
     [SerializeField] GameObject player;
+    PlayerController playerController;
     [SerializeField] float distanceFromPlayer;
     Animator zombieAnimator;
     Canvas zombieCanvas;
@@ -15,6 +16,7 @@ public class ZombieController : MonoBehaviour
 
     void Start()
     {
+        playerController = FindObjectOfType<PlayerController>();
         zombieCanvas = GetComponentInChildren<Canvas>();
         zombieAnimator = GetComponent<Animator>();
         currentHealth = maxHealth;
@@ -25,7 +27,7 @@ public class ZombieController : MonoBehaviour
     void Update()
     {
         distanceFromPlayer = transform.position.x - player.transform.position.x;
-        if(distanceFromPlayer < 2 && Input.GetKeyDown(KeyCode.LeftControl) && !isDead)
+        if(distanceFromPlayer < 2 && !isDead && playerController.Attack())
         {
             StartCoroutine(TakeDamage(20));
         }
