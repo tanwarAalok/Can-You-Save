@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
         Run();
         Jump();
         FlipSprite();
-        Attack();
+        AttackEnemy();
         ChangeColor();
     }
 
@@ -43,7 +43,7 @@ public class PlayerController : MonoBehaviour
         else sprite.color = new Color(1,1,1,1);
     }
 
-    public bool Attack()
+    public bool AttackEnemy()
     {
         bool hasHorizontalSpeed = Mathf.Abs(body.velocity.x) > Mathf.Epsilon;
 

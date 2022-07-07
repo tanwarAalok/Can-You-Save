@@ -13,6 +13,7 @@ public class ZombieController : MonoBehaviour
     Animator zombieAnimator;
     Canvas zombieCanvas;
     bool isDead;
+    [SerializeField] float minimumDistToAttack = 2f;
     [SerializeField]float range = 10f;
     [SerializeField]float speed = 10f;
     Rigidbody2D body;
@@ -31,9 +32,8 @@ public class ZombieController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // range = transform.position.x - player.transform.position.x;
         distanceFromPlayer = Mathf.Abs(transform.position.x - player.transform.position.x);
-        if(distanceFromPlayer < 2 && !isDead && playerController.Attack())
+        if(distanceFromPlayer < minimumDistToAttack && !isDead && playerController.AttackEnemy())
         {
             StartCoroutine(TakeDamage(20));
         }
@@ -42,7 +42,7 @@ public class ZombieController : MonoBehaviour
             zombieCanvas.enabled = false;
             zombieAnimator.Play("dead");
             isDead = true;
-            StartCoroutine(isDying());
+            StartCoroutine(IsDying());
         }
 
         
@@ -57,17 +57,21 @@ public class ZombieController : MonoBehaviour
             }
         }
     }
-
-    IEnumerator isDying()
+    IEnumerator TakeDamage(int damage)
     {
-        yield return new WaitForSeconds(1.3f);
+        yield return new WaitForSeconds(0.5f);
+        currentHealth -= damage;
+        healthBar.SetHealth(currentHealth);
+    }
+
+    IEnumerator IsDying()
+    {
+        yield return new WaitForSeconds(1.5f);
         Destroy(gameObject);
     }
 
     void MoveZombie()
     {
-
-
         if (player.transform.position.x < transform.position.x)
         {
             transform.localScale = new Vector2(-1f, 1f);
@@ -81,18 +85,18 @@ public class ZombieController : MonoBehaviour
     }
 
 
-    void AttackPlayer()
+    public bool AttackPlayer()
     {
-        if(distanceFromPlayer < 2)
+        if(distanceFromPlayer < minimumDistToAttack)
         {
             zombieAnimator.Play("attack");
+            StartCoroutine(WaitForPlayerDamage());
+            return true;
         }
+        return false;
     }
-
-    IEnumerator TakeDamage(int damage)
+    IEnumerator WaitForPlayerDamage()
     {
-        yield return new WaitForSeconds(0.5f);
-        currentHealth -= damage;
-        healthBar.SetHealth(currentHealth);
+        yield return new WaitForSeconds(1f);
     }
 }
