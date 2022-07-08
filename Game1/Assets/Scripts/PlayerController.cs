@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -11,13 +12,13 @@ public class PlayerController : MonoBehaviour
     BoxCollider2D feetCollider;
     private Animator anim;
     SpriteRenderer sprite;
-
+    [SerializeField] Animator transition;
     public int currHealth = 100;
     private int maxHealth = 100;
 
     [SerializeField]HealthBar healthBar;
     public bool gameOver = false;
-
+    float transitionTime = 1f;
 
 
     private void Awake() 
@@ -49,7 +50,18 @@ public class PlayerController : MonoBehaviour
         if(currHealth <= 0) {
             anim.Play("dead");
             gameOver = true;
+            ReloadLevel();
         }
+    }
+    void ReloadLevel()
+    {
+        StartCoroutine(WaitForReloadTime(SceneManager.GetActiveScene().buildIndex));
+    }
+    IEnumerator WaitForReloadTime(int levelIndex)
+    {
+        transition.SetTrigger("Start");
+        yield return new WaitForSeconds(transitionTime);
+        SceneManager.LoadScene(levelIndex);    
     }
 
 

@@ -34,23 +34,23 @@ public class ZombieController : MonoBehaviour
 
     void Update()
     {
-        if(!playerController.gameOver)
+        if (!playerController.gameOver)
         {
             distanceFromPlayer = Mathf.Abs(transform.position.x - player.transform.position.x);
             TakeDamage();
-            IsDying();
             hasWalkingSpeed = GetWalkingState();
-            if(!isDead)
+            if (!isDead)
             {
                 if (Time.time > nextAttack)
                 {
                     AttackPlayer();
                     nextAttack = Time.time + 1f;
                 }
-                zombieAnimator.SetBool("isWalking",hasWalkingSpeed);
+                zombieAnimator.SetBool("isWalking", hasWalkingSpeed);
                 MoveZombie();
             }
         }
+        IsDying();
 
     }
     bool GetWalkingState()
