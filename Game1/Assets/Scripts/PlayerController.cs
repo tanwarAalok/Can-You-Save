@@ -12,6 +12,13 @@ public class PlayerController : MonoBehaviour
     private Animator anim;
     SpriteRenderer sprite;
 
+    public int currHealth = 100;
+    private int maxHealth = 100;
+
+    [SerializeField]HealthBar healthBar;
+    public bool gameOver = false;
+
+
 
     private void Awake() 
     {
@@ -20,17 +27,29 @@ public class PlayerController : MonoBehaviour
         feetCollider = GetComponent<BoxCollider2D>();
         anim = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
+        healthBar.SetMaxHealth(maxHealth);
+        healthBar.SetHealth(currHealth);
+
     }
 
     private void Update() 
     {
-        float horizontalInput = Input.GetAxis("Horizontal");
-        body.velocity = new Vector2(horizontalInput * runSpeed, body.velocity.y);
-        Run();
-        Jump();
-        FlipSprite();
-        AttackEnemy();
-        ChangeColor();
+        if(!gameOver)
+        {
+            float horizontalInput = Input.GetAxis("Horizontal");
+            body.velocity = new Vector2(horizontalInput * runSpeed, body.velocity.y);
+            Run();
+            Jump();
+            FlipSprite();
+            AttackEnemy();
+            ChangeColor();
+            healthBar.SetHealth(currHealth);
+        }
+
+        if(currHealth <= 0) {
+            anim.Play("dead");
+            gameOver = true;
+        }
     }
 
 

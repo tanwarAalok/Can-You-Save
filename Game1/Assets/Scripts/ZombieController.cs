@@ -12,15 +12,21 @@ public class ZombieController : MonoBehaviour
     [SerializeField] float distanceFromPlayer;
     Animator zombieAnimator;
     Canvas zombieCanvas;
+    
+ 
+
     bool isDead = false;
 
     [SerializeField] float minimumDistToAttack = 2f;
     [SerializeField] float range = 10f;
     [SerializeField] float moveSpeed = 10f;
     [SerializeField] float initialSpeed = 3f;
-    bool hasWalkingSpeed = false;
+    [SerializeField]bool hasWalkingSpeed = false;
+    [SerializeField]bool deadEnd = false;
     Rigidbody2D body;
-    
+
+    float nextAttack = 0f;
+
 
     void Start()
     {
@@ -35,20 +41,28 @@ public class ZombieController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        distanceFromPlayer = Mathf.Abs(transform.position.x - player.transform.position.x);
-        TakeDamage();
-        IsDying();
-        hasWalkingSpeed = GetWalkingState();
-        if(!isDead)
+        if(!playerController.gameOver)
         {
-            AttackPlayer();
-            zombieAnimator.SetBool("isWalking",hasWalkingSpeed);
-            MoveZombie();
+            distanceFromPlayer = Mathf.Abs(transform.position.x - player.transform.position.x);
+            TakeDamage();
+            IsDying();
+            hasWalkingSpeed = GetWalkingState();
+            if(!isDead)
+            {
+                if (Time.time > nextAttack)
+                {
+                    AttackPlayer();
+                    nextAttack = Time.time + 1f;
+                }
+                zombieAnimator.SetBool("isWalking",hasWalkingSpeed);
+                MoveZombie();
+            }
         }
+
     }
     bool GetWalkingState()
     {
-        if(distanceFromPlayer > range)
+        if(distanceFromPlayer > range || deadEnd || distanceFromPlayer < minimumDistToAttack)
         {
             return false;
         }
@@ -57,7 +71,7 @@ public class ZombieController : MonoBehaviour
 
     void MoveZombie()
     {
-        if (distanceFromPlayer <= range && distanceFromPlayer > 1.9)
+        if (distanceFromPlayer <= range && distanceFromPlayer > 1.5)
         {
             if (player.transform.position.x < transform.position.x)
             {
@@ -77,19 +91,19 @@ public class ZombieController : MonoBehaviour
     }
 
 
-    public bool AttackPlayer()
+    void AttackPlayer()
     {
         if(distanceFromPlayer < minimumDistToAttack)
         {
             zombieAnimator.Play("attack");
             StartCoroutine(WaitForPlayerDamage());
-            return true;
+            
         }
-        return false;
     }
     IEnumerator WaitForPlayerDamage()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.8f);
+        playerController.currHealth -= 10;
     }
 
     void TakeDamage()
@@ -122,11 +136,14 @@ public class ZombieController : MonoBehaviour
     }
     void OnTriggerExit2D(Collider2D collision)
     {
+        if(collision.CompareTag("Player")) return;
         moveSpeed = 0;
-        hasWalkingSpeed = false;
+        deadEnd = true;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if(collision.CompareTag("Player")) return;
         moveSpeed = initialSpeed;
+        deadEnd = false;
     }
 }
