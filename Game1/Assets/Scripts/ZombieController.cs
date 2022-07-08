@@ -12,22 +12,16 @@ public class ZombieController : MonoBehaviour
     [SerializeField] float distanceFromPlayer;
     Animator zombieAnimator;
     Canvas zombieCanvas;
-    
- 
-
-    bool isDead = false;
-
     [SerializeField] float minimumDistToAttack = 2f;
     [SerializeField] float range = 10f;
     [SerializeField] float moveSpeed = 10f;
     [SerializeField] float initialSpeed = 3f;
-    [SerializeField]bool hasWalkingSpeed = false;
-    [SerializeField]bool deadEnd = false;
     Rigidbody2D body;
-
     float nextAttack = 0f;
-
-
+    bool deadEnd = false;
+    bool hasWalkingSpeed = false;
+    bool isDead = false;
+    
     void Start()
     {
         playerController = FindObjectOfType<PlayerController>();
@@ -38,7 +32,6 @@ public class ZombieController : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if(!playerController.gameOver)
@@ -62,7 +55,7 @@ public class ZombieController : MonoBehaviour
     }
     bool GetWalkingState()
     {
-        if(distanceFromPlayer > range || deadEnd || distanceFromPlayer < minimumDistToAttack)
+        if(distanceFromPlayer > range || deadEnd || distanceFromPlayer < minimumDistToAttack - 1)
         {
             return false;
         }
@@ -71,7 +64,7 @@ public class ZombieController : MonoBehaviour
 
     void MoveZombie()
     {
-        if (distanceFromPlayer <= range && distanceFromPlayer > 1.5)
+        if (distanceFromPlayer <= range && distanceFromPlayer > 0.8f)
         {
             if (player.transform.position.x < transform.position.x)
             {
@@ -90,19 +83,17 @@ public class ZombieController : MonoBehaviour
         }
     }
 
-
     void AttackPlayer()
     {
-        if(distanceFromPlayer < minimumDistToAttack)
+        if(distanceFromPlayer < minimumDistToAttack - 1)
         {
             zombieAnimator.Play("attack");
             StartCoroutine(WaitForPlayerDamage());
-            
         }
     }
     IEnumerator WaitForPlayerDamage()
     {
-        yield return new WaitForSeconds(0.8f);
+        yield return new WaitForSeconds(1f);
         playerController.currHealth -= 10;
     }
 
@@ -115,7 +106,7 @@ public class ZombieController : MonoBehaviour
     }
     IEnumerator WaitToTakeDamage(int damage)
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.8f);
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
     }
