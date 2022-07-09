@@ -22,6 +22,11 @@ public class LevelLoader : MonoBehaviour
         {
             StartCoroutine(ReloadTime(SceneManager.GetActiveScene().buildIndex));
         }
+
+        if(gameManager.LevelComplete())
+        {
+            StartCoroutine(ReloadTime(SceneManager.GetActiveScene().buildIndex+1));
+        }
     }
     IEnumerator ReloadTime(int levelIndex)
     {

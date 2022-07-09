@@ -26,9 +26,10 @@ public class ZombieController : MonoBehaviour
     [SerializeField] float initialSpeed = 3f;
     Rigidbody2D body;
     float nextAttack = 0f;
-    bool deadEnd = false;
-    bool hasWalkingSpeed = false;
-    bool isDead = false;
+    [SerializeField] bool deadEnd = false;
+    [SerializeField] bool hasWalkingSpeed = false;
+    [SerializeField] bool isDead = false;
+    
     
     void Start()
     {
@@ -133,16 +134,18 @@ public class ZombieController : MonoBehaviour
     {
         yield return new WaitForSeconds(1.5f);
         Destroy(gameObject);
+        gameManager.totalEnemy -= 1;
+
     }
     void OnTriggerExit2D(Collider2D collision)
     {
-        if(collision.CompareTag("Player")) return;
+        if(collision.CompareTag("Player") || collision.CompareTag("Enemy")) return;
         moveSpeed = 0;
         deadEnd = true;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Player")) return;
+        if(collision.CompareTag("Player") || collision.CompareTag("Enemy")) return;
         moveSpeed = initialSpeed;
         deadEnd = false;
     }

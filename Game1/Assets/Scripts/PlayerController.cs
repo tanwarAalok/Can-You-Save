@@ -23,6 +23,8 @@ public class PlayerController : MonoBehaviour
     [Header("Game Manager")]
     GameManager gameManager;
     [SerializeField] bool gameOver = false;
+    [SerializeField] GameObject door;
+    float distanceFromDoor = 0;
 
     private void Awake() 
     {
@@ -48,6 +50,8 @@ public class PlayerController : MonoBehaviour
             AttackEnemy();
             ChangeColor();
             healthBar.SetHealth(currHealth);
+            
+            OpenDoor();
         }
 
         if(currHealth <= 0) {
@@ -57,6 +61,14 @@ public class PlayerController : MonoBehaviour
         }
     }
     
+    void OpenDoor()
+    {
+        distanceFromDoor = Mathf.Abs(door.transform.position.x - transform.position.x);
+        if(distanceFromDoor < 1f && Input.GetKeyDown(KeyCode.V))
+        {
+            gameManager.openDoor = true;
+        }
+    }
 
 
     void ChangeColor()
