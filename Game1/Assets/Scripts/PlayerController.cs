@@ -6,23 +6,27 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D body;
-    [SerializeField] private float runSpeed = 5;
-    [SerializeField] private float jumpSpeed = 10;
-    private CapsuleCollider2D bodyCollider;
+    CapsuleCollider2D bodyCollider;
     BoxCollider2D feetCollider;
+
+    [Header("Speed")]
+    [SerializeField] float runSpeed = 5;
+    [SerializeField] float jumpSpeed = 10;
     private Animator anim;
     SpriteRenderer sprite;
-    [SerializeField] Animator transition;
+
+    [Header("Health Bar")]
+    [SerializeField] HealthBar healthBar;
     public int currHealth = 100;
-    private int maxHealth = 100;
+    [SerializeField] int maxHealth = 100;
 
-    [SerializeField]HealthBar healthBar;
-    public bool gameOver = false;
-    float transitionTime = 1f;
-
+    [Header("Game Manager")]
+    GameManager gameManager;
+    [SerializeField] bool gameOver = false;
 
     private void Awake() 
     {
+        gameManager = FindObjectOfType<GameManager>();
         body = GetComponent<Rigidbody2D>();
         bodyCollider = GetComponent<CapsuleCollider2D>();
         feetCollider = GetComponent<BoxCollider2D>();
@@ -30,7 +34,6 @@ public class PlayerController : MonoBehaviour
         sprite = GetComponent<SpriteRenderer>();
         healthBar.SetMaxHealth(maxHealth);
         healthBar.SetHealth(currHealth);
-
     }
 
     private void Update() 
@@ -50,19 +53,10 @@ public class PlayerController : MonoBehaviour
         if(currHealth <= 0) {
             anim.Play("dead");
             gameOver = true;
-            ReloadLevel();
+            gameManager.PlayerDeadState(gameOver);
         }
     }
-    void ReloadLevel()
-    {
-        StartCoroutine(WaitForReloadTime(SceneManager.GetActiveScene().buildIndex));
-    }
-    IEnumerator WaitForReloadTime(int levelIndex)
-    {
-        transition.SetTrigger("Start");
-        yield return new WaitForSeconds(transitionTime);
-        SceneManager.LoadScene(levelIndex);    
-    }
+    
 
 
     void ChangeColor()

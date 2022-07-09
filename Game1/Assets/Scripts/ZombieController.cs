@@ -4,16 +4,24 @@ using UnityEngine;
 
 public class ZombieController : MonoBehaviour
 {
+    GameManager gameManager;
+    [Header("Health")]
     int maxHealth = 100;
     [SerializeField] int currentHealth;
     [SerializeField] HealthBar healthBar;
+
+    [Header("Player")]
     [SerializeField] GameObject player;
     PlayerController playerController;
     [SerializeField] float distanceFromPlayer;
     Animator zombieAnimator;
     Canvas zombieCanvas;
+
+    [Header("Distance From Player")]
     [SerializeField] float minimumDistToAttack = 2f;
     [SerializeField] float range = 10f;
+
+    [Header("Speed")]
     [SerializeField] float moveSpeed = 10f;
     [SerializeField] float initialSpeed = 3f;
     Rigidbody2D body;
@@ -24,6 +32,7 @@ public class ZombieController : MonoBehaviour
     
     void Start()
     {
+        gameManager = FindObjectOfType<GameManager>();
         playerController = FindObjectOfType<PlayerController>();
         zombieCanvas = GetComponentInChildren<Canvas>();
         zombieAnimator = GetComponent<Animator>();
@@ -34,7 +43,7 @@ public class ZombieController : MonoBehaviour
 
     void Update()
     {
-        if (!playerController.gameOver)
+        if (!gameManager.GetPlayerState())
         {
             distanceFromPlayer = Mathf.Abs(transform.position.x - player.transform.position.x);
             TakeDamage();
