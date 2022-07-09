@@ -44,7 +44,7 @@ public class ZombieController : MonoBehaviour
 
     void Update()
     {
-        if (!gameManager.GetPlayerState())
+        if (!gameManager.GetPlayerDeadState())
         {
             distanceFromPlayer = Mathf.Abs(transform.position.x - player.transform.position.x);
             TakeDamage();

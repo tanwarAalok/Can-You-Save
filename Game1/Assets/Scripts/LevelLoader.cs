@@ -18,7 +18,7 @@ public class LevelLoader : MonoBehaviour
     }
     public void LoadLevel()
     {
-        if(gameManager.GetPlayerState())
+        if(gameManager.GetPlayerDeadState())
         {
             StartCoroutine(ReloadTime(SceneManager.GetActiveScene().buildIndex));
         }

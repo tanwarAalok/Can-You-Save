@@ -7,33 +7,24 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject doorLocked;
     [SerializeField] GameObject doorOpened;
     [SerializeField] GameObject doorUnlocked;
-    bool isPlayerDead = false;
     public int totalEnemy;
     public GameObject[] enemies;
-    public bool openDoor = false;
+    bool isPlayerDead = false;
+    bool openDoor = false;
+    bool isLevelComplete = false;
 
-    private void Start() 
+    void Awake()
     {
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
         totalEnemy = enemies.Length;
-
-        
     }
-    public void PlayerDeadState(bool check)
-    {
-        isPlayerDead = check;
-    }
-    public bool GetPlayerState()
-    {
-        return isPlayerDead;
-    }
-
-    private void Update() {
+    void Update() {
 
         Debug.Log(totalEnemy);
         
         if(totalEnemy <= 0)
         {
+            isLevelComplete = true;
             doorLocked.SetActive(false);
             doorUnlocked.SetActive(true);
         }
@@ -44,13 +35,25 @@ public class GameManager : MonoBehaviour
             doorOpened.SetActive(true);
         }
     }
-
+    public void PlayerDeadState(bool check)
+    {
+        isPlayerDead = check;
+    }
+    public bool GetPlayerDeadState()
+    {
+        return isPlayerDead;
+    }
+    public bool GetLevelCompleteState()
+    {
+        return isLevelComplete;
+    }
+    public void OpenDoorState(bool check)
+    {
+        openDoor = check;
+    }
     public bool LevelComplete()
     {
         return openDoor;
     }
-
-    
-
 
 }

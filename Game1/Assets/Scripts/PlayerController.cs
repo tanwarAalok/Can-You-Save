@@ -64,9 +64,9 @@ public class PlayerController : MonoBehaviour
     void OpenDoor()
     {
         distanceFromDoor = Mathf.Abs(door.transform.position.x - transform.position.x);
-        if(distanceFromDoor < 1f && Input.GetKeyDown(KeyCode.V))
+        if(distanceFromDoor < 1f && Input.GetKeyDown(KeyCode.V) && gameManager.GetLevelCompleteState())
         {
-            gameManager.openDoor = true;
+            gameManager.OpenDoorState(true);
         }
     }
 
