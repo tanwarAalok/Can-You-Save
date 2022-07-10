@@ -5,9 +5,9 @@ using UnityEngine;
 public class MoveSaw : MonoBehaviour
 {
     [SerializeField] float moveSpeed = 2f;
-    bool deadEnd = false;
     [SerializeField] float turnSpeed = 5f;
     BoxCollider2D boxCollider2D;
+    [SerializeField] GameObject saw;
     private void Start()
     {
         boxCollider2D = GetComponent<BoxCollider2D>();
@@ -19,13 +19,17 @@ public class MoveSaw : MonoBehaviour
     private void Move()
     {
         transform.Translate(Vector2.left * moveSpeed * Time.deltaTime);
-        //transform.Rotate(new Vector3(0,0,1), turnSpeed *Time.deltaTime);
+        saw.transform.Rotate(new Vector3(0,0,1), turnSpeed *Time.deltaTime);
+    }
+    void Flip()
+    {
+        moveSpeed  *= -1;
+        turnSpeed *= -1;
+        transform.localScale = new Vector3((transform.localScale.x * -1), transform.localScale.y ,transform.localScale.z);
+
     }
     void OnTriggerExit2D(Collider2D collision)
     {
-        Debug.Log("here");
-        if (collision.CompareTag("Player") || collision.CompareTag("Enemy")) return;
-        moveSpeed  *= -1;
-        transform.localScale = new Vector3((transform.localScale.x * -1), transform.localScale.y ,transform.localScale.z);
+        Flip();
     }
 }

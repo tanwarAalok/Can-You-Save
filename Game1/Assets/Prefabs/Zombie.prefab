@@ -303,7 +303,7 @@ MonoBehaviour:
   hasWalkingSpeed: 0
   isDead: 0
   waitBetweenAttack: 0
-  nextAttack: 1
+  nextAttack: 0.6
 --- !u!61 &7375850262308595849
 BoxCollider2D:
   m_ObjectHideFlags: 0

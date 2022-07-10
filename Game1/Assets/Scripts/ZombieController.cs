@@ -113,7 +113,7 @@ public class ZombieController : MonoBehaviour
     }
     IEnumerator WaitForPlayerDamage()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.8f);
         if(transform.position.y < player.transform.position.y + 0.5 && transform.position.y > player.transform.position.y - 0.5)
         {
             playerController.currHealth -= 10;
@@ -129,7 +129,7 @@ public class ZombieController : MonoBehaviour
     }
     IEnumerator WaitToTakeDamage(int damage)
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         if (player.transform.localScale !=transform.localScale)
         {
             currentHealth -= damage;
