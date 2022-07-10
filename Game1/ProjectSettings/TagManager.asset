@@ -16,7 +16,7 @@ TagManager:
   - Player
   - Background
   - Zombie
-  - 
+  - Spikes
   - 
   - 
   - 
@@ -47,6 +47,9 @@ TagManager:
     locked: 0
   - name: Water
     uniqueID: 2006580795
+    locked: 0
+  - name: Spikes
+    uniqueID: 1588453959
     locked: 0
   - name: Platform
     uniqueID: 1356271531

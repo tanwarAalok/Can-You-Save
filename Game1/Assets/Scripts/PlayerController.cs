@@ -54,9 +54,14 @@ public class PlayerController : MonoBehaviour
             ChangeColor();
             healthBar.SetHealth(currHealth);
             OpenDoor();
+            if(feetCollider.IsTouchingLayers(LayerMask.GetMask("Zombie")) && !feetCollider.IsTouchingLayers(LayerMask.GetMask("groundLayer")))
+            {
+                float moveALitte = 0.02f * transform.localScale.x;
+                transform.position = new Vector2(transform.position.x + moveALitte, transform.position.y);
+            }
         }
 
-        if(currHealth <= 0) {
+        if(currHealth <= 0 || feetCollider.IsTouchingLayers(LayerMask.GetMask("Spikes"))) {
             anim.Play("dead");
             gameOver = true;
             gameManager.PlayerDeadState(gameOver);

@@ -105,7 +105,7 @@ public class ZombieController : MonoBehaviour
 
     void AttackPlayer()
     {
-        if(distanceFromPlayer <= minimumDistToAttackPlayer)
+        if(distanceFromPlayer <= minimumDistToAttackPlayer && Mathf.Abs(transform.position.y - player.transform.position.y) < 1)
         {
             zombieAnimator.Play("attack");
             StartCoroutine(WaitForPlayerDamage());
@@ -114,12 +114,15 @@ public class ZombieController : MonoBehaviour
     IEnumerator WaitForPlayerDamage()
     {
         yield return new WaitForSeconds(1f);
-        playerController.currHealth -= 10;
+        if(transform.position.y < player.transform.position.y + 0.5 && transform.position.y > player.transform.position.y - 0.5)
+        {
+            playerController.currHealth -= 10;
+        }
     }
 
     void TakeDamage()
     {
-        if (distanceFromPlayer < minimumDistForPlayerToAttack && !isDead && playerController.AttackEnemy())
+        if (distanceFromPlayer < minimumDistForPlayerToAttack && !isDead && playerController.AttackEnemy() && Mathf.Abs(transform.position.y - player.transform.position.y) < 1)
         {
             StartCoroutine(WaitToTakeDamage(20));
         }
@@ -127,8 +130,11 @@ public class ZombieController : MonoBehaviour
     IEnumerator WaitToTakeDamage(int damage)
     {
         yield return new WaitForSeconds(1f);
-        currentHealth -= damage;
-        healthBar.SetHealth(currentHealth);
+        if (player.transform.localScale !=transform.localScale)
+        {
+            currentHealth -= damage;
+            healthBar.SetHealth(currentHealth);
+        }
         
     }
     void IsDying()

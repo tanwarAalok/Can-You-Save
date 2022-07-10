@@ -19,9 +19,6 @@ public class GameManager : MonoBehaviour
         totalEnemy = enemies.Length;
     }
     void Update() {
-
-        Debug.Log(totalEnemy);
-        
         if(totalEnemy <= 0)
         {
             isLevelComplete = true;
