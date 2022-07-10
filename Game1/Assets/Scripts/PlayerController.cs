@@ -26,6 +26,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] GameObject door;
     float distanceFromDoor = 0;
 
+    [Header("Attack")]
+    [SerializeField] float waitBetweenAttack;
+    [SerializeField] float startWaitBetweenAttack;
     private void Awake() 
     {
         gameManager = FindObjectOfType<GameManager>();
@@ -50,7 +53,6 @@ public class PlayerController : MonoBehaviour
             AttackEnemy();
             ChangeColor();
             healthBar.SetHealth(currHealth);
-            
             OpenDoor();
         }
 
@@ -83,11 +85,18 @@ public class PlayerController : MonoBehaviour
     public bool AttackEnemy()
     {
         bool hasHorizontalSpeed = Mathf.Abs(body.velocity.x) > Mathf.Epsilon;
-
-        if (Input.GetKeyDown(KeyCode.LeftControl) && !hasHorizontalSpeed)
+        if (waitBetweenAttack <= 0)
         {
-            anim.Play("attack");
-            return true;
+            if (Input.GetKeyDown(KeyCode.LeftControl) && !hasHorizontalSpeed)
+            {
+                anim.Play("attack");
+                waitBetweenAttack = startWaitBetweenAttack;
+                return true;
+            }
+        }
+        else
+        {
+            waitBetweenAttack -= Time.deltaTime;
         }
         return false;
     }

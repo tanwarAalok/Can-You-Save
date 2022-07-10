@@ -4736,7 +4736,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.3444967, y: -1.667881, z: 62.38948}
+  m_LocalPosition: {x: -7.3197165, y: -1.667448, z: 62.38948}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1276850879}
@@ -5332,6 +5332,8 @@ MonoBehaviour:
   deadEnd: 0
   hasWalkingSpeed: 0
   isDead: 0
+  waitBetweenAttack: 0
+  nextAttack: 1
 --- !u!61 &722968035
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6248,6 +6250,8 @@ MonoBehaviour:
   maxHealth: 100
   gameOver: 0
   door: {fileID: 2125367078}
+  waitBetweenAttack: 0
+  startWaitBetweenAttack: 0.3
 --- !u!50 &1338741224
 Rigidbody2D:
   serializedVersion: 4

@@ -18,17 +18,23 @@ public class ZombieController : MonoBehaviour
     Canvas zombieCanvas;
 
     [Header("Distance From Player")]
-    [SerializeField] float minimumDistToAttack = 2f;
+    [SerializeField] float minimumDistToAttackPlayer = 1f;
+    [SerializeField] float minimumDistForPlayerToAttack = 3f;
     [SerializeField] float range = 10f;
 
     [Header("Speed")]
     [SerializeField] float moveSpeed = 10f;
     [SerializeField] float initialSpeed = 3f;
     Rigidbody2D body;
-    float nextAttack = 0f;
+
+    [Header("Bools")]
     [SerializeField] bool deadEnd = false;
     [SerializeField] bool hasWalkingSpeed = false;
     [SerializeField] bool isDead = false;
+
+    [Header("Attack")]
+    [SerializeField] float waitBetweenAttack;
+    [SerializeField] float nextAttack;
     
     
     void Start()
@@ -51,10 +57,14 @@ public class ZombieController : MonoBehaviour
             hasWalkingSpeed = GetWalkingState();
             if (!isDead)
             {
-                if (Time.time > nextAttack)
+                if (waitBetweenAttack<=0)
                 {
                     AttackPlayer();
-                    nextAttack = Time.time + 1f;
+                    waitBetweenAttack = nextAttack;
+                }
+                else
+                {
+                    waitBetweenAttack -= Time.deltaTime;
                 }
                 zombieAnimator.SetBool("isWalking", hasWalkingSpeed);
                 MoveZombie();
@@ -65,7 +75,7 @@ public class ZombieController : MonoBehaviour
     }
     bool GetWalkingState()
     {
-        if(distanceFromPlayer > range || deadEnd || distanceFromPlayer < minimumDistToAttack - 1)
+        if(distanceFromPlayer > range || deadEnd || distanceFromPlayer < minimumDistToAttackPlayer)
         {
             return false;
         }
@@ -95,7 +105,7 @@ public class ZombieController : MonoBehaviour
 
     void AttackPlayer()
     {
-        if(distanceFromPlayer < minimumDistToAttack - 1)
+        if(distanceFromPlayer <= minimumDistToAttackPlayer)
         {
             zombieAnimator.Play("attack");
             StartCoroutine(WaitForPlayerDamage());
@@ -109,16 +119,17 @@ public class ZombieController : MonoBehaviour
 
     void TakeDamage()
     {
-        if (distanceFromPlayer < minimumDistToAttack && !isDead && playerController.AttackEnemy())
+        if (distanceFromPlayer < minimumDistForPlayerToAttack && !isDead && playerController.AttackEnemy())
         {
             StartCoroutine(WaitToTakeDamage(20));
         }
     }
     IEnumerator WaitToTakeDamage(int damage)
     {
-        yield return new WaitForSeconds(0.8f);
+        yield return new WaitForSeconds(1f);
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
+        
     }
     void IsDying()
     {
