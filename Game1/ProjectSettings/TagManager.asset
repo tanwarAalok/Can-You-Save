@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - range
+  - Barrel
   layers:
   - Default
   - TransparentFX
@@ -57,6 +58,9 @@ TagManager:
     locked: 0
   - name: Platform
     uniqueID: 1356271531
+    locked: 0
+  - name: extras
+    uniqueID: 1982567021
     locked: 0
   - name: Zombie
     uniqueID: 1034898069
