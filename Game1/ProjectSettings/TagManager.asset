@@ -17,8 +17,8 @@ TagManager:
   - Player
   - Background
   - Zombie
-  - Spikes
   - 
+  - Obstacle
   - 
   - 
   - 
@@ -51,6 +51,9 @@ TagManager:
     locked: 0
   - name: Spikes
     uniqueID: 1588453959
+    locked: 0
+  - name: Acid
+    uniqueID: 3486361629
     locked: 0
   - name: Platform
     uniqueID: 1356271531

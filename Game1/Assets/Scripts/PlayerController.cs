@@ -63,8 +63,9 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if(currHealth <= 0 || feetCollider.IsTouchingLayers(LayerMask.GetMask("Spikes"))) {
+        if(currHealth <= 0 || feetCollider.IsTouchingLayers(LayerMask.GetMask("Obstacle"))) {
             anim.Play("dead");
+            body.velocity = new Vector2(0, body.velocity.y);
             gameOver = true;
             gameManager.PlayerDeadState(gameOver);
         }
