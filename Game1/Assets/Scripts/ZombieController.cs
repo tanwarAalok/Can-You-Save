@@ -64,7 +64,8 @@ public class ZombieController : MonoBehaviour
                 {
                     waitBetweenAttack -= Time.deltaTime;
                 }
-                zombieAnimator.SetBool("isWalking", hasWalkingSpeed);
+                
+            zombieAnimator.SetBool("isWalking", hasWalkingSpeed);
                 MoveZombie();
             }
         }
@@ -73,7 +74,7 @@ public class ZombieController : MonoBehaviour
     }
     bool GetWalkingState()
     {
-        if(distanceFromPlayer > range || deadEnd || distanceFromPlayer < minimumDistToAttackPlayer)
+        if(distanceFromPlayer > range || deadEnd || distanceFromPlayer < minimumDistToAttackPlayer || Mathf.Abs(transform.position.y - player.transform.position.y) > 3)
         {
             return false;
         }
@@ -82,7 +83,7 @@ public class ZombieController : MonoBehaviour
 
     void MoveZombie()
     {
-        if (distanceFromPlayer <= range && distanceFromPlayer > 0.8f)
+        if (distanceFromPlayer <= range && distanceFromPlayer > 0.8f && Mathf.Abs(transform.position.y - player.transform.position.y) <= 3)
         {
             if (player.transform.position.x < transform.position.x)
             {
