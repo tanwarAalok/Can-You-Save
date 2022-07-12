@@ -19,7 +19,6 @@ public class ZombieController : MonoBehaviour
 
     [Header("Distance From Player")]
     [SerializeField] float minimumDistToAttackPlayer = 1f;
-    [SerializeField] float minimumDistForPlayerToAttack = 3f;
     [SerializeField] float range = 10f;
 
     [Header("Speed")]
@@ -53,7 +52,6 @@ public class ZombieController : MonoBehaviour
         if (!gameManager.GetPlayerDeadState())
         {
             distanceFromPlayer = Mathf.Abs(transform.position.x - player.transform.position.x);
-            TakeDamage();
             hasWalkingSpeed = GetWalkingState();
             if (!isDead)
             {
@@ -108,34 +106,16 @@ public class ZombieController : MonoBehaviour
         if(distanceFromPlayer <= minimumDistToAttackPlayer && Mathf.Abs(transform.position.y - player.transform.position.y) < 1)
         {
             zombieAnimator.Play("attack");
-            StartCoroutine(WaitForPlayerDamage());
-        }
-    }
-    IEnumerator WaitForPlayerDamage()
-    {
-        yield return new WaitForSeconds(0.8f);
-        if(transform.position.y < player.transform.position.y + 0.5 && transform.position.y > player.transform.position.y - 0.5)
-        {
-            playerController.currHealth -= 10;
         }
     }
 
-    void TakeDamage()
+    public void TakeDamage()
     {
-        if (distanceFromPlayer < minimumDistForPlayerToAttack && !isDead && playerController.AttackEnemy() && Mathf.Abs(transform.position.y - player.transform.position.y) < 1)
+        if (!isDead)
         {
-            StartCoroutine(WaitToTakeDamage(20));
-        }
-    }
-    IEnumerator WaitToTakeDamage(int damage)
-    {
-        yield return new WaitForSeconds(0.5f);
-        if (player.transform.localScale !=transform.localScale)
-        {
-            currentHealth -= damage;
+            currentHealth -= 20;
             healthBar.SetHealth(currentHealth);
         }
-        
     }
     void IsDying()
     {
@@ -156,13 +136,13 @@ public class ZombieController : MonoBehaviour
     }
     void OnTriggerExit2D(Collider2D collision)
     {
-        if(collision.CompareTag("Player") || collision.CompareTag("Enemy")) return;
+        if(collision.CompareTag("Player") || collision.CompareTag("Enemy") || collision.CompareTag("range")) return;
         moveSpeed = 0;
         deadEnd = true;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Player") || collision.CompareTag("Enemy")) return;
+        if(collision.CompareTag("Player") || collision.CompareTag("Enemy") || collision.CompareTag("range")) return;
         moveSpeed = initialSpeed;
         deadEnd = false;
     }

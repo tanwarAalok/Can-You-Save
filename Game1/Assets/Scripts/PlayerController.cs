@@ -17,7 +17,8 @@ public class PlayerController : MonoBehaviour
 
     [Header("Health Bar")]
     [SerializeField] HealthBar healthBar;
-    public int currHealth = 100;
+    public static int currHealth = 100;
+    static int levelHealth = 100;
     [SerializeField] int maxHealth = 100;
 
     [Header("Game Manager")]
@@ -37,6 +38,7 @@ public class PlayerController : MonoBehaviour
         feetCollider = GetComponent<BoxCollider2D>();
         anim = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
+        currHealth = levelHealth;
         healthBar.SetMaxHealth(maxHealth);
         healthBar.SetHealth(currHealth);
     }
@@ -73,6 +75,7 @@ public class PlayerController : MonoBehaviour
         distanceFromDoor = Mathf.Abs(door.transform.position.x - transform.position.x);
         if(distanceFromDoor < 1f && Input.GetKeyDown(KeyCode.V) && gameManager.GetLevelCompleteState())
         {
+            LevelHealth(currHealth);
             gameManager.OpenDoorState(true);
         }
     }
@@ -87,7 +90,7 @@ public class PlayerController : MonoBehaviour
         else sprite.color = new Color(1,1,1,1);
     }
 
-    public bool AttackEnemy()
+    void AttackEnemy()
     {
         bool hasHorizontalSpeed = Mathf.Abs(body.velocity.x) > Mathf.Epsilon;
         if (waitBetweenAttack <= 0)
@@ -96,14 +99,13 @@ public class PlayerController : MonoBehaviour
             {
                 anim.Play("attack");
                 waitBetweenAttack = startWaitBetweenAttack;
-                return true;
             }
         }
         else
         {
             waitBetweenAttack -= Time.deltaTime;
         }
-        return false;
+        
     }
 
     void Run()
@@ -130,5 +132,13 @@ public class PlayerController : MonoBehaviour
         {
             transform.localScale = new Vector2(Mathf.Sign(body.velocity.x), 1f);
         }
+    }
+     public void DecreaseHealth()
+    {
+        currHealth -= 10;
+    }
+    public void LevelHealth(int health)
+    {
+        levelHealth = health;
     }
 }
