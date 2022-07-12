@@ -53,7 +53,6 @@ public class PlayerController : MonoBehaviour
             Jump();
             FlipSprite();
             AttackEnemy();
-            ChangeColor();
             healthBar.SetHealth(currHealth);
             OpenDoor();
             if(feetCollider.IsTouchingLayers(LayerMask.GetMask("Zombie")) && !feetCollider.IsTouchingLayers(LayerMask.GetMask("groundLayer")))
@@ -63,6 +62,7 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+        ChangeColor();
         if(currHealth <= 0 || feetCollider.IsTouchingLayers(LayerMask.GetMask("Obstacle"))) {
             anim.Play("dead");
             body.velocity = new Vector2(0, body.velocity.y);
@@ -84,7 +84,7 @@ public class PlayerController : MonoBehaviour
 
     void ChangeColor()
     {
-        if (bodyCollider.IsTouchingLayers(LayerMask.GetMask("Water")))
+        if (bodyCollider.IsTouchingLayers(LayerMask.GetMask("Water")) || bodyCollider.IsTouchingLayers(LayerMask.GetMask("Obstacle")))
         {
             sprite.color = new Color(1, 1, 1, 0.6f);
         }

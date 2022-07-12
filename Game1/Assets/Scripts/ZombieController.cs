@@ -74,7 +74,7 @@ public class ZombieController : MonoBehaviour
     }
     bool GetWalkingState()
     {
-        if(distanceFromPlayer > range || deadEnd || distanceFromPlayer < minimumDistToAttackPlayer || Mathf.Abs(transform.position.y - player.transform.position.y) > 2)
+        if(distanceFromPlayer > range || deadEnd || distanceFromPlayer < minimumDistToAttackPlayer || Mathf.Abs(transform.position.y - player.transform.position.y) > 2.5)
         {
             return false;
         }
@@ -83,7 +83,7 @@ public class ZombieController : MonoBehaviour
 
     void MoveZombie()
     {
-        if (distanceFromPlayer <= range && distanceFromPlayer > 0.8f && Mathf.Abs(transform.position.y - player.transform.position.y) <= 2)
+        if (distanceFromPlayer <= range && distanceFromPlayer > 0.8f && Mathf.Abs(transform.position.y - player.transform.position.y) <= 2.5)
         {
             if (player.transform.position.x < transform.position.x)
             {
