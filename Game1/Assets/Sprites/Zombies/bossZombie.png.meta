@@ -1,7 +1,124 @@
 fileFormatVersion: 2
 guid: 9726cbf48446b2d4b8326ed5d0b535fe
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 6999919083453744863
+    second: bossZombie_0
+  - first:
+      213: 3216188866741378284
+    second: bossZombie_1
+  - first:
+      213: -2575957875808426051
+    second: bossZombie_2
+  - first:
+      213: 3039412223339442962
+    second: bossZombie_3
+  - first:
+      213: -2483028162888817270
+    second: bossZombie_4
+  - first:
+      213: -4141870152366908182
+    second: bossZombie_5
+  - first:
+      213: 4796866428358396856
+    second: bossZombie_6
+  - first:
+      213: 3333067491129344656
+    second: bossZombie_7
+  - first:
+      213: -1339520609436472621
+    second: bossZombie_8
+  - first:
+      213: -9092841723292659985
+    second: bossZombie_9
+  - first:
+      213: -9010842298584374667
+    second: bossZombie_10
+  - first:
+      213: 6879592699184332656
+    second: bossZombie_11
+  - first:
+      213: 8449706317306983791
+    second: bossZombie_12
+  - first:
+      213: -4132078584349275127
+    second: bossZombie_13
+  - first:
+      213: 7004692187104382431
+    second: bossZombie_14
+  - first:
+      213: -6149931269140968721
+    second: bossZombie_15
+  - first:
+      213: 5450200858917869389
+    second: bossZombie_16
+  - first:
+      213: 1920765071504893096
+    second: bossZombie_17
+  - first:
+      213: 3688603145340220291
+    second: bossZombie_18
+  - first:
+      213: 154232993255975893
+    second: bossZombie_19
+  - first:
+      213: 6468769069119361084
+    second: bossZombie_20
+  - first:
+      213: -2073946643661970754
+    second: bossZombie_21
+  - first:
+      213: -296708681678464951
+    second: bossZombie_22
+  - first:
+      213: -1150253200010010600
+    second: bossZombie_23
+  - first:
+      213: 5289942175987950711
+    second: bossZombie_24
+  - first:
+      213: -2741638098363203243
+    second: bossZombie_25
+  - first:
+      213: -3022602916112002097
+    second: bossZombie_26
+  - first:
+      213: 5122348136957653472
+    second: bossZombie_27
+  - first:
+      213: -4730767898373895715
+    second: bossZombie_28
+  - first:
+      213: -1341521417967154137
+    second: bossZombie_29
+  - first:
+      213: 9109762469174209981
+    second: bossZombie_30
+  - first:
+      213: 4907556440615596191
+    second: bossZombie_31
+  - first:
+      213: 1270942987223415824
+    second: bossZombie_32
+  - first:
+      213: 3478654230926821814
+    second: bossZombie_33
+  - first:
+      213: -6175296644597364202
+    second: bossZombie_34
+  - first:
+      213: -9077309611017778046
+    second: bossZombie_35
+  - first:
+      213: 6920020524407545062
+    second: bossZombie_36
+  - first:
+      213: 1719162734839412493
+    second: bossZombie_37
+  - first:
+      213: 4634736222327659220
+    second: bossZombie_38
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -41,12 +158,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 30
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,9 +192,852 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: bossZombie_0
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 765
+        width: 78
+        height: 126
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd60db9b155b42160800000000000000
+      internalID: 6999919083453744863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossZombie_1
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 765
+        width: 80
+        height: 126
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cec9fa4fbb232ac20800000000000000
+      internalID: 3216188866741378284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossZombie_2
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 765
+        width: 82
+        height: 126
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db7a110c5fb504cd0800000000000000
+      internalID: -2575957875808426051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossZombie_3
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 765
+        width: 84
+        height: 126
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 213b02a40592e2a20800000000000000
+      internalID: 3039412223339442962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossZombie_4
+      rect:
+        serializedVersion: 2
+        x: 601
+        y: 765
+        width: 82
+        height: 126
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a85a8bf9a038a8dd0800000000000000
+      internalID: -2483028162888817270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossZombie_5
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 765
+        width: 78
+        height: 126
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aec906e7a0f1586c0800000000000000
+      internalID: -4141870152366908182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossZombie_6
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 617
+        width: 82
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bb8c490a94e19240800000000000000
+      internalID: 4796866428358396856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossZombie_7
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 617
+        width: 72
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 092ca2d493f614e20800000000000000
+      internalID: 3333067491129344656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossZombie_8
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 617
+        width: 74
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3da69315a11196de0800000000000000
+      internalID: -1339520609436472621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossZombie_9
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 617
+        width: 82
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fee4a4ce0acbfc180800000000000000
+      internalID: -9092841723292659985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossZombie_10
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 617
+        width: 86
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57260d1cbae03f280800000000000000
+      internalID: -9010842298584374667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossZombie_11
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 615
+        width: 86
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07fb04a3c19397f50800000000000000
+      internalID: 6879592699184332656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossZombie_12
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 615
+        width: 106
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f65f47b8023634570800000000000000
+      internalID: 8449706317306983791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossZombie_13
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 479
+        width: 112
+        height: 116
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90cccd39b68e7a6c0800000000000000
+      internalID: -4132078584349275127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossZombie_14
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 479
+        width: 114
+        height: 116
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdd8f458e6aa53160800000000000000
+      internalID: 7004692187104382431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossZombie_15
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 479
+        width: 124
+        height: 116
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fea09cd281e07aaa0800000000000000
+      internalID: -6149931269140968721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossZombie_16
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 479
+        width: 138
+        height: 116
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4714560ec003ab40800000000000000
+      internalID: 5450200858917869389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossZombie_17
+      rect:
+        serializedVersion: 2
+        x: 573
+        y: 479
+        width: 132
+        height: 116
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a4e608e7ade7aa10800000000000000
+      internalID: 1920765071504893096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossZombie_18
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 341
+        width: 48
+        height: 126
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3837463840d803330800000000000000
+      internalID: 3688603145340220291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossZombie_19
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 341
+        width: 72
+        height: 126
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dbeaa71712f32200800000000000000
+      internalID: 154232993255975893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossZombie_20
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 341
+        width: 96
+        height: 126
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c30d4e2023fa5c950800000000000000
+      internalID: 6468769069119361084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossZombie_21
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 341
+        width: 96
+        height: 126
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb22a6d048cd733e0800000000000000
+      internalID: -2073946643661970754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossZombie_22
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 341
+        width: 86
+        height: 126
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 948d7caa601e1ebf0800000000000000
+      internalID: -296708681678464951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossZombie_23
+      rect:
+        serializedVersion: 2
+        x: 743
+        y: 341
+        width: 76
+        height: 126
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 810a5a31fca7900f0800000000000000
+      internalID: -1150253200010010600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossZombie_24
+      rect:
+        serializedVersion: 2
+        x: 877
+        y: 341
+        width: 80
+        height: 126
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7746e1ab166a96940800000000000000
+      internalID: 5289942175987950711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossZombie_25
+      rect:
+        serializedVersion: 2
+        x: 1005
+        y: 341
+        width: 80
+        height: 126
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5514264ecaeb3f9d0800000000000000
+      internalID: -2741638098363203243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossZombie_26
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 183
+        width: 77
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc3951889ae8d06d0800000000000000
+      internalID: -3022602916112002097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossZombie_27
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 183
+        width: 76
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e1be3fbd7c361740800000000000000
+      internalID: 5122348136957653472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossZombie_28
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 183
+        width: 76
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd94a9e39afe85eb0800000000000000
+      internalID: -4730767898373895715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossZombie_29
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 183
+        width: 76
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72c4d77c065f16de0800000000000000
+      internalID: -1341521417967154137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossZombie_30
+      rect:
+        serializedVersion: 2
+        x: 603
+        y: 183
+        width: 76
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbd605b33b06c6e70800000000000000
+      internalID: 9109762469174209981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossZombie_31
+      rect:
+        serializedVersion: 2
+        x: 731
+        y: 183
+        width: 76
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f90b216d4942b1440800000000000000
+      internalID: 4907556440615596191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossZombie_32
+      rect:
+        serializedVersion: 2
+        x: 861
+        y: 183
+        width: 76
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01cb933c9eb43a110800000000000000
+      internalID: 1270942987223415824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossZombie_33
+      rect:
+        serializedVersion: 2
+        x: 1015
+        y: 185
+        width: 78
+        height: 122
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b98dc2a799a64030800000000000000
+      internalID: 3478654230926821814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossZombie_34
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 35
+        width: 82
+        height: 122
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61acc1c7b60fc4aa0800000000000000
+      internalID: -6175296644597364202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossZombie_35
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 35
+        width: 84
+        height: 122
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28ccb0f900be60280800000000000000
+      internalID: -9077309611017778046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossZombie_36
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 34
+        width: 82
+        height: 123
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ec59bbc00ad80060800000000000000
+      internalID: 6920020524407545062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossZombie_37
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 35
+        width: 80
+        height: 122
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0731391661bbd710800000000000000
+      internalID: 1719162734839412493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossZombie_38
+      rect:
+        serializedVersion: 2
+        x: 581
+        y: 33
+        width: 76
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4dad97fc904e15040800000000000000
+      internalID: 4634736222327659220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
