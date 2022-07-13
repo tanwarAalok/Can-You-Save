@@ -5,11 +5,13 @@ using UnityEngine;
 
 public class SwitchController : MonoBehaviour
 {
-    public GameObject box;
-    public GameObject player;
+    [SerializeField] GameObject addBox;
+    [SerializeField] GameObject player;
     bool canSwitchOn = false;
-    public Sprite GreenSwitch;
-    public GameObject SwitchText;
+    [SerializeField] Sprite GreenSwitch;
+    [SerializeField] GameObject SwitchText;
+    [SerializeField] GameObject[] removeBoxes;
+    [SerializeField] GameObject doorSwitch;
 
 
     private void Update() {
@@ -20,8 +22,13 @@ public class SwitchController : MonoBehaviour
     {
         if(canSwitchOn && Input.GetKeyDown(KeyCode.X))
         {
-            box.SetActive(true);
+            addBox.SetActive(true);
+            for (int i = 0; i < removeBoxes.Length; i++)
+            {
+                removeBoxes[i].SetActive(false);
+            }
             transform.GetComponent<SpriteRenderer>().sprite = GreenSwitch;
+            doorSwitch.GetComponent<SpriteRenderer>().sprite = GreenSwitch;
 
         }
     }
