@@ -119,9 +119,9 @@ public class PlayerController : MonoBehaviour
     void Jump()
     {
         // Jumping
-        if (feetCollider.IsTouchingLayers(LayerMask.GetMask("groundLayer")) && Input.GetKey(KeyCode.Space))
+        if (feetCollider.IsTouchingLayers(LayerMask.GetMask("groundLayer")) && Input.GetKeyDown(KeyCode.Space))
         {
-            body.velocity = new Vector2(body.velocity.x, jumpSpeed);
+            body.velocity += new Vector2(0, jumpSpeed);
             anim.Play("Jump");
         }
     }
