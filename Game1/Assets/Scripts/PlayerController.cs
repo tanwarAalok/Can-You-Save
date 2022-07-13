@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
     [Header("Game Manager")]
     GameManager gameManager;
     [SerializeField] bool gameOver = false;
-    [SerializeField] GameObject door;
+    [SerializeField] GameObject door = null;
     float distanceFromDoor = 0;
 
     [Header("Attack")]
@@ -54,7 +54,7 @@ public class PlayerController : MonoBehaviour
             FlipSprite();
             AttackEnemy();
             healthBar.SetHealth(currHealth);
-            OpenDoor();
+            if(SceneManager.GetActiveScene().buildIndex < 2) OpenDoor();
             if(feetCollider.IsTouchingLayers(LayerMask.GetMask("Zombie")) && !feetCollider.IsTouchingLayers(LayerMask.GetMask("groundLayer")))
             {
                 float moveALitte = 0.02f * transform.localScale.x;

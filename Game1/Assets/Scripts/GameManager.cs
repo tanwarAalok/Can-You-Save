@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] GameObject doorLocked;
-    [SerializeField] GameObject doorOpened;
-    [SerializeField] GameObject doorUnlocked;
+    [SerializeField] GameObject doorLocked = null;
+    [SerializeField] GameObject doorOpened = null;
+    [SerializeField] GameObject doorUnlocked = null;
     public int totalEnemy;
     public GameObject[] enemies;
     bool isPlayerDead = false;
@@ -19,17 +20,21 @@ public class GameManager : MonoBehaviour
         totalEnemy = enemies.Length;
     }
     void Update() {
-        if(totalEnemy <= 0)
+        
+        if(SceneManager.GetActiveScene().buildIndex < 2)
         {
-            isLevelComplete = true;
-            doorLocked.SetActive(false);
-            doorUnlocked.SetActive(true);
-        }
+            if(totalEnemy <= 0)
+            {
+                isLevelComplete = true;
+                doorLocked.SetActive(false);
+                doorUnlocked.SetActive(true);
+            }
 
-        if(openDoor)
-        {
-            doorUnlocked.SetActive(false);
-            doorOpened.SetActive(true);
+            if(openDoor)
+            {
+                doorUnlocked.SetActive(false);
+                doorOpened.SetActive(true);
+            }
         }
     }
     public void PlayerDeadState(bool check)
