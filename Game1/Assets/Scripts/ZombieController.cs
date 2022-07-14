@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ZombieController : MonoBehaviour
 {
+    AttackPlayer attackPlayer;
     GameManager gameManager;
     [Header("Health")]
     int maxHealth = 100;
@@ -38,6 +39,7 @@ public class ZombieController : MonoBehaviour
     
     void Start()
     {
+        attackPlayer = FindObjectOfType<AttackPlayer>();
         gameManager = FindObjectOfType<GameManager>();
         zombieCanvas = GetComponentInChildren<Canvas>();
         zombieAnimator = GetComponent<Animator>();
@@ -48,29 +50,26 @@ public class ZombieController : MonoBehaviour
 
     void Update()
     {
-        if (!gameManager.GetPlayerDeadState())
+        if (!gameManager.GetPlayerDeadState() && !isDead)
         {
             distanceFromPlayer = Mathf.Abs(transform.position.x - player.transform.position.x);
             hasWalkingSpeed = GetWalkingState();
-            if (!isDead)
+            if (waitBetweenAttack<=0)
             {
-                if (waitBetweenAttack<=0)
-                {
-                    AttackPlayer();
-                    waitBetweenAttack = nextAttack;
-                }
-                else
-                {
-                    waitBetweenAttack -= Time.deltaTime;
-                }
-                
-            zombieAnimator.SetBool("isWalking", hasWalkingSpeed);
-                MoveZombie();
+                attackPlayer.hasGivenDamage = false;
+                AttackPlayer();
+                waitBetweenAttack = nextAttack;
             }
+            else
+            {
+                waitBetweenAttack -= Time.deltaTime;
+            }
+            zombieAnimator.SetBool("isWalking", hasWalkingSpeed);
+            MoveZombie();
         }
         IsDying();
-
     }
+    
     bool GetWalkingState()
     {
         if(distanceFromPlayer > range || deadEnd || distanceFromPlayer < minimumDistToAttackPlayer || Mathf.Abs(transform.position.y - player.transform.position.y) > 2.5)

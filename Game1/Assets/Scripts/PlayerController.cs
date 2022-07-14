@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D body;
     CapsuleCollider2D bodyCollider;
     BoxCollider2D feetCollider;
+    AttackEnemy attackEnemy;
 
     [Header("Speed")]
     [SerializeField] float runSpeed = 5;
@@ -37,6 +38,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] TextMeshProUGUI showText = null;
     private void Awake() 
     {
+        attackEnemy = FindObjectOfType<AttackEnemy>();
         gameManager = FindObjectOfType<GameManager>();
         body = GetComponent<Rigidbody2D>();
         bodyCollider = GetComponent<CapsuleCollider2D>();
@@ -103,6 +105,7 @@ public class PlayerController : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.LeftControl) && !hasHorizontalSpeed)
             {
+                attackEnemy.hasGivenDamage = false;
                 anim.Play("attack");
                 waitBetweenAttack = startWaitBetweenAttack;
             }

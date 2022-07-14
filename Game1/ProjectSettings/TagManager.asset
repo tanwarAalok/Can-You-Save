@@ -58,10 +58,10 @@ TagManager:
   - name: Acid
     uniqueID: 3486361629
     locked: 0
-  - name: extras
+  - name: Extras
     uniqueID: 1982567021
     locked: 0
-  - name: Decor
+  - name: Fence
     uniqueID: 46814121
     locked: 0
   - name: Platform

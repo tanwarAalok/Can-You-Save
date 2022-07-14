@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class AttackEnemy : MonoBehaviour
 {
+    public bool hasGivenDamage = false;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Enemy"))
+        if(collision.CompareTag("Enemy") && !hasGivenDamage)
         {
+            hasGivenDamage = true;
             collision.GetComponent<ZombieController>().TakeDamage();
         }
     }
