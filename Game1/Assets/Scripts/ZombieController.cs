@@ -29,6 +29,7 @@ public class ZombieController : MonoBehaviour
     [SerializeField] bool deadEnd = false;
     [SerializeField] bool hasWalkingSpeed = false;
     [SerializeField] bool isDead = false;
+    [SerializeField] bool bossZombie = false;
 
     [Header("Attack")]
     [SerializeField] float waitBetweenAttack;
@@ -132,6 +133,10 @@ public class ZombieController : MonoBehaviour
         Destroy(gameObject);
         gameManager.totalEnemy -= 1;
 
+    }
+    public bool IsThisABossZombie()
+    {
+        return bossZombie;
     }
     void OnTriggerExit2D(Collider2D collision)
     {

@@ -3,22 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class SwitchController : MonoBehaviour
+public class BoxController : MonoBehaviour
 {
     [SerializeField] GameObject addBox = null;
     [SerializeField] GameObject player;
     bool canSwitchOn = false;
-    [SerializeField] Sprite GreenSwitch;
+    [SerializeField] Sprite GreenSwitch = null;
     [SerializeField] GameObject[] removeBoxes = null;
-
-
+    [SerializeField] bool isBossZombiePresent = false;
     private void Update() {
+        if(FindObjectOfType<ZombieController>()!=null)
+        {
+            isBossZombiePresent = FindObjectOfType<ZombieController>().IsThisABossZombie();
+        }
+        else
+        {
+            isBossZombiePresent = false;
+        }
         ButtonTrigger();
     }
 
     void ButtonTrigger()
     {
-        if(canSwitchOn && Input.GetKeyDown(KeyCode.X))
+        if(canSwitchOn && Input.GetKeyDown(KeyCode.X) || !isBossZombiePresent)
         {
             if(addBox!=null)
             {
@@ -28,7 +35,10 @@ public class SwitchController : MonoBehaviour
             {
                 removeBoxes[i].SetActive(false);
             }
-            transform.GetComponent<SpriteRenderer>().sprite = GreenSwitch;
+            if(GreenSwitch!=null)
+            {
+                transform.GetComponent<SpriteRenderer>().sprite = GreenSwitch;
+            }
         }
     }
 

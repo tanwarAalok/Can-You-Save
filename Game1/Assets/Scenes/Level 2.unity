@@ -810,6 +810,57 @@ Transform:
   m_Father: {fileID: 402054968}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1012129527
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1012129529}
+  - component: {fileID: 1012129528}
+  m_Layer: 0
+  m_Name: Box Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1012129528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1012129527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e644f38bb5b2ec468b95767cccce26e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  addBox: {fileID: 0}
+  player: {fileID: 1760465712}
+  GreenSwitch: {fileID: 0}
+  removeBoxes:
+  - {fileID: 2060024984}
+  - {fileID: 1195327683}
+  - {fileID: 532003229}
+  isBossZombiePresent: 0
+--- !u!4 &1012129529
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1012129527}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 17.67178, y: -2.8724844, z: -1182.1393}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1045007499
 GameObject:
   m_ObjectHideFlags: 0
@@ -12412,6 +12463,7 @@ MonoBehaviour:
   deadEnd: 0
   hasWalkingSpeed: 0
   isDead: 0
+  bossZombie: 1
   waitBetweenAttack: 0
   nextAttack: 0.8
   takeDamage: 10
@@ -12993,7 +13045,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2180337878646852575}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.75072193, y: 1.8678474, z: 62.38948}
+  m_LocalPosition: {x: 0.00067806244, y: 1.8678474, z: 62.38948}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2180337879970840860}
