@@ -83,7 +83,7 @@ public class ZombieController : MonoBehaviour
 
     void MoveZombie()
     {
-        if (distanceFromPlayer <= range && distanceFromPlayer > 0.8f && Mathf.Abs(transform.position.y - player.transform.position.y) <= 2.5)
+        if (distanceFromPlayer <= range && distanceFromPlayer > minimumDistToAttackPlayer - 0.5f && Mathf.Abs(transform.position.y - player.transform.position.y) <= 2.5)
         {
             if (player.transform.position.x < transform.position.x)
             {
@@ -104,7 +104,7 @@ public class ZombieController : MonoBehaviour
 
     void AttackPlayer()
     {
-        if(distanceFromPlayer <= minimumDistToAttackPlayer && Mathf.Abs(transform.position.y - player.transform.position.y) < 1)
+        if(distanceFromPlayer <= minimumDistToAttackPlayer && Mathf.Abs(transform.position.y - player.transform.position.y) < 2)
         {
             zombieAnimator.Play("attack");
         }

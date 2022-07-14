@@ -30,6 +30,7 @@ public class MoveSaw : MonoBehaviour
     }
     void OnTriggerExit2D(Collider2D collision)
     {
+        if (collision.CompareTag("Player")) return;
         Flip();
     }
 }

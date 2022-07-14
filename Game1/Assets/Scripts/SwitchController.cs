@@ -9,7 +9,6 @@ public class SwitchController : MonoBehaviour
     [SerializeField] GameObject player;
     bool canSwitchOn = false;
     [SerializeField] Sprite GreenSwitch;
-    [SerializeField] GameObject SwitchText;
     [SerializeField] GameObject[] removeBoxes = null;
 
 
@@ -36,11 +35,9 @@ public class SwitchController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other) {
     
         canSwitchOn = true;
-        SwitchText.SetActive(true);
     }
 
     private void OnTriggerExit2D(Collider2D other) {
         canSwitchOn = false;
-        SwitchText.SetActive(false);
     }
 }

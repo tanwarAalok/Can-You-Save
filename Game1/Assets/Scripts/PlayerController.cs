@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
@@ -30,6 +31,10 @@ public class PlayerController : MonoBehaviour
     [Header("Attack")]
     [SerializeField] float waitBetweenAttack;
     [SerializeField] float startWaitBetweenAttack;
+
+    [Header("Text Field")]
+    [SerializeField] GameObject textBox = null;
+    [SerializeField] TextMeshProUGUI showText = null;
     private void Awake() 
     {
         gameManager = FindObjectOfType<GameManager>();
@@ -141,5 +146,35 @@ public class PlayerController : MonoBehaviour
     public void LevelHealth(int health)
     {
         levelHealth = health;
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(textBox!=null)
+        {
+            if(collision.CompareTag("Orignal_Player"))
+            {
+                textBox.SetActive(true);
+                showText.text = "Orignal Character Sprite";
+            }
+            else if(collision.CompareTag("Switch"))
+            {
+                textBox.SetActive(true);
+            }
+            else
+            {
+                return;
+            }
+        }
+        else
+        {
+            return;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if(textBox!=null)
+        {
+            textBox.SetActive(false);
+        }
     }
 }

@@ -310,6 +310,7 @@ GameObject:
   - component: {fileID: 7084144884329845733}
   - component: {fileID: 7084144884329845736}
   - component: {fileID: 7084144884329845743}
+  - component: {fileID: 1449684192}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -403,7 +404,9 @@ MonoBehaviour:
   gameOver: 0
   door: {fileID: 0}
   waitBetweenAttack: 0
-  startWaitBetweenAttack: 0.2
+  startWaitBetweenAttack: 0.47
+  textBox: {fileID: 0}
+  showText: {fileID: 0}
 --- !u!50 &7084144884329845732
 Rigidbody2D:
   serializedVersion: 4
@@ -486,6 +489,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.7065501, y: 0.22149181}
   m_EdgeRadius: 0
+--- !u!58 &1449684192
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7084144884329845742}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 1.03, y: -0.7564392}
+  serializedVersion: 2
+  m_Radius: 0.5347371
 --- !u!1 &7084144884364440308
 GameObject:
   m_ObjectHideFlags: 0
