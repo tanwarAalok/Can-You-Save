@@ -6208,13 +6208,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2180337878329059370, guid: 566aeeb4345d6e645b78c405d0baafda, type: 3}
+      propertyPath: orthographic size
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 2180337878329059541, guid: 566aeeb4345d6e645b78c405d0baafda, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.3444967
+      value: -3.2052927
       objectReference: {fileID: 0}
     - target: {fileID: 2180337878329059541, guid: 566aeeb4345d6e645b78c405d0baafda, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.667881
+      value: -1.495573
       objectReference: {fileID: 0}
     - target: {fileID: 2180337878336690601, guid: 566aeeb4345d6e645b78c405d0baafda, type: 3}
       propertyPath: m_BoundingShape2D
@@ -6226,19 +6230,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2180337878336690606, guid: 566aeeb4345d6e645b78c405d0baafda, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.8294497
+      value: -1.7294493
       objectReference: {fileID: 0}
     - target: {fileID: 2180337878336690607, guid: 566aeeb4345d6e645b78c405d0baafda, type: 3}
       propertyPath: m_Follow
       value: 
       objectReference: {fileID: 1338741222}
+    - target: {fileID: 2180337878336690607, guid: 566aeeb4345d6e645b78c405d0baafda, type: 3}
+      propertyPath: m_Lens.OrthographicSize
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 2180337878349762762, guid: 566aeeb4345d6e645b78c405d0baafda, type: 3}
       propertyPath: m_LocalPosition.x
       value: -16.593407
       objectReference: {fileID: 0}
     - target: {fileID: 2180337878349762762, guid: 566aeeb4345d6e645b78c405d0baafda, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.0294504
+      value: -1.92945
       objectReference: {fileID: 0}
     - target: {fileID: 2180337878349762804, guid: 566aeeb4345d6e645b78c405d0baafda, type: 3}
       propertyPath: m_Follow
@@ -6248,6 +6256,22 @@ PrefabInstance:
       propertyPath: m_BoundingShape2D
       value: 
       objectReference: {fileID: 1865916695}
+    - target: {fileID: 2180337878661448785, guid: 566aeeb4345d6e645b78c405d0baafda, type: 3}
+      propertyPath: m_BiasX
+      value: -0.000000037252903
+      objectReference: {fileID: 0}
+    - target: {fileID: 2180337878661448785, guid: 566aeeb4345d6e645b78c405d0baafda, type: 3}
+      propertyPath: m_ScreenX
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2180337878661448785, guid: 566aeeb4345d6e645b78c405d0baafda, type: 3}
+      propertyPath: m_DeadZoneWidth
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2180337878661448785, guid: 566aeeb4345d6e645b78c405d0baafda, type: 3}
+      propertyPath: m_SoftZoneWidth
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 2180337879045426426, guid: 566aeeb4345d6e645b78c405d0baafda, type: 3}
       propertyPath: m_AnimatedTarget
       value: 
