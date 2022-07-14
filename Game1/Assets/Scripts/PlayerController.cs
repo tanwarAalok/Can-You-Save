@@ -139,9 +139,9 @@ public class PlayerController : MonoBehaviour
             transform.localScale = new Vector2(Mathf.Sign(body.velocity.x), 1f);
         }
     }
-     public void DecreaseHealth()
+     public void DecreaseHealth(int damage)
     {
-        currHealth -= 10;
+        currHealth -= damage;
     }
     public void LevelHealth(int health)
     {

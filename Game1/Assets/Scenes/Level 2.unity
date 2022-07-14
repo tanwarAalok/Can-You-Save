@@ -11451,7 +11451,7 @@ MonoBehaviour:
   player: {fileID: 1760465712}
   distanceFromPlayer: 0
   minimumDistToAttackPlayer: 2.5
-  range: 10
+  range: 12
   moveSpeed: 3
   initialSpeed: 3
   deadEnd: 0
@@ -11459,6 +11459,7 @@ MonoBehaviour:
   isDead: 0
   waitBetweenAttack: 0
   nextAttack: 0.8
+  takeDamage: 10
 --- !u!50 &1358187113674103083
 Rigidbody2D:
   serializedVersion: 4
@@ -12423,3 +12424,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26e074e626d70bc4cb6b217d178974ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  giveDamage: 15

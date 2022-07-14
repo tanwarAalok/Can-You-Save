@@ -5,6 +5,7 @@ using UnityEngine;
 public class AttackPlayer : MonoBehaviour
 {
     PlayerController playerController;
+    [SerializeField] int giveDamage = 10;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +16,7 @@ public class AttackPlayer : MonoBehaviour
     {
         if(collision.CompareTag("Player"))
         {
-            playerController.DecreaseHealth();
+            playerController.DecreaseHealth(giveDamage);
         }
     }
 }

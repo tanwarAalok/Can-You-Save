@@ -12,7 +12,6 @@ public class ZombieController : MonoBehaviour
 
     [Header("Player")]
     [SerializeField] GameObject player;
-    PlayerController playerController;
     [SerializeField] float distanceFromPlayer;
     Animator zombieAnimator;
     Canvas zombieCanvas;
@@ -34,12 +33,11 @@ public class ZombieController : MonoBehaviour
     [Header("Attack")]
     [SerializeField] float waitBetweenAttack;
     [SerializeField] float nextAttack;
-    
+    [SerializeField] int takeDamage = 20;
     
     void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
-        playerController = FindObjectOfType<PlayerController>();
         zombieCanvas = GetComponentInChildren<Canvas>();
         zombieAnimator = GetComponent<Animator>();
         currentHealth = maxHealth;
@@ -114,7 +112,7 @@ public class ZombieController : MonoBehaviour
     {
         if (!isDead)
         {
-            currentHealth -= 20;
+            currentHealth -= takeDamage;
             healthBar.SetHealth(currentHealth);
         }
     }

@@ -366,7 +366,7 @@ MonoBehaviour:
   player: {fileID: 0}
   distanceFromPlayer: 0
   minimumDistToAttackPlayer: 2
-  range: 10
+  range: 12
   moveSpeed: 3
   initialSpeed: 3
   deadEnd: 0
