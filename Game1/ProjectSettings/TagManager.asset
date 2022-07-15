@@ -9,6 +9,7 @@ TagManager:
   - Barrel
   - Switch
   - Orignal_Player
+  - Door
   layers:
   - Default
   - TransparentFX

@@ -26,8 +26,7 @@ public class PlayerController : MonoBehaviour
     [Header("Game Manager")]
     GameManager gameManager;
     [SerializeField] bool gameOver = false;
-    [SerializeField] GameObject door = null;
-    float distanceFromDoor = 0;
+    bool canOpenDoor = false;
 
     [Header("Attack")]
     [SerializeField] float waitBetweenAttack;
@@ -61,7 +60,10 @@ public class PlayerController : MonoBehaviour
             FlipSprite();
             AttackEnemy();
             healthBar.SetHealth(currHealth);
-            if(SceneManager.GetActiveScene().buildIndex < 2) OpenDoor();
+            if (SceneManager.GetActiveScene().buildIndex < 2)
+            {
+                OpenDoor();
+            }
             if(feetCollider.IsTouchingLayers(LayerMask.GetMask("Zombie")) && !feetCollider.IsTouchingLayers(LayerMask.GetMask("groundLayer")))
             {
                 float moveALitte = 0.02f * transform.localScale.x;
@@ -80,11 +82,19 @@ public class PlayerController : MonoBehaviour
     
     void OpenDoor()
     {
-        distanceFromDoor = Mathf.Abs(door.transform.position.x - transform.position.x);
-        if(distanceFromDoor < 1f && Input.GetKeyDown(KeyCode.V) && gameManager.GetLevelCompleteState())
+        if (canOpenDoor && Input.GetKeyDown(KeyCode.V))
         {
-            LevelHealth(currHealth);
-            gameManager.OpenDoorState(true);
+            if (gameManager.GetLevelCompleteState())
+            {
+                LevelHealth(currHealth);
+                gameManager.OpenDoorState(true);
+            }
+            else
+            {
+                textBox.SetActive(true);
+                showText.color = new Color(1, 0.1f, 0.2f);
+                showText.text = "All Zombies are not Dead! You cannot get through";
+            }
         }
     }
 
@@ -127,7 +137,7 @@ public class PlayerController : MonoBehaviour
     void Jump()
     {
         // Jumping
-        if (feetCollider.IsTouchingLayers(LayerMask.GetMask("groundLayer")) && Input.GetKeyDown(KeyCode.Space))
+        if ((feetCollider.IsTouchingLayers(LayerMask.GetMask("groundLayer")) || feetCollider.IsTouchingLayers(LayerMask.GetMask("Box"))) && Input.GetKeyDown(KeyCode.Space))
         {
             body.velocity += new Vector2(0, jumpSpeed);
             anim.Play("Jump");
@@ -150,10 +160,12 @@ public class PlayerController : MonoBehaviour
     {
         levelHealth = health;
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
+        Color orignalColor = new Color(0.724f, 1, 0, 1);
         if(textBox!=null)
         {
+            showText.color = orignalColor;
             if(collision.CompareTag("Orignal_Player"))
             {
                 textBox.SetActive(true);
@@ -162,6 +174,13 @@ public class PlayerController : MonoBehaviour
             else if(collision.CompareTag("Switch"))
             {
                 textBox.SetActive(true);
+                showText.text = "Press 'X' to Switch On";
+            }
+            else if (collision.CompareTag("Door"))
+            {
+                canOpenDoor = true;
+                textBox.SetActive(true);
+                showText.text = "Press 'V' to Open Door";
             }
             else
             {

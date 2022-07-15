@@ -310,7 +310,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1034898069
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 7f57e7847dfc11e478144d5b18a4ee84, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -340,7 +340,7 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 5
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 2
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
@@ -383,8 +383,10 @@ MonoBehaviour:
   deadEnd: 0
   hasWalkingSpeed: 0
   isDead: 0
+  bossZombie: 0
   waitBetweenAttack: 0
   nextAttack: 0.8
+  takeDamage: 20
 --- !u!61 &425507564403372145
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -725,3 +727,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26e074e626d70bc4cb6b217d178974ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  giveDamage: 10
+  hasGivenDamage: 0
