@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ZombieController : MonoBehaviour
 {
+    CapsuleCollider2D capsuleCollider2D;
     AttackPlayer attackPlayer;
     GameManager gameManager;
     [Header("Health")]
@@ -36,9 +37,10 @@ public class ZombieController : MonoBehaviour
     [SerializeField] float waitBetweenAttack;
     [SerializeField] float nextAttack;
     [SerializeField] int takeDamage = 20;
-    
+
     void Start()
     {
+        capsuleCollider2D = GetComponent<CapsuleCollider2D>();
         attackPlayer = FindObjectOfType<AttackPlayer>();
         gameManager = FindObjectOfType<GameManager>();
         zombieCanvas = GetComponentInChildren<Canvas>();
@@ -54,7 +56,7 @@ public class ZombieController : MonoBehaviour
         {
             distanceFromPlayer = Mathf.Abs(transform.position.x - player.transform.position.x);
             hasWalkingSpeed = GetWalkingState();
-            if (waitBetweenAttack<=0)
+            if (waitBetweenAttack <= 0)
             {
                 attackPlayer.hasGivenDamage = false;
                 AttackPlayer();
@@ -69,14 +71,14 @@ public class ZombieController : MonoBehaviour
         }
         IsDying();
     }
-    
+
     bool GetWalkingState()
     {
-        if(distanceFromPlayer > range || deadEnd || distanceFromPlayer < minimumDistToAttackPlayer || Mathf.Abs(transform.position.y - player.transform.position.y) > 2.5)
+        if (distanceFromPlayer > range || deadEnd || distanceFromPlayer < minimumDistToAttackPlayer || Mathf.Abs(transform.position.y - player.transform.position.y) > 2.5)
         {
             return false;
         }
-        return true;    
+        return true;
     }
 
     void MoveZombie()
@@ -102,7 +104,7 @@ public class ZombieController : MonoBehaviour
 
     void AttackPlayer()
     {
-        if(distanceFromPlayer <= minimumDistToAttackPlayer && Mathf.Abs(transform.position.y - player.transform.position.y) < 2)
+        if (distanceFromPlayer <= minimumDistToAttackPlayer && Mathf.Abs(transform.position.y - player.transform.position.y) < 2)
         {
             zombieAnimator.Play("attack");
         }
@@ -139,13 +141,13 @@ public class ZombieController : MonoBehaviour
     }
     void OnTriggerExit2D(Collider2D collision)
     {
-        if(collision.CompareTag("Player") || collision.CompareTag("Enemy") || collision.CompareTag("range")) return;
+        if (collision.CompareTag("Player") || collision.CompareTag("Enemy") || collision.CompareTag("range") || capsuleCollider2D.IsTouchingLayers(LayerMask.GetMask("Box"))) return;
         moveSpeed = 0;
         deadEnd = true;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Player") || collision.CompareTag("Enemy") || collision.CompareTag("range")) return;
+        if (collision.CompareTag("Player") || collision.CompareTag("Enemy") || collision.CompareTag("range") || capsuleCollider2D.IsTouchingLayers(LayerMask.GetMask("Box"))) return;
         moveSpeed = initialSpeed;
         deadEnd = false;
     }

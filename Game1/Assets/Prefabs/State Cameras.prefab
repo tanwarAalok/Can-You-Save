@@ -129,6 +129,7 @@ GameObject:
   - component: {fileID: 2180337878336690606}
   - component: {fileID: 2180337878336690607}
   - component: {fileID: 2180337878336690601}
+  - component: {fileID: 1894086353}
   m_Layer: 0
   m_Name: Idle Camera
   m_TagString: Untagged
@@ -144,7 +145,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2180337878336690604}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.9934072, y: 0.26955032, z: 62.38948}
+  m_LocalPosition: {x: -4.783408, y: 0.28955078, z: 62.38948}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2180337878661448790}
@@ -203,6 +204,18 @@ MonoBehaviour:
   m_BoundingShape2D: {fileID: 0}
   m_ConfineScreenEdges: 1
   m_Damping: 0
+--- !u!114 &1894086353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2180337878336690604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d47f6a40eb0c36c47bcab68962b91fb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2180337878349762763
 GameObject:
   m_ObjectHideFlags: 0
@@ -229,7 +242,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2180337878349762763}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.9934072, y: 0.069550514, z: 62.38948}
+  m_LocalPosition: {x: -4.783407, y: 0.08955002, z: 62.38948}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2180337878512204384}
@@ -415,6 +428,7 @@ GameObject:
   - component: {fileID: 2180337878661448787}
   - component: {fileID: 2180337878661448784}
   - component: {fileID: 2180337878661448785}
+  - component: {fileID: 1729228362}
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -518,6 +532,23 @@ MonoBehaviour:
   m_MaximumFOV: 60
   m_MinimumOrthoSize: 1
   m_MaximumOrthoSize: 5000
+--- !u!114 &1729228362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2180337878661448791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NoiseProfile: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
+  m_PivotOffset: {x: 0, y: 0, z: 0}
+  m_AmplitudeGain: 1
+  m_FrequencyGain: 1
+  mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1 &2180337879045426424
 GameObject:
   m_ObjectHideFlags: 0

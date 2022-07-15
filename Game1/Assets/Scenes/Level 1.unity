@@ -1087,6 +1087,7 @@ MonoBehaviour:
   GreenSwitch: {fileID: 21300000, guid: e48c75c5386b2464380b808f9456f174, type: 3}
   removeBoxes: []
   isBossZombiePresent: 0
+  wasBossZombieEverPresent: 0
 --- !u!1 &265235050
 GameObject:
   m_ObjectHideFlags: 0
@@ -1313,6 +1314,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 757906289, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
+      propertyPath: intensity
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 757906289, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
+      propertyPath: shakeTime
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 7084144883954200460, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -1674,7 +1683,7 @@ GameObject:
   - component: {fileID: 901796020}
   - component: {fileID: 901796018}
   - component: {fileID: 901796019}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: Barrel (2)
   m_TagString: Barrel
   m_Icon: {fileID: 0}
@@ -2144,34 +2153,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2180337878329059541, guid: 566aeeb4345d6e645b78c405d0baafda, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.4143219
+    - target: {fileID: 1729228362, guid: 566aeeb4345d6e645b78c405d0baafda, type: 3}
+      propertyPath: m_AmplitudeGain
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2180337878329059541, guid: 566aeeb4345d6e645b78c405d0baafda, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.4513693
+    - target: {fileID: 1729228362, guid: 566aeeb4345d6e645b78c405d0baafda, type: 3}
+      propertyPath: m_FrequencyGain
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2180337878336690601, guid: 566aeeb4345d6e645b78c405d0baafda, type: 3}
       propertyPath: m_BoundingShape2D
       value: 
       objectReference: {fileID: 1558496426}
-    - target: {fileID: 2180337878336690606, guid: 566aeeb4345d6e645b78c405d0baafda, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -4.783407
-      objectReference: {fileID: 0}
-    - target: {fileID: 2180337878336690606, guid: 566aeeb4345d6e645b78c405d0baafda, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.28955078
-      objectReference: {fileID: 0}
-    - target: {fileID: 2180337878349762762, guid: 566aeeb4345d6e645b78c405d0baafda, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -4.783407
-      objectReference: {fileID: 0}
-    - target: {fileID: 2180337878349762762, guid: 566aeeb4345d6e645b78c405d0baafda, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.08955002
-      objectReference: {fileID: 0}
     - target: {fileID: 2180337878349762805, guid: 566aeeb4345d6e645b78c405d0baafda, type: 3}
       propertyPath: m_BoundingShape2D
       value: 
@@ -36037,6 +36030,7 @@ MonoBehaviour:
   - {fileID: 1281161043}
   - {fileID: 989023763}
   isBossZombiePresent: 0
+  wasBossZombieEverPresent: 0
 --- !u!61 &2060454494
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -36254,7 +36248,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!223 &6409458112620457664
 Canvas:
   m_ObjectHideFlags: 0
