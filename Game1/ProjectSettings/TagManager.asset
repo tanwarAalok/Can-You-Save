@@ -6,10 +6,10 @@ TagManager:
   tags:
   - Enemy
   - range
-  - Barrel
   - Switch
   - Orignal_Player
   - Door
+  - Box
   layers:
   - Default
   - TransparentFX

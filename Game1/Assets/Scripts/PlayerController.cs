@@ -91,9 +91,13 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                textBox.SetActive(true);
-                showText.color = new Color(1, 0.1f, 0.2f);
-                showText.text = "All Zombies are not Dead! You cannot get through";
+                if(textBox!=null)
+                {
+                    textBox.SetActive(true);
+                    showText.color = new Color(1, 0.1f, 0.2f);
+                    showText.text = "All Zombies are not Dead! You cannot get through";
+                }
+                return;
             }
         }
     }
@@ -197,6 +201,7 @@ public class PlayerController : MonoBehaviour
         if(textBox!=null)
         {
             textBox.SetActive(false);
+            canOpenDoor = false;
         }
     }
 }

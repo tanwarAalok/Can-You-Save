@@ -357,8 +357,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.12500614, y: -0.23052883}
-  m_Size: {x: 0.9423226, y: 2.9343948}
+  m_Offset: {x: -0.12500614, y: -0.36157966}
+  m_Size: {x: 0.9423226, y: 3.1964965}
   m_Direction: 0
 --- !u!114 &425507564403372144
 MonoBehaviour:
@@ -374,7 +374,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 0
   healthBar: {fileID: 425507564046518890}
-  player: {fileID: 0}
+  player: {fileID: 7084144884329845742, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
   distanceFromPlayer: 0
   minimumDistToAttackPlayer: 2
   range: 12

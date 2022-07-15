@@ -56,16 +56,7 @@ public class ZombieController : MonoBehaviour
         {
             distanceFromPlayer = Mathf.Abs(transform.position.x - player.transform.position.x);
             hasWalkingSpeed = GetWalkingState();
-            if (waitBetweenAttack <= 0)
-            {
-                attackPlayer.hasGivenDamage = false;
-                AttackPlayer();
-                waitBetweenAttack = nextAttack;
-            }
-            else
-            {
-                waitBetweenAttack -= Time.deltaTime;
-            }
+            Attack();
             zombieAnimator.SetBool("isWalking", hasWalkingSpeed);
             MoveZombie();
         }
@@ -102,12 +93,22 @@ public class ZombieController : MonoBehaviour
         }
     }
 
-    void AttackPlayer()
+    void Attack()
     {
-        if (distanceFromPlayer <= minimumDistToAttackPlayer && Mathf.Abs(transform.position.y - player.transform.position.y) < 2)
+        if (waitBetweenAttack <= 0)
         {
-            zombieAnimator.Play("attack");
+            if (distanceFromPlayer <= minimumDistToAttackPlayer && Mathf.Abs(transform.position.y - player.transform.position.y) < 2)
+            {
+                attackPlayer.hasGivenDamage = false;
+                zombieAnimator.Play("attack");
+                waitBetweenAttack = nextAttack;
+            }
         }
+        else
+        {
+            waitBetweenAttack -= Time.deltaTime;
+        }
+        
     }
 
     public void TakeDamage()
@@ -131,6 +132,7 @@ public class ZombieController : MonoBehaviour
     IEnumerator WaitForDying()
     {
         yield return new WaitForSeconds(1.5f);
+        attackPlayer.hasGivenDamage = false;
         Destroy(gameObject);
         gameManager.totalEnemy -= 1;
 
@@ -141,13 +143,13 @@ public class ZombieController : MonoBehaviour
     }
     void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player") || collision.CompareTag("Enemy") || collision.CompareTag("range") || capsuleCollider2D.IsTouchingLayers(LayerMask.GetMask("Box"))) return;
+        if (collision.CompareTag("Player") || collision.CompareTag("Enemy") || collision.CompareTag("range") || collision.CompareTag("Box")) return;
         moveSpeed = 0;
         deadEnd = true;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player") || collision.CompareTag("Enemy") || collision.CompareTag("range") || capsuleCollider2D.IsTouchingLayers(LayerMask.GetMask("Box"))) return;
+        if (collision.CompareTag("Player") || collision.CompareTag("Enemy") || collision.CompareTag("range") || collision.CompareTag("Box")) return;
         moveSpeed = initialSpeed;
         deadEnd = false;
     }
