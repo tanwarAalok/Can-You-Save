@@ -9,6 +9,8 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    public GameObject helpSection = null;
+    private bool toggle = false;
 
     public void PlayButton()
     {
@@ -23,4 +25,11 @@ public class MainMenu : MonoBehaviour
             Application.Quit();
         #endif
     }
+
+    public void Help()
+    {
+        toggle = !toggle;
+        helpSection.SetActive(toggle);
+    }
+
 }
