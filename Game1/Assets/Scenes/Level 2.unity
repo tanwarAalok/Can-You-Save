@@ -4736,10 +4736,13 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Hurray !! You Saved ....
+  m_Text: 'Hurray !! You Won .....
 
 
-    Yourself .....'
+    Sadly You were already late to save anyone
+    :)
+
+'
 --- !u!222 &1426893228
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13909,8 +13912,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.1267705, y: -0.03439927}
-  m_Size: {x: 1.6250811, y: 3.881476}
+  m_Offset: {x: -0.08492184, y: -0.03439927}
+  m_Size: {x: 1.3739872, y: 3.881476}
   m_Direction: 0
 --- !u!50 &2101176501
 Rigidbody2D:
@@ -14334,8 +14337,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.1267705, y: -0.03439927}
-  m_Size: {x: 1.6250811, y: 3.881476}
+  m_Offset: {x: -0.119874954, y: -0.03439927}
+  m_Size: {x: 1.4182167, y: 3.881476}
   m_Direction: 0
 --- !u!4 &1358187113674103061
 Transform:
@@ -15192,7 +15195,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2180337878646852575}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.6076431, y: 1.864378, z: -10}
+  m_LocalPosition: {x: 1.3567138, y: 1.8678474, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2180337879970840860}
@@ -15310,7 +15313,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2180337878656399962}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.6065922, y: 0.84955025, z: -10}
+  m_LocalPosition: {x: 0.6065917, y: 0.84955025, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2180337878339626912}
