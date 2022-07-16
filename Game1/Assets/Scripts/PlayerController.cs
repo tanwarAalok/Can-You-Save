@@ -53,6 +53,7 @@ public class PlayerController : MonoBehaviour
     {
         if(!gameOver)
         {
+            Debug.Log(canOpenDoor);
             float horizontalInput = Input.GetAxis("Horizontal");
             body.velocity = new Vector2(horizontalInput * runSpeed, body.velocity.y);
             Run();
@@ -60,7 +61,7 @@ public class PlayerController : MonoBehaviour
             FlipSprite();
             AttackEnemy();
             healthBar.SetHealth(currHealth);
-            if (SceneManager.GetActiveScene().buildIndex < 2)
+            if (SceneManager.GetActiveScene().buildIndex <3)
             {
                 OpenDoor();
             }
@@ -84,6 +85,7 @@ public class PlayerController : MonoBehaviour
     {
         if (canOpenDoor && Input.GetKeyDown(KeyCode.V))
         {
+            Debug.Log("Key Pressed");
             if (gameManager.GetLevelCompleteState())
             {
                 LevelHealth(currHealth);
@@ -97,7 +99,10 @@ public class PlayerController : MonoBehaviour
                     showText.color = new Color(1, 0.1f, 0.2f);
                     showText.text = "All Zombies are not Dead! You cannot get through";
                 }
-                return;
+                else
+                {
+                    return;
+                }
             }
         }
     }

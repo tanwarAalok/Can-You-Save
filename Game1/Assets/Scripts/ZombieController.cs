@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ZombieController : MonoBehaviour
 {
-    CapsuleCollider2D capsuleCollider2D;
     AttackPlayer attackPlayer;
     GameManager gameManager;
     [Header("Health")]
@@ -40,8 +39,7 @@ public class ZombieController : MonoBehaviour
 
     void Start()
     {
-        capsuleCollider2D = GetComponent<CapsuleCollider2D>();
-        attackPlayer = FindObjectOfType<AttackPlayer>();
+        attackPlayer = GetComponentInChildren<AttackPlayer>();
         gameManager = FindObjectOfType<GameManager>();
         zombieCanvas = GetComponentInChildren<Canvas>();
         zombieAnimator = GetComponent<Animator>();
@@ -95,7 +93,7 @@ public class ZombieController : MonoBehaviour
 
     void Attack()
     {
-        if (waitBetweenAttack <= 0)
+        if (waitBetweenAttack < 0)
         {
             if (distanceFromPlayer <= minimumDistToAttackPlayer && Mathf.Abs(transform.position.y - player.transform.position.y) < 2)
             {
