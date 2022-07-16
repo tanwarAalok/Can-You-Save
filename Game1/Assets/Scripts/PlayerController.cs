@@ -19,9 +19,9 @@ public class PlayerController : MonoBehaviour
 
     [Header("Health Bar")]
     [SerializeField] HealthBar healthBar;
-    public static int currHealth = 100;
-    static int levelHealth = 100;
-    [SerializeField] int maxHealth = 100;
+    public static int currHealth = 200;
+    static int levelHealth = 200;
+    [SerializeField] int maxHealth = 200;
 
     [Header("Game Manager")]
     GameManager gameManager;
@@ -223,6 +223,14 @@ public class PlayerController : MonoBehaviour
         {
             textBox.SetActive(false);
             canOpenDoor = false;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        if(other.CompareTag("Collectiable"))
+        {
+            gameManager.gameWon = true;
+            Destroy(other.gameObject);
         }
     }
 }

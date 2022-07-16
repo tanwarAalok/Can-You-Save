@@ -10,6 +10,7 @@ TagManager:
   - Orignal_Player
   - Door
   - Box
+  - Collectiable
   layers:
   - Default
   - TransparentFX
@@ -73,4 +74,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 114663867
+    locked: 0
+  - name: Pause
+    uniqueID: 4197392737
     locked: 0

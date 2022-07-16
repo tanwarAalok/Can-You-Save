@@ -48,3 +48,4 @@ MonoBehaviour:
   doorUnlocked: {fileID: 0}
   totalEnemy: 0
   enemies: []
+  pauseMenu: {fileID: 0}

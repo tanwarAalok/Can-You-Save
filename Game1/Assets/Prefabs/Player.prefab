@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5926897400305530001}
   - component: {fileID: 2977797260875887001}
   - component: {fileID: 4448276551011830254}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: PlayerHealth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -281,7 +281,7 @@ MonoBehaviour:
   runSpeed: 10
   jumpSpeed: 21
   healthBar: {fileID: 6280638789044906617}
-  maxHealth: 100
+  maxHealth: 200
   gameOver: 0
   waitBetweenAttack: 0
   startWaitBetweenAttack: 0.47
@@ -289,22 +289,17 @@ MonoBehaviour:
   showText: {fileID: 0}
   attackSound: {fileID: 8300000, guid: 19dcdf1f6c9bc3f4cb7306e25a130f8d, type: 3}
   runSound:
-  - {fileID: 8300000, guid: 3e299b9129329f24692bb63f57f33d19, type: 3}
-  - {fileID: 8300000, guid: 38f0c96f5fc9ad54bb7f70129602e268, type: 3}
-  - {fileID: 8300000, guid: 72b37684ac7a413499d259a0a9be50e6, type: 3}
-  - {fileID: 8300000, guid: 5da9a1fac751fd544933656ba7cdb367, type: 3}
-  - {fileID: 8300000, guid: 83e12fcd809c9444192c377fe18a65e5, type: 3}
-  - {fileID: 8300000, guid: 6056a660bb0897e4ea25a31889075437, type: 3}
-  - {fileID: 8300000, guid: af104ebdf73bf7a4ba6013021dd458cb, type: 3}
-  - {fileID: 8300000, guid: e968240fec458e24a862c16541a528c6, type: 3}
-  - {fileID: 8300000, guid: 72854b6a8fde5e54eb8ae2eb10155f45, type: 3}
-  - {fileID: 8300000, guid: 22dffeeb60f8846499a8c08a2c0e6f80, type: 3}
-  - {fileID: 8300000, guid: 642f9eb7b8ea3f14e9fc48dff8f8e34b, type: 3}
-  - {fileID: 8300000, guid: 90754431c63071d48b2bfa8dc2472b9d, type: 3}
-  - {fileID: 8300000, guid: d51df139d4e50794993d2130348b08d9, type: 3}
-  - {fileID: 8300000, guid: 39ca7e88dc461e8458d02a2284708c0d, type: 3}
-  - {fileID: 8300000, guid: d772d1b334ef5f148bf1308d5fb3e4b0, type: 3}
-  jumpSound: {fileID: 8300000, guid: 5c39ec0074165fb4eaf789fc68f5379b, type: 3}
+  - {fileID: 8300000, guid: 44737e645aa918043b3d8cab5d1511bc, type: 3}
+  - {fileID: 8300000, guid: 302595b93370c52408825d7fb07d09be, type: 3}
+  - {fileID: 8300000, guid: 2bb076cd89fe2a148a76da2a45c910e4, type: 3}
+  - {fileID: 8300000, guid: 0b8aed54efbbfa946af2f31d3d92f9cd, type: 3}
+  - {fileID: 8300000, guid: 16627ace4424d91498eb01bb4028a449, type: 3}
+  - {fileID: 8300000, guid: 32d4132b6bada6b48ac1474c5b84a1f5, type: 3}
+  - {fileID: 8300000, guid: 6bd33082282efa240ae4942ba4e11422, type: 3}
+  - {fileID: 8300000, guid: b91418e7e651a5741a14cd31af0f5ba8, type: 3}
+  - {fileID: 8300000, guid: 41ba7c338f630f2489bd0273b0573616, type: 3}
+  - {fileID: 8300000, guid: a5d1dce4bff0e0a458049ab99fef06c4, type: 3}
+  jumpSound: {fileID: 8300000, guid: 80d4ea7778bc3d9459d9fcea672afcee, type: 3}
 --- !u!50 &6297901744972625824
 Rigidbody2D:
   serializedVersion: 4
@@ -510,7 +505,7 @@ GameObject:
   - component: {fileID: 2317455487063634286}
   - component: {fileID: 2766861735336991682}
   - component: {fileID: 6280638789044906617}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
