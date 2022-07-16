@@ -35,8 +35,16 @@ public class PlayerController : MonoBehaviour
     [Header("Text Field")]
     [SerializeField] GameObject textBox = null;
     [SerializeField] TextMeshProUGUI showText = null;
+
+
+    public AudioClip attackSound = null;
+    public AudioClip[] runSound = null;
+    public AudioClip jumpSound = null;
+    AudioSource audioSource = null;
+
     private void Awake() 
     {
+        audioSource = GetComponent<AudioSource>();
         attackEnemy = FindObjectOfType<AttackEnemy>();
         gameManager = FindObjectOfType<GameManager>();
         body = GetComponent<Rigidbody2D>();
@@ -53,8 +61,8 @@ public class PlayerController : MonoBehaviour
     {
         if(!gameOver)
         {
-            Debug.Log(canOpenDoor);
             float horizontalInput = Input.GetAxis("Horizontal");
+
             body.velocity = new Vector2(horizontalInput * runSpeed, body.velocity.y);
             Run();
             Jump();
@@ -85,7 +93,6 @@ public class PlayerController : MonoBehaviour
     {
         if (canOpenDoor && Input.GetKeyDown(KeyCode.V))
         {
-            Debug.Log("Key Pressed");
             if (gameManager.GetLevelCompleteState())
             {
                 LevelHealth(currHealth);
@@ -126,6 +133,7 @@ public class PlayerController : MonoBehaviour
             {
                 attackEnemy.hasGivenDamage = false;
                 anim.Play("attack");
+                audioSource.PlayOneShot(attackSound, 0.6f);
                 waitBetweenAttack = startWaitBetweenAttack;
             }
         }
@@ -141,7 +149,14 @@ public class PlayerController : MonoBehaviour
         // Run animation
         bool hasHorizontalSpeed = Mathf.Abs(body.velocity.x) > Mathf.Epsilon;
         anim.SetBool("Run", hasHorizontalSpeed);
+
+        if(hasHorizontalSpeed && !audioSource.isPlaying && (feetCollider.IsTouchingLayers(LayerMask.GetMask("groundLayer")) || feetCollider.IsTouchingLayers(LayerMask.GetMask("Box")))) {
+
+            int randomIdx = Random.Range(0, runSound.Length);
+            audioSource.PlayOneShot(runSound[randomIdx], 0.6f);
+        }
     }
+
 
     void Jump()
     {
@@ -150,6 +165,7 @@ public class PlayerController : MonoBehaviour
         {
             body.velocity += new Vector2(0, jumpSpeed);
             anim.Play("Jump");
+            audioSource.PlayOneShot(jumpSound, 0.8f);
         }
     }
 

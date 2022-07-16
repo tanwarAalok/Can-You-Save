@@ -37,8 +37,13 @@ public class ZombieController : MonoBehaviour
     [SerializeField] float nextAttack;
     [SerializeField] int takeDamage = 20;
 
+    AudioSource audioSource = null;
+    public AudioClip attackSound = null;
+
+
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         attackPlayer = GetComponentInChildren<AttackPlayer>();
         gameManager = FindObjectOfType<GameManager>();
         zombieCanvas = GetComponentInChildren<Canvas>();
@@ -74,6 +79,7 @@ public class ZombieController : MonoBehaviour
     {
         if (distanceFromPlayer <= range && distanceFromPlayer > minimumDistToAttackPlayer - 0.5f && Mathf.Abs(transform.position.y - player.transform.position.y) <= 2.5)
         {
+            
             if (player.transform.position.x < transform.position.x)
             {
                 transform.localScale = new Vector2(-1f, 1f);
@@ -99,6 +105,7 @@ public class ZombieController : MonoBehaviour
             {
                 attackPlayer.hasGivenDamage = false;
                 zombieAnimator.Play("attack");
+                audioSource.PlayOneShot(attackSound, 0.1f);
                 waitBetweenAttack = nextAttack;
             }
         }
