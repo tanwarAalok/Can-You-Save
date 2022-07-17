@@ -88,6 +88,7 @@ public class PlayerController : MonoBehaviour
         ChangeColor();
         if(currHealth <= 0 || feetCollider.IsTouchingLayers(LayerMask.GetMask("Obstacle"))) {
             anim.Play("dead");
+            SplashController.instance.MakeSplat();
             body.velocity = new Vector2(0, body.velocity.y);
             gameOver = true;
             gameManager.PlayerDeadState(gameOver);

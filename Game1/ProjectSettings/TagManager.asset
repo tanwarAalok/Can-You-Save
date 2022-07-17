@@ -76,6 +76,9 @@ TagManager:
   - name: Player
     uniqueID: 114663867
     locked: 0
+  - name: Splatter
+    uniqueID: 3570315563
+    locked: 0
   - name: Pause
     uniqueID: 4197392737
     locked: 0

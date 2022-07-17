@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7161027521453976199
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7161027521453976198}
+  - component: {fileID: 7161027521453976197}
+  m_Layer: 0
+  m_Name: Splash Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7161027521453976198
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7161027521453976199}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7161027521453976197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7161027521453976199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59f23fbd2c5bf2b4a9a10cde80ebf918, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  splat:
+  - {fileID: 808592142794621309, guid: 9198e32b6d71537429a2e7fc339d46ea, type: 3}
+  - {fileID: 1864461352686835456, guid: f204030ccfe3362499b436ba09133bd0, type: 3}
+  - {fileID: 1902537506687289215, guid: 554902e052729cf4395e2b3ab1df603e, type: 3}
+  - {fileID: 8532208544069565489, guid: 6ba9cf4341e791544b6cff8cafca59fa, type: 3}
+  - {fileID: 5576945119731279272, guid: c97981e135184864e991b2b235c18f53, type: 3}
+  - {fileID: 6284870262136194434, guid: 9dca273c6f1938c4696652be462a99f7, type: 3}
+  - {fileID: 9121111442753008011, guid: 15f42092a20db8a42bb1f8b1ddcd765b, type: 3}
+  - {fileID: 7615746483632695081, guid: 76f1d51c5a3f14f47a16183b7f0cb8f5, type: 3}
+  - {fileID: 7909418365129626093, guid: 9702e7c3b4b9b0344a64a2544f899073, type: 3}
+  - {fileID: 6008887306927522675, guid: b862b17e7f8531743814f0a4520fafad, type: 3}
+  - {fileID: 5860248485496889849, guid: 2534203a050ba6b44a841037d9beebe5, type: 3}
+  offsetY: 1

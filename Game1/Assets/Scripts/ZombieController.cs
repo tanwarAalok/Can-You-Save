@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ZombieController : MonoBehaviour
 {
+    int count = 0;
     AttackPlayer attackPlayer;
     GameManager gameManager;
     [Header("Health")]
@@ -31,6 +32,7 @@ public class ZombieController : MonoBehaviour
     [SerializeField] bool hasWalkingSpeed = false;
     [SerializeField] bool isDead = false;
     [SerializeField] bool bossZombie = false;
+    bool callMakeSplat = false;
 
     [Header("Attack")]
     [SerializeField] float waitBetweenAttack;
@@ -65,7 +67,10 @@ public class ZombieController : MonoBehaviour
             zombieAnimator.SetBool("isWalking", hasWalkingSpeed);
             MoveZombie();
         }
-        IsDying();
+        if(!callMakeSplat)
+        {
+            IsDying();
+        }
     }
 
     bool GetWalkingState()
@@ -130,10 +135,16 @@ public class ZombieController : MonoBehaviour
     {
         if (currentHealth <= 0)
         {
+            count++;
             zombieCanvas.enabled = false;
             zombieAnimator.Play("dead");
             isDead = true;
+            if(count==3)
+            {
+                callMakeSplat = true;
+            }
             blood.Play();
+            SplashController.instance.MakeSplat();
             StartCoroutine(WaitForDying());
         }
     }

@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Lab Rule Tile
   m_EditorClassIdentifier: 
   m_DefaultSprite: {fileID: 21300000, guid: cc388224a6f78a24282854393f425045, type: 3}
-  m_DefaultGameObject: {fileID: 0}
+  m_DefaultGameObject: {fileID: 8901955264356635904, guid: 708d6bfe47da6c3499e6024d7625ca2e, type: 3}
   m_DefaultColliderType: 1
   m_TilingRules:
   - m_Id: 0
     m_Sprites:
     - {fileID: 21300000, guid: 023c3b8172405f04fbc41c3c538f0eec, type: 3}
-    m_GameObject: {fileID: 0}
+    m_GameObject: {fileID: 8901955264356635904, guid: 708d6bfe47da6c3499e6024d7625ca2e, type: 3}
     m_MinAnimationSpeed: 1
     m_MaxAnimationSpeed: 1
     m_PerlinScale: 0.5
@@ -38,7 +38,7 @@ MonoBehaviour:
   - m_Id: 1
     m_Sprites:
     - {fileID: 21300000, guid: 7689629f247bf4b4db98d90e50ea65a2, type: 3}
-    m_GameObject: {fileID: 0}
+    m_GameObject: {fileID: 8901955264356635904, guid: 708d6bfe47da6c3499e6024d7625ca2e, type: 3}
     m_MinAnimationSpeed: 1
     m_MaxAnimationSpeed: 1
     m_PerlinScale: 0.5
@@ -70,7 +70,7 @@ MonoBehaviour:
   - m_Id: 3
     m_Sprites:
     - {fileID: 21300000, guid: e6a74adea83fd2742a00da0a5d81da3d, type: 3}
-    m_GameObject: {fileID: 0}
+    m_GameObject: {fileID: 8901955264356635904, guid: 708d6bfe47da6c3499e6024d7625ca2e, type: 3}
     m_MinAnimationSpeed: 1
     m_MaxAnimationSpeed: 1
     m_PerlinScale: 0.5
@@ -87,7 +87,7 @@ MonoBehaviour:
   - m_Id: 4
     m_Sprites:
     - {fileID: 21300000, guid: ae83596629dc774409a10aa57735ea23, type: 3}
-    m_GameObject: {fileID: 0}
+    m_GameObject: {fileID: 8901955264356635904, guid: 708d6bfe47da6c3499e6024d7625ca2e, type: 3}
     m_MinAnimationSpeed: 1
     m_MaxAnimationSpeed: 1
     m_PerlinScale: 0.5
@@ -103,7 +103,7 @@ MonoBehaviour:
   - m_Id: 5
     m_Sprites:
     - {fileID: 21300000, guid: 908fb3bf2956305408fc6db97bd9c2af, type: 3}
-    m_GameObject: {fileID: 0}
+    m_GameObject: {fileID: 8901955264356635904, guid: 708d6bfe47da6c3499e6024d7625ca2e, type: 3}
     m_MinAnimationSpeed: 1
     m_MaxAnimationSpeed: 1
     m_PerlinScale: 0.5
