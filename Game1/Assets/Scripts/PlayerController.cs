@@ -6,10 +6,11 @@ using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
-    private Rigidbody2D body;
+    Rigidbody2D body;
     CapsuleCollider2D bodyCollider;
     BoxCollider2D feetCollider;
     AttackEnemy attackEnemy;
+    AudioSource audioSource;
 
     [Header("Speed")]
     [SerializeField] float runSpeed = 5;
@@ -36,12 +37,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField] GameObject textBox = null;
     [SerializeField] TextMeshProUGUI showText = null;
 
+    [Header("Sounds")]
+    [SerializeField] AudioClip attackSound = null;
+    [SerializeField] AudioClip[] runSound = null;
+    [SerializeField] AudioClip jumpSound = null;
 
-    public AudioClip attackSound = null;
-    public AudioClip[] runSound = null;
-    public AudioClip jumpSound = null;
-    AudioSource audioSource = null;
-
+    [Header("Particle Effect")]
+    [SerializeField] ParticleSystem runParticles;
     private void Awake() 
     {
         audioSource = GetComponent<AudioSource>();
@@ -150,10 +152,17 @@ public class PlayerController : MonoBehaviour
         bool hasHorizontalSpeed = Mathf.Abs(body.velocity.x) > Mathf.Epsilon;
         anim.SetBool("Run", hasHorizontalSpeed);
 
-        if(hasHorizontalSpeed && !audioSource.isPlaying && (feetCollider.IsTouchingLayers(LayerMask.GetMask("groundLayer")) || feetCollider.IsTouchingLayers(LayerMask.GetMask("Box")))) {
-
-            int randomIdx = Random.Range(0, runSound.Length);
-            audioSource.PlayOneShot(runSound[randomIdx], 0.6f);
+        if(hasHorizontalSpeed  && (feetCollider.IsTouchingLayers(LayerMask.GetMask("groundLayer")) || feetCollider.IsTouchingLayers(LayerMask.GetMask("Box")))) {
+            runParticles.Play();
+            if(!audioSource.isPlaying)
+            {
+                int randomIdx = Random.Range(0, runSound.Length);
+                audioSource.PlayOneShot(runSound[randomIdx], 0.6f);
+            }
+        }
+        else
+        {
+            runParticles.Stop();
         }
     }
 

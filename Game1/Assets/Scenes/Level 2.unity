@@ -581,6 +581,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 320859711}
   m_CullTransparentMesh: 1
+--- !u!198 &354786907 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 741283779, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
+  m_PrefabInstance: {fileID: 679417839}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &391924823
 GameObject:
   m_ObjectHideFlags: 0
@@ -1105,6 +1110,42 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 741283778, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
+      propertyPath: m_SortingLayer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 741283778, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 46814121
+      objectReference: {fileID: 0}
+    - target: {fileID: 741283779, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 741283779, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
+      propertyPath: ShapeModule.m_Rotation.x
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 741283779, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 741283779, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.a
+      value: 0.38431373
+      objectReference: {fileID: 0}
+    - target: {fileID: 741283779, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 741283779, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 741283779, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1362925680731259572, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
       propertyPath: intensity
       value: 0.5
@@ -1161,6 +1202,10 @@ PrefabInstance:
       propertyPath: jumpSound
       value: 
       objectReference: {fileID: 8300000, guid: df49938a1860650418b6d5654ed436be, type: 3}
+    - target: {fileID: 4124271952115489820, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
+      propertyPath: runParticles
+      value: 
+      objectReference: {fileID: 354786907}
     - target: {fileID: 4124271952115489820, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
       propertyPath: runSound.Array.size
       value: 15
@@ -15195,7 +15240,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2180337878646852575}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.3567138, y: 1.8678474, z: -10}
+  m_LocalPosition: {x: 1.3819747, y: 1.8678474, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2180337879970840860}

@@ -1477,6 +1477,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 741283776, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
+      propertyPath: m_Name
+      value: Run Particle
+      objectReference: {fileID: 0}
+    - target: {fileID: 741283778, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
+      propertyPath: m_SortingLayer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 741283778, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 46814121
+      objectReference: {fileID: 0}
+    - target: {fileID: 741283779, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
+      propertyPath: ShapeModule.m_Rotation.x
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 741283779, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
+      propertyPath: ShapeModule.m_Rotation.y
+      value: -45
+      objectReference: {fileID: 0}
+    - target: {fileID: 741283779, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 741283779, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.a
+      value: 0.49803922
+      objectReference: {fileID: 0}
+    - target: {fileID: 741283779, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.6320754
+      objectReference: {fileID: 0}
+    - target: {fileID: 741283779, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.6320754
+      objectReference: {fileID: 0}
+    - target: {fileID: 741283779, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.6320754
+      objectReference: {fileID: 0}
     - target: {fileID: 3325663435733232467, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1537,6 +1577,10 @@ PrefabInstance:
       propertyPath: jumpSound
       value: 
       objectReference: {fileID: 8300000, guid: df49938a1860650418b6d5654ed436be, type: 3}
+    - target: {fileID: 4124271952115489820, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
+      propertyPath: runParticles
+      value: 
+      objectReference: {fileID: 1221556037}
     - target: {fileID: 4124271952115489820, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
       propertyPath: runSound.Array.size
       value: 15
@@ -2776,6 +2820,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!198 &1221556037 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 741283779, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
+  m_PrefabInstance: {fileID: 495529771}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1281161043
 GameObject:
   m_ObjectHideFlags: 0
@@ -2924,7 +2973,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2180337878329059541, guid: 566aeeb4345d6e645b78c405d0baafda, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.435413
+      value: 6.460674
       objectReference: {fileID: 0}
     - target: {fileID: 2180337878329059541, guid: 566aeeb4345d6e645b78c405d0baafda, type: 3}
       propertyPath: m_LocalPosition.y
