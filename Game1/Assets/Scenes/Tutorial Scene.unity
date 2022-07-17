@@ -6707,11 +6707,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2180337878329059541, guid: 566aeeb4345d6e645b78c405d0baafda, type: 3}
       propertyPath: m_LocalPosition.x
+<<<<<<< Updated upstream
       value: -9.976983
       objectReference: {fileID: 0}
     - target: {fileID: 2180337878329059541, guid: 566aeeb4345d6e645b78c405d0baafda, type: 3}
       propertyPath: m_LocalPosition.y
       value: -1.6611567
+=======
+      value: -14.114537
+      objectReference: {fileID: 0}
+    - target: {fileID: 2180337878329059541, guid: 566aeeb4345d6e645b78c405d0baafda, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.7334356
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 2180337878336690601, guid: 566aeeb4345d6e645b78c405d0baafda, type: 3}
       propertyPath: m_BoundingShape2D
@@ -7065,6 +7073,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3537123121096021290, guid: 7c1e33856a7b8834888837824996b86d, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.03681023
+      objectReference: {fileID: 0}
+    - target: {fileID: 3537123121096021290, guid: 7c1e33856a7b8834888837824996b86d, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.41509432
+      objectReference: {fileID: 0}
+    - target: {fileID: 3537123121096021290, guid: 7c1e33856a7b8834888837824996b86d, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.06375908
+      objectReference: {fileID: 0}
     - target: {fileID: 7089401543131595396, guid: 7c1e33856a7b8834888837824996b86d, type: 3}
       propertyPath: m_RootOrder
       value: 5

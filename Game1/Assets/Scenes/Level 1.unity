@@ -1523,11 +1523,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3325663435733232467, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.8
+      value: 22.25
       objectReference: {fileID: 0}
     - target: {fileID: 3325663435733232467, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.6
+      value: -7.15
       objectReference: {fileID: 0}
     - target: {fileID: 3325663435733232467, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2973,11 +2973,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2180337878329059541, guid: 566aeeb4345d6e645b78c405d0baafda, type: 3}
       propertyPath: m_LocalPosition.x
+<<<<<<< Updated upstream
       value: 6.460674
+=======
+      value: 33.14
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 2180337878329059541, guid: 566aeeb4345d6e645b78c405d0baafda, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.4513693
+      value: 0.79955006
       objectReference: {fileID: 0}
     - target: {fileID: 2180337878336690601, guid: 566aeeb4345d6e645b78c405d0baafda, type: 3}
       propertyPath: m_BoundingShape2D
@@ -2985,19 +2989,19 @@ PrefabInstance:
       objectReference: {fileID: 1558496426}
     - target: {fileID: 2180337878336690606, guid: 566aeeb4345d6e645b78c405d0baafda, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.0899997
+      value: 33.14
       objectReference: {fileID: 0}
     - target: {fileID: 2180337878336690606, guid: 566aeeb4345d6e645b78c405d0baafda, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.34955025
+      value: 0.79955006
       objectReference: {fileID: 0}
     - target: {fileID: 2180337878349762762, guid: 566aeeb4345d6e645b78c405d0baafda, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.09
+      value: 33.14
       objectReference: {fileID: 0}
     - target: {fileID: 2180337878349762762, guid: 566aeeb4345d6e645b78c405d0baafda, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.14955044
+      value: 0.5995498
       objectReference: {fileID: 0}
     - target: {fileID: 2180337878349762805, guid: 566aeeb4345d6e645b78c405d0baafda, type: 3}
       propertyPath: m_BoundingShape2D
@@ -41524,6 +41528,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 495529774}
     - target: {fileID: 425507564403372144, guid: a900a108c40282749abbc105a751294f, type: 3}
+      propertyPath: bloodSplash
+      value: 
+      objectReference: {fileID: 1966892569}
+    - target: {fileID: 425507564403372144, guid: a900a108c40282749abbc105a751294f, type: 3}
       propertyPath: attackPlayer
       value: 
       objectReference: {fileID: 2126109041}
@@ -41535,11 +41543,20 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7752073159534787813, guid: a900a108c40282749abbc105a751294f, type: 3}
+      propertyPath: moveWithTransform
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a900a108c40282749abbc105a751294f, type: 3}
 --- !u!4 &1884505245 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 425507564403372108, guid: a900a108c40282749abbc105a751294f, type: 3}
+  m_PrefabInstance: {fileID: 1884505244}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &1966892569 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 7752073159534787813, guid: a900a108c40282749abbc105a751294f, type: 3}
   m_PrefabInstance: {fileID: 1884505244}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2026307472
