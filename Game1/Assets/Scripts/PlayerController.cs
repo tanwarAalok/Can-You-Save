@@ -36,11 +36,15 @@ public class PlayerController : MonoBehaviour
     [SerializeField] GameObject textBox = null;
     [SerializeField] TextMeshProUGUI showText = null;
 
-
+    [Header("Sounds")]
     public AudioClip attackSound = null;
     public AudioClip[] runSound = null;
     public AudioClip jumpSound = null;
-    AudioSource audioSource = null;
+    AudioSource audioSource;
+
+    [Header("Particle Effects")]
+    [SerializeField] ParticleSystem runParticles;
+
 
     private void Awake() 
     {
@@ -150,10 +154,18 @@ public class PlayerController : MonoBehaviour
         bool hasHorizontalSpeed = Mathf.Abs(body.velocity.x) > Mathf.Epsilon;
         anim.SetBool("Run", hasHorizontalSpeed);
 
-        if(hasHorizontalSpeed && !audioSource.isPlaying && (feetCollider.IsTouchingLayers(LayerMask.GetMask("groundLayer")) || feetCollider.IsTouchingLayers(LayerMask.GetMask("Box")))) {
+        if(hasHorizontalSpeed && (feetCollider.IsTouchingLayers(LayerMask.GetMask("groundLayer")) || feetCollider.IsTouchingLayers(LayerMask.GetMask("Box")))) {
 
-            int randomIdx = Random.Range(0, runSound.Length);
-            audioSource.PlayOneShot(runSound[randomIdx], 0.6f);
+            runParticles.Play();
+            if(!audioSource.isPlaying)
+            { 
+                int randomIdx = Random.Range(0, runSound.Length);
+                audioSource.PlayOneShot(runSound[randomIdx], 0.6f);
+            }
+        }
+        else
+        {
+            runParticles.Stop();
         }
     }
 
