@@ -40,6 +40,8 @@ public class ZombieController : MonoBehaviour
     AudioSource audioSource = null;
     public AudioClip attackSound = null;
 
+    public ParticleSystem blood = null;
+
 
     void Start()
     {
@@ -131,6 +133,7 @@ public class ZombieController : MonoBehaviour
             zombieCanvas.enabled = false;
             zombieAnimator.Play("dead");
             isDead = true;
+            blood.Play();
             StartCoroutine(WaitForDying());
         }
     }
