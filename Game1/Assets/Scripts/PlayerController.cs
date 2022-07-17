@@ -42,8 +42,18 @@ public class PlayerController : MonoBehaviour
     [SerializeField] AudioClip[] runSound = null;
     [SerializeField] AudioClip jumpSound = null;
 
+<<<<<<< Updated upstream
     [Header("Particle Effect")]
     [SerializeField] ParticleSystem runParticles;
+=======
+    public AudioClip attackSound = null;
+    public AudioClip[] runSound = null;
+    public AudioClip jumpSound = null;
+    AudioSource audioSource = null;
+
+    
+
+>>>>>>> Stashed changes
     private void Awake() 
     {
         audioSource = GetComponent<AudioSource>();
