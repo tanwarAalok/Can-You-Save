@@ -82,6 +82,7 @@ public class PlayerController : MonoBehaviour
                 float moveALitte = 0.02f * transform.localScale.x;
                 transform.position = new Vector2(transform.position.x + moveALitte, transform.position.y);
             }
+
         }
 
         ChangeColor();
@@ -246,5 +247,6 @@ public class PlayerController : MonoBehaviour
             gameManager.gameWon = true;
             Destroy(other.gameObject);
         }
+
     }
 }

@@ -11,6 +11,7 @@ TagManager:
   - Door
   - Box
   - Collectiable
+  - trigger
   layers:
   - Default
   - TransparentFX
