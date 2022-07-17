@@ -155,8 +155,10 @@ public class PlayerController : MonoBehaviour
         anim.SetBool("Run", hasHorizontalSpeed);
 
         if(hasHorizontalSpeed && (feetCollider.IsTouchingLayers(LayerMask.GetMask("groundLayer")) || feetCollider.IsTouchingLayers(LayerMask.GetMask("Box")))) {
-
-            runParticles.Play();
+            if(!bodyCollider.IsTouchingLayers(LayerMask.GetMask("Water")))
+            {
+                runParticles.Play();
+            }
             if(!audioSource.isPlaying)
             { 
                 int randomIdx = Random.Range(0, runSound.Length);

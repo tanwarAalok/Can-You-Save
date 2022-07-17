@@ -139,7 +139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &131890224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1173,6 +1173,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1702090424, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1702090424, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
       propertyPath: InitialModule.startColor.maxColor.a
       value: 0.23921569
       objectReference: {fileID: 0}
@@ -1187,6 +1191,14 @@ PrefabInstance:
     - target: {fileID: 1702090424, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
       propertyPath: InitialModule.startColor.maxColor.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1702090424, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
+      propertyPath: EmissionModule.rateOverDistance.scalar
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1702090424, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
+      propertyPath: EmissionModule.rateOverDistance.minScalar
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1362925680731259572, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
       propertyPath: intensity
@@ -15347,7 +15359,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2180337878646852575}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.5117111, y: 1.8675928, z: -10}
+  m_LocalPosition: {x: 1.3819737, y: 1.8678474, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2180337879970840860}
@@ -15465,7 +15477,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2180337878656399962}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.5134077, y: 0.22955036, z: -10}
+  m_LocalPosition: {x: -2.5134082, y: 0.22955036, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2180337878339626912}
