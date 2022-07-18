@@ -293,7 +293,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -390,6 +390,7 @@ MonoBehaviour:
   nextAttack: 0.8
   takeDamage: 20
   attackSound: {fileID: 8300000, guid: 90054576c036ea44096d20cc89ff4da2, type: 3}
+  attackVolme: 0.3
   blood: {fileID: 3033949178572392381}
 --- !u!61 &425507564403372145
 BoxCollider2D:
