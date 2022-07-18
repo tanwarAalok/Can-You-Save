@@ -148,6 +148,11 @@ public class ZombieController : MonoBehaviour
             StartCoroutine(WaitForDying());
         }
     }
+    public void PlayBloodParticleEffect()
+    {
+        SplashController.instance.MakeSplat();
+        blood.Play();
+    }
     IEnumerator WaitForDying()
     {
         yield return new WaitForSeconds(1.5f);

@@ -19,6 +19,7 @@ public class AttackEnemy : MonoBehaviour
             cinemachineShake.ShakeCamera(intensity, shakeTime);
             hasGivenDamage = true;
             collision.GetComponent<ZombieController>().TakeDamage();
+            collision.GetComponent<ZombieController>().PlayBloodParticleEffect();
         }
     }
 }
