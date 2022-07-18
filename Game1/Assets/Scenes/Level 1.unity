@@ -1549,74 +1549,6 @@ PrefabInstance:
       propertyPath: showText
       value: 
       objectReference: {fileID: 783770517}
-    - target: {fileID: 4124271952115489820, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
-      propertyPath: jumpSound
-      value: 
-      objectReference: {fileID: 8300000, guid: c2694fab5eccc4249bd5a2083be61d3e, type: 3}
-    - target: {fileID: 4124271952115489820, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
-      propertyPath: runSound.Array.size
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 4124271952115489820, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
-      propertyPath: runSound.Array.data[0]
-      value: 
-      objectReference: {fileID: 8300000, guid: 3e299b9129329f24692bb63f57f33d19, type: 3}
-    - target: {fileID: 4124271952115489820, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
-      propertyPath: runSound.Array.data[1]
-      value: 
-      objectReference: {fileID: 8300000, guid: 38f0c96f5fc9ad54bb7f70129602e268, type: 3}
-    - target: {fileID: 4124271952115489820, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
-      propertyPath: runSound.Array.data[2]
-      value: 
-      objectReference: {fileID: 8300000, guid: 72b37684ac7a413499d259a0a9be50e6, type: 3}
-    - target: {fileID: 4124271952115489820, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
-      propertyPath: runSound.Array.data[3]
-      value: 
-      objectReference: {fileID: 8300000, guid: 5da9a1fac751fd544933656ba7cdb367, type: 3}
-    - target: {fileID: 4124271952115489820, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
-      propertyPath: runSound.Array.data[4]
-      value: 
-      objectReference: {fileID: 8300000, guid: 83e12fcd809c9444192c377fe18a65e5, type: 3}
-    - target: {fileID: 4124271952115489820, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
-      propertyPath: runSound.Array.data[5]
-      value: 
-      objectReference: {fileID: 8300000, guid: 6056a660bb0897e4ea25a31889075437, type: 3}
-    - target: {fileID: 4124271952115489820, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
-      propertyPath: runSound.Array.data[6]
-      value: 
-      objectReference: {fileID: 8300000, guid: af104ebdf73bf7a4ba6013021dd458cb, type: 3}
-    - target: {fileID: 4124271952115489820, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
-      propertyPath: runSound.Array.data[7]
-      value: 
-      objectReference: {fileID: 8300000, guid: e968240fec458e24a862c16541a528c6, type: 3}
-    - target: {fileID: 4124271952115489820, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
-      propertyPath: runSound.Array.data[8]
-      value: 
-      objectReference: {fileID: 8300000, guid: 72854b6a8fde5e54eb8ae2eb10155f45, type: 3}
-    - target: {fileID: 4124271952115489820, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
-      propertyPath: runSound.Array.data[9]
-      value: 
-      objectReference: {fileID: 8300000, guid: 22dffeeb60f8846499a8c08a2c0e6f80, type: 3}
-    - target: {fileID: 4124271952115489820, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
-      propertyPath: runSound.Array.data[10]
-      value: 
-      objectReference: {fileID: 8300000, guid: 642f9eb7b8ea3f14e9fc48dff8f8e34b, type: 3}
-    - target: {fileID: 4124271952115489820, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
-      propertyPath: runSound.Array.data[11]
-      value: 
-      objectReference: {fileID: 8300000, guid: 90754431c63071d48b2bfa8dc2472b9d, type: 3}
-    - target: {fileID: 4124271952115489820, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
-      propertyPath: runSound.Array.data[12]
-      value: 
-      objectReference: {fileID: 8300000, guid: d51df139d4e50794993d2130348b08d9, type: 3}
-    - target: {fileID: 4124271952115489820, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
-      propertyPath: runSound.Array.data[13]
-      value: 
-      objectReference: {fileID: 8300000, guid: 39ca7e88dc461e8458d02a2284708c0d, type: 3}
-    - target: {fileID: 4124271952115489820, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
-      propertyPath: runSound.Array.data[14]
-      value: 
-      objectReference: {fileID: 8300000, guid: d772d1b334ef5f148bf1308d5fb3e4b0, type: 3}
     - target: {fileID: 7626751395310930653, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -2574,6 +2506,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 495529774}
     - target: {fileID: 7089401543131595401, guid: 7c1e33856a7b8834888837824996b86d, type: 3}
+      propertyPath: attackVolme
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7089401543131595401, guid: 7c1e33856a7b8834888837824996b86d, type: 3}
       propertyPath: attackPlayer
       value: 
       objectReference: {fileID: 1566661720}
@@ -2957,7 +2893,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2180337878329059541, guid: 566aeeb4345d6e645b78c405d0baafda, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.4543457
+      value: 5.373211
       objectReference: {fileID: 0}
     - target: {fileID: 2180337878329059541, guid: 566aeeb4345d6e645b78c405d0baafda, type: 3}
       propertyPath: m_LocalPosition.y
@@ -41459,6 +41395,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 495529774}
     - target: {fileID: 7089401543131595401, guid: 7c1e33856a7b8834888837824996b86d, type: 3}
+      propertyPath: attackVolme
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7089401543131595401, guid: 7c1e33856a7b8834888837824996b86d, type: 3}
       propertyPath: attackPlayer
       value: 
       objectReference: {fileID: 499861774}
@@ -41574,6 +41514,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 495529774}
+    - target: {fileID: 425507564403372144, guid: a900a108c40282749abbc105a751294f, type: 3}
+      propertyPath: attackVolme
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 425507564403372144, guid: a900a108c40282749abbc105a751294f, type: 3}
       propertyPath: attackPlayer
       value: 
@@ -43091,6 +43035,7 @@ MonoBehaviour:
   enemies: []
   pauseMenu: {fileID: 784351141}
   gameWonMenu: {fileID: 0}
+  isPaused: 0
   gameWon: 0
 --- !u!114 &6409458111857678016
 MonoBehaviour:

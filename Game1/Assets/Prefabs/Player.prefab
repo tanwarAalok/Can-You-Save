@@ -5094,22 +5094,24 @@ MonoBehaviour:
   showText: {fileID: 0}
   attackSound: {fileID: 8300000, guid: 19dcdf1f6c9bc3f4cb7306e25a130f8d, type: 3}
   runSound:
-  - {fileID: 8300000, guid: 9a30499e47789df48aa9bdb1ec7b0982, type: 3}
-  - {fileID: 8300000, guid: 1d7e7e6569aab5a45a837f470eaddc8b, type: 3}
-  - {fileID: 8300000, guid: 31be579b280d0bc459635877e8c45aee, type: 3}
-  - {fileID: 8300000, guid: c3f3efc1106f84643a38bd21f6826aaf, type: 3}
-  - {fileID: 8300000, guid: 2de8329adc6f9b944a5ab0875fb59924, type: 3}
-  - {fileID: 8300000, guid: f39f1d43c5b9fbf449e7b39d056e5aad, type: 3}
-  - {fileID: 8300000, guid: d3ea0567dbe95714eb0ca07f43a37a96, type: 3}
-  - {fileID: 8300000, guid: 161d5a427e88d594f9906708ccdc5663, type: 3}
-  - {fileID: 8300000, guid: 7a5ff4a806216b14ab9dba35a4fb258c, type: 3}
-  - {fileID: 8300000, guid: bd5653e52c4636e4aa3b0ced8f49a18d, type: 3}
-  - {fileID: 8300000, guid: 6c8508d96905ea749ae50b49916fde55, type: 3}
-  - {fileID: 8300000, guid: 35bda0c39b1fbe64196a669bfb99757d, type: 3}
-  - {fileID: 8300000, guid: 6259119f201fafa4ca80646eff6b4b1f, type: 3}
-  - {fileID: 8300000, guid: b04914b5801123b4dafba88cbcb5bc74, type: 3}
-  - {fileID: 8300000, guid: 3ec9ef3892d02044a9d62e412eb45ffb, type: 3}
-  jumpSound: {fileID: 8300000, guid: 984d316ed8be3ac4da9e31768a8b1fa9, type: 3}
+  - {fileID: 8300000, guid: 3e299b9129329f24692bb63f57f33d19, type: 3}
+  - {fileID: 8300000, guid: 38f0c96f5fc9ad54bb7f70129602e268, type: 3}
+  - {fileID: 8300000, guid: 72b37684ac7a413499d259a0a9be50e6, type: 3}
+  - {fileID: 8300000, guid: 5da9a1fac751fd544933656ba7cdb367, type: 3}
+  - {fileID: 8300000, guid: 83e12fcd809c9444192c377fe18a65e5, type: 3}
+  - {fileID: 8300000, guid: 6056a660bb0897e4ea25a31889075437, type: 3}
+  - {fileID: 8300000, guid: af104ebdf73bf7a4ba6013021dd458cb, type: 3}
+  - {fileID: 8300000, guid: e968240fec458e24a862c16541a528c6, type: 3}
+  - {fileID: 8300000, guid: 72854b6a8fde5e54eb8ae2eb10155f45, type: 3}
+  - {fileID: 8300000, guid: 22dffeeb60f8846499a8c08a2c0e6f80, type: 3}
+  - {fileID: 8300000, guid: 642f9eb7b8ea3f14e9fc48dff8f8e34b, type: 3}
+  - {fileID: 8300000, guid: 90754431c63071d48b2bfa8dc2472b9d, type: 3}
+  - {fileID: 8300000, guid: d51df139d4e50794993d2130348b08d9, type: 3}
+  - {fileID: 8300000, guid: 39ca7e88dc461e8458d02a2284708c0d, type: 3}
+  - {fileID: 8300000, guid: d772d1b334ef5f148bf1308d5fb3e4b0, type: 3}
+  jumpSound: {fileID: 8300000, guid: df49938a1860650418b6d5654ed436be, type: 3}
+  audioVolume: 0.7
+  jumpVolume: 1
   runParticles: {fileID: 1702090424}
 --- !u!50 &6297901744972625824
 Rigidbody2D:

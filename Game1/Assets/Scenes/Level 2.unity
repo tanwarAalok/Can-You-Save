@@ -222,13 +222,13 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 181886386}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1.5, y: -0.5}
+  m_Offset: {x: 1.6, y: -0.5}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1140,6 +1140,7 @@ MonoBehaviour:
   enemies: []
   pauseMenu: {fileID: 1197234730}
   gameWonMenu: {fileID: 391924823}
+  isPaused: 0
   gameWon: 0
 --- !u!4 &577378945
 Transform:
@@ -14106,7 +14107,7 @@ MonoBehaviour:
   healthBar: {fileID: 1383686952}
   player: {fileID: 679417842}
   distanceFromPlayer: 0
-  minimumDistToAttackPlayer: 2
+  minimumDistToAttackPlayer: 2.5
   range: 12
   moveSpeed: 3
   initialSpeed: 3
@@ -14118,6 +14119,7 @@ MonoBehaviour:
   nextAttack: 0.8
   takeDamage: 10
   attackSound: {fileID: 8300000, guid: 8b9826c915109c446be0c38d54721a2d, type: 3}
+  attackVolme: 0.3
   blood: {fileID: 1481811172}
 --- !u!70 &2101176500
 CapsuleCollider2D:
@@ -14821,6 +14823,7 @@ MonoBehaviour:
   nextAttack: 0.8
   takeDamage: 10
   attackSound: {fileID: 8300000, guid: 8b9826c915109c446be0c38d54721a2d, type: 3}
+  attackVolme: 0.3
   blood: {fileID: 623685242}
 --- !u!50 &1358187113674103083
 Rigidbody2D:
@@ -15418,7 +15421,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2180337878646852575}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.3756471, y: 1.8678474, z: -10}
+  m_LocalPosition: {x: 0.29451227, y: 1.8678474, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2180337879970840860}
@@ -15778,7 +15781,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1.5, y: -0.5}
+  m_Offset: {x: 1.6, y: -0.5}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}

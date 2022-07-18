@@ -37,9 +37,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] TextMeshProUGUI showText = null;
 
     [Header("Sounds")]
-    public AudioClip attackSound = null;
-    public AudioClip[] runSound = null;
-    public AudioClip jumpSound = null;
+    [SerializeField] AudioClip attackSound = null;
+    [SerializeField] AudioClip[] runSound = null;
+    [SerializeField] AudioClip jumpSound = null;
+    [SerializeField] float audioVolume = 0.7f;
+    [SerializeField] float jumpVolume = 1f;
     AudioSource audioSource;
 
     [Header("Particle Effects")]
@@ -139,7 +141,7 @@ public class PlayerController : MonoBehaviour
             {
                 attackEnemy.hasGivenDamage = false;
                 anim.Play("attack");
-                audioSource.PlayOneShot(attackSound, 0.6f);
+                audioSource.PlayOneShot(attackSound, audioVolume);
                 waitBetweenAttack = startWaitBetweenAttack;
             }
         }
@@ -161,10 +163,10 @@ public class PlayerController : MonoBehaviour
             {
                 runParticles.Play();
             }
-            if(!audioSource.isPlaying)
+            if(!audioSource.isPlaying && !gameManager.isPaused)
             { 
                 int randomIdx = Random.Range(0, runSound.Length);
-                audioSource.PlayOneShot(runSound[randomIdx], 0.6f);
+                audioSource.PlayOneShot(runSound[randomIdx], audioVolume);
             }
         }
         else
@@ -181,7 +183,7 @@ public class PlayerController : MonoBehaviour
         {
             body.velocity += new Vector2(0, jumpSpeed);
             anim.Play("Jump");
-            audioSource.PlayOneShot(jumpSound, 0.8f);
+            audioSource.PlayOneShot(jumpSound, jumpVolume);
         }
     }
 

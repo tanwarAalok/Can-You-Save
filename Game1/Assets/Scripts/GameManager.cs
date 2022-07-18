@@ -16,12 +16,9 @@ public class GameManager : MonoBehaviour
     bool isPlayerDead = false;
     bool openDoor = false;
     bool isLevelComplete = false;
-
     public GameObject pauseMenu = null;
     public GameObject gameWonMenu = null;
-
-    bool isPaused = false;
-
+    public bool isPaused = false;
     public bool gameWon = false;
 
     void Awake()
@@ -80,7 +77,6 @@ public class GameManager : MonoBehaviour
     {
         return openDoor;
     }
-
     public void PauseMenu()
     {
         isPaused = false;

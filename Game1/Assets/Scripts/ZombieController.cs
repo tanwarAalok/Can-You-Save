@@ -39,9 +39,11 @@ public class ZombieController : MonoBehaviour
     [SerializeField] float nextAttack;
     [SerializeField] int takeDamage = 20;
 
+    [Header("Sounds")]
     AudioSource audioSource = null;
-    public AudioClip attackSound = null;
-
+    [SerializeField] AudioClip attackSound = null;
+    [SerializeField] float attackVolme = 0.3f;
+    [Header("Particles")]
     public ParticleSystem blood = null;
 
 
@@ -112,7 +114,7 @@ public class ZombieController : MonoBehaviour
             {
                 attackPlayer.hasGivenDamage = false;
                 zombieAnimator.Play("attack");
-                audioSource.PlayOneShot(attackSound, 0.1f);
+                audioSource.PlayOneShot(attackSound, attackVolme);
                 waitBetweenAttack = nextAttack;
             }
         }
