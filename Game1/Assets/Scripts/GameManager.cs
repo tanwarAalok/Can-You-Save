@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviour
         if(!gameWon && !isPaused && Input.GetKeyDown(KeyCode.Escape))
         {
             isPaused = true;
+            AudioManager.instance.PauseAudio();
             pauseMenu.SetActive(isPaused);
             Time.timeScale = 0;
         }
@@ -80,6 +81,7 @@ public class GameManager : MonoBehaviour
     public void PauseMenu()
     {
         isPaused = false;
+        AudioManager.instance.PlayAudio();
         pauseMenu.SetActive(isPaused);
         Time.timeScale = 1;
     }

@@ -5,27 +5,29 @@ using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
+    public static AudioManager instance;
     AudioSource audioSource;
-    [SerializeField] AudioClip mainmenuMusic  = null;
-    [SerializeField] AudioClip gameMusic = null;
-    GameManager gameManager = null;
 
     private void Awake() {
-        gameManager = FindObjectOfType<GameManager>();
+        if(instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+        DontDestroyOnLoad(gameObject);
         audioSource = GetComponent<AudioSource>();
+        audioSource.Play();
     }
-
-    private void Update() {
-
-        if(SceneManager.GetActiveScene().buildIndex == 0 || (gameManager != null && gameManager.isPaused)) {
-            audioSource.clip = mainmenuMusic;
-        }
-        else {
-            audioSource.clip = gameMusic;
-        }
-
-        if(!audioSource.isPlaying) audioSource.Play();
+    public void PauseAudio()
+    {
+        audioSource.Pause();
     }
-
-
+    public void PlayAudio()
+    {
+        audioSource.UnPause();
+    }
 }
