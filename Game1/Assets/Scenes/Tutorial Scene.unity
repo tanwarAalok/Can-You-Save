@@ -5437,7 +5437,7 @@ GameObject:
   - component: {fileID: 1394979108}
   - component: {fileID: 1394979107}
   m_Layer: 0
-  m_Name: Sign_1
+  m_Name: Attack Control Sign
   m_TagString: trigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8446,7 +8446,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6409458111666535041, guid: ec104f9373ae523469fa20167e97fd06, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -64.04258
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6409458111666535041, guid: ec104f9373ae523469fa20167e97fd06, type: 3}
       propertyPath: m_LocalRotation.w
