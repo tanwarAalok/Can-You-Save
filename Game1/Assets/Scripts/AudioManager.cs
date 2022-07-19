@@ -30,4 +30,8 @@ public class AudioManager : MonoBehaviour
     {
         audioSource.UnPause();
     }
+    public void Volume(float volume)
+    {
+        audioSource.volume = volume;
+    }
 }
