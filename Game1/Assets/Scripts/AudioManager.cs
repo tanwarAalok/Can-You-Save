@@ -7,6 +7,7 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
     AudioSource audioSource;
+    float currVolume;
 
     private void Awake() {
         if(instance == null)
@@ -21,7 +22,11 @@ public class AudioManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         audioSource = GetComponent<AudioSource>();
         audioSource.Play();
+
+        Volume(getVolume());
+
     }
+
     public void PauseAudio()
     {
         audioSource.Pause();
@@ -29,9 +34,15 @@ public class AudioManager : MonoBehaviour
     public void PlayAudio()
     {
         audioSource.UnPause();
+        Volume(getVolume());
     }
     public void Volume(float volume)
     {
         audioSource.volume = volume;
+    }
+
+    private float getVolume()
+    {
+        return VolumeController.currentVolume;
     }
 }

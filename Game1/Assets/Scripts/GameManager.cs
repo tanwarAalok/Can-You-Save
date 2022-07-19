@@ -25,6 +25,8 @@ public class GameManager : MonoBehaviour
     {
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
         totalEnemy = enemies.Length;
+        AudioManager.instance.PlayAudio();
+        
     }
     void Update() {
 
@@ -80,7 +82,7 @@ public class GameManager : MonoBehaviour
     }
     public void PauseMenu()
     {
-        isPaused = false;
+        isPaused = false;  // for game resume
         AudioManager.instance.PlayAudio();
         pauseMenu.SetActive(isPaused);
         Time.timeScale = 1;
@@ -88,6 +90,7 @@ public class GameManager : MonoBehaviour
 
     public void MainMenu()
     {
+        isPaused = false;
         SceneManager.LoadScene(0);
         Time.timeScale = 1;
     }
