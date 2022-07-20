@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
+
 
 public class PlayerController : MonoBehaviour
 {
@@ -46,10 +48,15 @@ public class PlayerController : MonoBehaviour
 
     [Header("Particle Effects")]
     [SerializeField] ParticleSystem runParticles;
+    [SerializeField] Text death;
+
+    public static int deathCount = 0;
+    [SerializeField] Sprite emptyVessel = null;
 
 
     private void Awake() 
     {
+        
         audioSource = GetComponent<AudioSource>();
         attackEnemy = FindObjectOfType<AttackEnemy>();
         gameManager = FindObjectOfType<GameManager>();
@@ -61,6 +68,7 @@ public class PlayerController : MonoBehaviour
         currHealth = levelHealth;
         healthBar.SetMaxHealth(maxHealth);
         healthBar.SetHealth(currHealth);
+        death.text = "Deaths: " + deathCount.ToString();
     }
 
     private void Update() 
@@ -85,16 +93,18 @@ public class PlayerController : MonoBehaviour
                 transform.position = new Vector2(transform.position.x + moveALitte, transform.position.y);
             }
 
+            ChangeColor();
+            if(currHealth <= 0 || feetCollider.IsTouchingLayers(LayerMask.GetMask("Obstacle"))) {
+                anim.Play("dead");
+                deathCount++;
+                death.text = "Deaths: " + deathCount.ToString();
+                body.velocity = new Vector2(0, body.velocity.y);
+                gameOver = true;
+                gameManager.PlayerDeadState(gameOver);
+                SplashController.instance.MakeSplat();
+            }
         }
 
-        ChangeColor();
-        if(currHealth <= 0 || feetCollider.IsTouchingLayers(LayerMask.GetMask("Obstacle"))) {
-            anim.Play("dead");
-            body.velocity = new Vector2(0, body.velocity.y);
-            gameOver = true;
-            gameManager.PlayerDeadState(gameOver);
-            SplashController.instance.MakeSplat();
-        }
     }
     
     void OpenDoor()
@@ -247,6 +257,7 @@ public class PlayerController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.CompareTag("Collectiable"))
         {
+            if(deathCount > 5) other.GetComponent<SpriteRenderer>().sprite = emptyVessel;
             gameManager.gameWon = true;
             Destroy(other.gameObject);
         }
