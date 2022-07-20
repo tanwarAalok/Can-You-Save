@@ -7948,11 +7948,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2180337878329059541, guid: 566aeeb4345d6e645b78c405d0baafda, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.98331
+      value: -9.996808
       objectReference: {fileID: 0}
     - target: {fileID: 2180337878329059541, guid: 566aeeb4345d6e645b78c405d0baafda, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.6612663
+      value: -1.6615038
       objectReference: {fileID: 0}
     - target: {fileID: 2180337878336690601, guid: 566aeeb4345d6e645b78c405d0baafda, type: 3}
       propertyPath: m_BoundingShape2D
@@ -8378,30 +8378,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 150130021, guid: 7c1e33856a7b8834888837824996b86d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 150130022, guid: 7c1e33856a7b8834888837824996b86d, type: 3}
-      propertyPath: m_Intensity
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 150130022, guid: 7c1e33856a7b8834888837824996b86d, type: 3}
-      propertyPath: m_FalloffIntensity
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 150130022, guid: 7c1e33856a7b8834888837824996b86d, type: 3}
-      propertyPath: m_PointLightInnerAngle
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 150130022, guid: 7c1e33856a7b8834888837824996b86d, type: 3}
-      propertyPath: m_PointLightOuterAngle
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 150130022, guid: 7c1e33856a7b8834888837824996b86d, type: 3}
-      propertyPath: m_PointLightOuterRadius
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 7089401543131595396, guid: 7c1e33856a7b8834888837824996b86d, type: 3}
       propertyPath: m_RootOrder
       value: 5
