@@ -95,6 +95,7 @@ public class GameManager : MonoBehaviour
         isPaused = false;
         gameWon = false;
         FindObjectOfType<PlayerController>().LevelHealth(200);
+        PlayerController.deathCount = 0;
         SceneManager.LoadScene(0);
         Time.timeScale = 1;
     }

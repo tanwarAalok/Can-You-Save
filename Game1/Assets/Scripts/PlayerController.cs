@@ -51,8 +51,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Text death;
 
     public static int deathCount = 0;
+    [SerializeField] GameObject antidote = null;
     [SerializeField] Sprite emptyVessel = null;
-
 
     private void Awake() 
     {
@@ -69,6 +69,10 @@ public class PlayerController : MonoBehaviour
         healthBar.SetMaxHealth(maxHealth);
         healthBar.SetHealth(currHealth);
         death.text = "Deaths: " + deathCount.ToString();
+        if(deathCount > 5 && antidote!=null)
+        {
+            antidote.GetComponent<SpriteRenderer>().sprite = emptyVessel;
+        }
     }
 
     private void Update() 
@@ -257,7 +261,10 @@ public class PlayerController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.CompareTag("Collectiable"))
         {
-            if(deathCount > 5) other.GetComponent<SpriteRenderer>().sprite = emptyVessel;
+            if (deathCount > 5)
+            {
+                other.gameObject.GetComponent<SpriteRenderer>().sprite = emptyVessel;
+            }
             gameManager.gameWon = true;
             Destroy(other.gameObject);
         }
