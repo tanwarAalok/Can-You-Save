@@ -50,9 +50,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] ParticleSystem runParticles;
     [SerializeField] Text death;
 
+    [Header("Death Related")]
     public static int deathCount = 0;
     [SerializeField] GameObject antidote = null;
     [SerializeField] Sprite emptyVessel = null;
+    bool callDeathCount = false;
 
     private void Awake() 
     {
@@ -96,19 +98,23 @@ public class PlayerController : MonoBehaviour
                 float moveALitte = 0.02f * transform.localScale.x;
                 transform.position = new Vector2(transform.position.x + moveALitte, transform.position.y);
             }
-
-            ChangeColor();
-            if(currHealth <= 0 || feetCollider.IsTouchingLayers(LayerMask.GetMask("Obstacle"))) {
-                anim.Play("dead");
-                deathCount++;
-                death.text = "Deaths: " + deathCount.ToString();
-                body.velocity = new Vector2(0, body.velocity.y);
-                gameOver = true;
-                gameManager.PlayerDeadState(gameOver);
-                SplashController.instance.MakeSplat();
-            }
+            
         }
-
+        ChangeColor();
+        if (currHealth <= 0 || feetCollider.IsTouchingLayers(LayerMask.GetMask("Obstacle")))
+        {
+            anim.Play("dead");
+            if(!callDeathCount)
+            {
+                deathCount++;
+                callDeathCount = true;
+            }
+            death.text = "Deaths: " + deathCount.ToString();
+            body.velocity = new Vector2(0, body.velocity.y);
+            gameOver = true;
+            gameManager.PlayerDeadState(gameOver);
+            SplashController.instance.MakeSplat();
+        }
     }
     
     void OpenDoor()
