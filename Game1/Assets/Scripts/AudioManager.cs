@@ -22,9 +22,11 @@ public class AudioManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         audioSource = GetComponent<AudioSource>();
         audioSource.Play();
-
         Volume(getVolume());
-
+        if(SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            audioSource.Stop();
+        }
     }
 
     public void PauseAudio()

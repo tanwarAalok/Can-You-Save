@@ -464,7 +464,7 @@ MonoBehaviour:
   takeDamage: 20
   attackSound: {fileID: 8300000, guid: 90054576c036ea44096d20cc89ff4da2, type: 3}
   attackVolme: 0.3
-  blood: {fileID: 0}
+  blood: {fileID: 9051850766624802463}
 --- !u!61 &425507564403372145
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -963,5 +963,10 @@ PrefabInstance:
 --- !u!4 &7360030725438844104 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7702068122028700149, guid: 0143595075fd9a541b9f54fb9390ee2a, type: 3}
+  m_PrefabInstance: {fileID: 920751744426663229}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &9051850766624802463 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 8167709504232463266, guid: 0143595075fd9a541b9f54fb9390ee2a, type: 3}
   m_PrefabInstance: {fileID: 920751744426663229}
   m_PrefabAsset: {fileID: 0}

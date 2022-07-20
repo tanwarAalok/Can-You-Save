@@ -3054,7 +3054,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2180337878329059541, guid: 566aeeb4345d6e645b78c405d0baafda, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.828474
+      value: 6.4543457
       objectReference: {fileID: 0}
     - target: {fileID: 2180337878329059541, guid: 566aeeb4345d6e645b78c405d0baafda, type: 3}
       propertyPath: m_LocalPosition.y
@@ -41236,6 +41236,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7089401543131595401, guid: 7c1e33856a7b8834888837824996b86d, type: 3}
+      propertyPath: blood
+      value: 
+      objectReference: {fileID: 1797057201}
+    - target: {fileID: 7089401543131595401, guid: 7c1e33856a7b8834888837824996b86d, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 495529774}
@@ -41256,6 +41260,11 @@ PrefabInstance:
 --- !u!4 &1797057200 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7089401543131595396, guid: 7c1e33856a7b8834888837824996b86d, type: 3}
+  m_PrefabInstance: {fileID: 1797057199}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &1797057201 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 3599884777929644186, guid: 7c1e33856a7b8834888837824996b86d, type: 3}
   m_PrefabInstance: {fileID: 1797057199}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1840457557
