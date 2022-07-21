@@ -25,10 +25,6 @@ public class GameManager : MonoBehaviour
     {
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
         totalEnemy = enemies.Length;
-        if(AudioManager.instance != null)
-        {
-            AudioManager.instance.PlayAudio();
-        }
     }
     void Update() {
 
@@ -96,6 +92,10 @@ public class GameManager : MonoBehaviour
         gameWon = false;
         FindObjectOfType<PlayerController>().LevelHealth(200);
         PlayerController.deathCount = 0;
+        if(AudioManager.instance!=null)
+        {
+            AudioManager.instance.StopAudio(true);
+        }
         SceneManager.LoadScene(0);
         Time.timeScale = 1;
     }

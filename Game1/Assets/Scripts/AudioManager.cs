@@ -7,7 +7,6 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
     AudioSource audioSource;
-    float currVolume;
 
     private void Awake() {
         if(instance == null)
@@ -38,7 +37,17 @@ public class AudioManager : MonoBehaviour
     {
         audioSource.volume = volume;
     }
-
+    public void StopAudio(bool stopTheAudio)
+    {
+        if(stopTheAudio)
+        {
+            audioSource.Stop();
+        }
+        else
+        {
+            audioSource.Play();
+        }
+    }
     private float getVolume()
     {
         return VolumeController.currentVolume;

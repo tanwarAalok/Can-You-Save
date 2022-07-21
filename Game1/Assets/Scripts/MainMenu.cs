@@ -14,6 +14,10 @@ public class MainMenu : MonoBehaviour
 
     public void PlayButton()
     {
+        if(AudioManager.instance!=null)
+        {
+            AudioManager.instance.StopAudio(false);
+        }
         SceneManager.LoadScene(1);
     }
 
