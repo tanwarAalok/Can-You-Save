@@ -706,10 +706,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1717706906733864411}
     m_Modifications:
+    - target: {fileID: 4185802142615669784, guid: 6ac881db9ded1cc4daf274330c69b0bf, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4185802142615669785, guid: 6ac881db9ded1cc4daf274330c69b0bf, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 37
+      objectReference: {fileID: 0}
+    - target: {fileID: 4185802142615669785, guid: 6ac881db9ded1cc4daf274330c69b0bf, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 83.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4185802143258577954, guid: 6ac881db9ded1cc4daf274330c69b0bf, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.13949585
+      objectReference: {fileID: 0}
     - target: {fileID: 4185802144215741617, guid: 6ac881db9ded1cc4daf274330c69b0bf, type: 3}
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 26116476}
+    - target: {fileID: 4185802144215741619, guid: 6ac881db9ded1cc4daf274330c69b0bf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4185802144215741629, guid: 6ac881db9ded1cc4daf274330c69b0bf, type: 3}
       propertyPath: m_Name
       value: Volume
@@ -780,11 +800,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4185802144215741630, guid: 6ac881db9ded1cc4daf274330c69b0bf, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -450
+      value: -66.5
       objectReference: {fileID: 0}
     - target: {fileID: 4185802144215741630, guid: 6ac881db9ded1cc4daf274330c69b0bf, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 152
+      value: -106
       objectReference: {fileID: 0}
     - target: {fileID: 4185802144215741630, guid: 6ac881db9ded1cc4daf274330c69b0bf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -797,6 +817,14 @@ PrefabInstance:
     - target: {fileID: 4185802144215741630, guid: 6ac881db9ded1cc4daf274330c69b0bf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4185802144382257417, guid: 6ac881db9ded1cc4daf274330c69b0bf, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4185802144382257417, guid: 6ac881db9ded1cc4daf274330c69b0bf, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ac881db9ded1cc4daf274330c69b0bf, type: 3}

@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
@@ -56,9 +58,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Sprite emptyVessel = null;
     bool callDeathCount = false;
 
+    // [SerializeField] GameObject globalVolume = null;
+
     private void Awake() 
-    {
-        
+    {   
         audioSource = GetComponent<AudioSource>();
         attackEnemy = FindObjectOfType<AttackEnemy>();
         gameManager = FindObjectOfType<GameManager>();
@@ -218,6 +221,10 @@ public class PlayerController : MonoBehaviour
      public void DecreaseHealth(int damage)
     {
         currHealth -= damage;
+        // if(globalVolume.GetComponent<Volume>().profile.TryGet<Vignette>(out var vig)){
+        //     vig.color.Override(Color.red);
+        // }
+        
     }
     public void LevelHealth(int health)
     {
@@ -276,4 +283,6 @@ public class PlayerController : MonoBehaviour
         }
 
     }
+
+    
 }

@@ -46,7 +46,6 @@ public class ZombieController : MonoBehaviour
     [Header("Particles")]
     public ParticleSystem blood = null;
 
-
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -124,6 +123,8 @@ public class ZombieController : MonoBehaviour
         }
         
     }
+
+    
 
     public void TakeDamage()
     {
