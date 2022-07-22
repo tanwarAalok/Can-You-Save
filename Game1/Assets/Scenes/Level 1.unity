@@ -379,6 +379,7 @@ GameObject:
   m_Component:
   - component: {fileID: 126863398}
   - component: {fileID: 126863397}
+  - component: {fileID: 126863399}
   m_Layer: 0
   m_Name: Post Process Volume
   m_TagString: Untagged
@@ -417,6 +418,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &126863399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 126863396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79b7c32a60b66974e93cb60f1fe5e6a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &133762706
 GameObject:
   m_ObjectHideFlags: 0
@@ -3186,7 +3199,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2180337878329059541, guid: 566aeeb4345d6e645b78c405d0baafda, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.531225
+      value: 6.4606724
       objectReference: {fileID: 0}
     - target: {fileID: 2180337878329059541, guid: 566aeeb4345d6e645b78c405d0baafda, type: 3}
       propertyPath: m_LocalPosition.y
@@ -11239,18 +11252,6 @@ CompositeCollider2D:
         Y: 80161329
       - X: 160161321
         Y: 80161388
-      - X: 149838679
-        Y: 80161388
-      - X: 149838620
-        Y: 80161329
-      - X: 149838620
-        Y: 80161288
-      - X: 140161380
-        Y: 80161288
-      - X: 140161380
-        Y: 80161329
-      - X: 140161321
-        Y: 80161388
       - X: 129838671
         Y: 80161388
       - X: 129838612
@@ -12185,36 +12186,6 @@ CompositeCollider2D:
         Y: -55645260
       - X: 150161321
         Y: -55645260
-    - - X: 399838777
-        Y: -65645245
-      - X: 400161365
-        Y: -65322637
-      - X: 400161380
-        Y: -65322600
-      - X: 400161380
-        Y: -59838667
-      - X: 400161321
-        Y: -59838608
-      - X: 389838679
-        Y: -59838608
-      - X: 389838620
-        Y: -59838667
-      - X: 389838620
-        Y: -59838708
-      - X: 379838720
-        Y: -59838708
-      - X: 379838720
-        Y: -65322580
-      - X: 380161280
-        Y: -65645160
-      - X: 389838620
-        Y: -65645160
-      - X: 389838620
-        Y: -65645201
-      - X: 389838679
-        Y: -65645260
-      - X: 399838740
-        Y: -65645260
     - - X: 70161388
         Y: -80161329
       - X: 70161388
@@ -12253,6 +12224,36 @@ CompositeCollider2D:
         Y: -80161388
       - X: 70161329
         Y: -80161388
+    - - X: 399838777
+        Y: -65645245
+      - X: 400161365
+        Y: -65322637
+      - X: 400161380
+        Y: -65322600
+      - X: 400161380
+        Y: -59838667
+      - X: 400161321
+        Y: -59838608
+      - X: 389838679
+        Y: -59838608
+      - X: 389838620
+        Y: -59838667
+      - X: 389838620
+        Y: -59838708
+      - X: 379838720
+        Y: -59838708
+      - X: 379838720
+        Y: -65322580
+      - X: 380161280
+        Y: -65645160
+      - X: 389838620
+        Y: -65645160
+      - X: 389838620
+        Y: -65645201
+      - X: 389838679
+        Y: -65645260
+      - X: 399838740
+        Y: -65645260
   m_CompositePaths:
     m_Paths:
     - - {x: 36.016117, y: -11.564519}
@@ -41324,11 +41325,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7089401543131595396, guid: 7c1e33856a7b8834888837824996b86d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 32.142483
+      value: 31.75
       objectReference: {fileID: 0}
     - target: {fileID: 7089401543131595396, guid: 7c1e33856a7b8834888837824996b86d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.7719812
+      value: 4.78
       objectReference: {fileID: 0}
     - target: {fileID: 7089401543131595396, guid: 7c1e33856a7b8834888837824996b86d, type: 3}
       propertyPath: m_LocalPosition.z

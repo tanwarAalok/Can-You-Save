@@ -64,7 +64,6 @@ public class PlayerController : MonoBehaviour
 
     private void Awake() 
     {
-        
         audioSource = GetComponent<AudioSource>();
         attackEnemy = FindObjectOfType<AttackEnemy>();
         gameManager = FindObjectOfType<GameManager>();
@@ -226,16 +225,11 @@ public class PlayerController : MonoBehaviour
         currHealth -= damage;
         if (globalVolume.GetComponent<Volume>().profile.TryGet<Vignette>(out vignette))
         {
-            vignette.color.value = new Color(1, 0, 0);
-            StartCoroutine(VignetteOriginalSettings());
+            PostProcessController.instance.VignetteColor();
+            PostProcessController.instance.VignetteIntensity(currHealth, maxHealth);
         }
+    }
 
-    }
-    IEnumerator VignetteOriginalSettings()
-    {
-        yield return new WaitForSeconds(1f);
-        vignette.color.value = new Color(0, 0, 0);
-    }
     public void LevelHealth(int health)
     {
         levelHealth = health;

@@ -8,9 +8,11 @@ public class SplashController : MonoBehaviour
     public static SplashController instance;
     public GameObject[] splat;
     [SerializeField] float offsetY = 0.9f;
+    [SerializeField] List<GameObject> enemies;
     // Start is called before the first frame update
     void Awake()
     {
+        enemies.AddRange(GameObject.FindGameObjectsWithTag("Enemy"));
         instance = this;
         gameManager = FindObjectOfType<GameManager>();
     }
@@ -24,7 +26,18 @@ public class SplashController : MonoBehaviour
         }
         else
         {
-            Instantiate(splat[Random.Range(0, splat.Length)], FindObjectOfType<ZombieController>().transform.position + offset, transform.rotation);
+            for (int i = 0; i < enemies.Count; i++)
+            {
+                if(enemies[i].GetComponent<ZombieController>().isDead)
+                {
+                    Instantiate(splat[Random.Range(0, splat.Length)], enemies[i].transform.position + offset, transform.rotation);
+                    enemies.Remove(enemies[i]);
+                }
+                if(enemies[i].GetComponent<ZombieController>().callMakeSplat && !enemies[i].GetComponent<ZombieController>().isDead)
+                {
+                    Instantiate(splat[Random.Range(0, splat.Length)], enemies[i].transform.position + offset, transform.rotation);
+                }
+            }
         }
     }
 }

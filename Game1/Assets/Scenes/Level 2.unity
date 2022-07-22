@@ -723,6 +723,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7161027521453976197, guid: 87219ca1056147d4a9f0779783f246b2, type: 3}
+      propertyPath: offsetY
+      value: 1.4
+      objectReference: {fileID: 0}
     - target: {fileID: 7161027521453976198, guid: 87219ca1056147d4a9f0779783f246b2, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -5348,6 +5352,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1526331273}
   - component: {fileID: 1526331272}
+  - component: {fileID: 1526331274}
   m_Layer: 0
   m_Name: Post Process Volume
   m_TagString: Untagged
@@ -5386,6 +5391,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1526331274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1526331271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79b7c32a60b66974e93cb60f1fe5e6a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1720932978
 GameObject:
   m_ObjectHideFlags: 0
@@ -14527,6 +14544,7 @@ MonoBehaviour:
   hasWalkingSpeed: 0
   isDead: 0
   bossZombie: 1
+  callMakeSplat: 0
   waitBetweenAttack: 0
   nextAttack: 0.8
   takeDamage: 10
@@ -15233,6 +15251,7 @@ MonoBehaviour:
   hasWalkingSpeed: 0
   isDead: 0
   bossZombie: 1
+  callMakeSplat: 0
   waitBetweenAttack: 0
   nextAttack: 0.8
   takeDamage: 10
@@ -15835,7 +15854,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2180337878646852575}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.511712, y: 1.8675766, z: -10}
+  m_LocalPosition: {x: -2.511714, y: 1.8656597, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2180337879970840860}

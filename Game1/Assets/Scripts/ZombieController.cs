@@ -30,9 +30,9 @@ public class ZombieController : MonoBehaviour
     [Header("Bools")]
     [SerializeField] bool deadEnd = false;
     [SerializeField] bool hasWalkingSpeed = false;
-    [SerializeField] bool isDead = false;
+    public bool isDead = false;
     [SerializeField] bool bossZombie = false;
-    bool callMakeSplat = false;
+    public bool callMakeSplat = false;
 
     [Header("Attack")]
     [SerializeField] float waitBetweenAttack;
@@ -68,10 +68,7 @@ public class ZombieController : MonoBehaviour
             zombieAnimator.SetBool("isWalking", hasWalkingSpeed);
             MoveZombie();
         }
-        if(!callMakeSplat)
-        {
-            IsDying();
-        }
+        IsDying();
     }
 
     bool GetWalkingState()
@@ -123,9 +120,6 @@ public class ZombieController : MonoBehaviour
         }
         
     }
-
-    
-
     public void TakeDamage()
     {
         if (!isDead)
@@ -142,18 +136,15 @@ public class ZombieController : MonoBehaviour
             zombieCanvas.enabled = false;
             zombieAnimator.Play("dead");
             isDead = true;
-            if(count==3)
-            {
-                callMakeSplat = true;
-            }
-            blood.Play();
             SplashController.instance.MakeSplat();
             StartCoroutine(WaitForDying());
         }
     }
     public void PlayBloodParticleEffect()
     {
+        callMakeSplat = true;
         SplashController.instance.MakeSplat();
+        callMakeSplat = false;
         blood.Play();
     }
     IEnumerator WaitForDying()
