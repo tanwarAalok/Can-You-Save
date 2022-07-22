@@ -1234,6 +1234,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1702090424, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.a
+      value: 0.56078434
+      objectReference: {fileID: 0}
+    - target: {fileID: 1702090424, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.2830189
+      objectReference: {fileID: 0}
+    - target: {fileID: 1702090424, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.2830189
+      objectReference: {fileID: 0}
+    - target: {fileID: 1702090424, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.2830189
+      objectReference: {fileID: 0}
     - target: {fileID: 3325663435733232467, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1286,6 +1302,78 @@ PrefabInstance:
       propertyPath: antidote
       value: 
       objectReference: {fileID: 759605135}
+    - target: {fileID: 4124271952115489820, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
+      propertyPath: jumpSound
+      value: 
+      objectReference: {fileID: 8300000, guid: c2694fab5eccc4249bd5a2083be61d3e, type: 3}
+    - target: {fileID: 4124271952115489820, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
+      propertyPath: globalVolume
+      value: 
+      objectReference: {fileID: 1526331272}
+    - target: {fileID: 4124271952115489820, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
+      propertyPath: runSound.Array.size
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4124271952115489820, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
+      propertyPath: runSound.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 3e299b9129329f24692bb63f57f33d19, type: 3}
+    - target: {fileID: 4124271952115489820, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
+      propertyPath: runSound.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 38f0c96f5fc9ad54bb7f70129602e268, type: 3}
+    - target: {fileID: 4124271952115489820, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
+      propertyPath: runSound.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 72b37684ac7a413499d259a0a9be50e6, type: 3}
+    - target: {fileID: 4124271952115489820, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
+      propertyPath: runSound.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 5da9a1fac751fd544933656ba7cdb367, type: 3}
+    - target: {fileID: 4124271952115489820, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
+      propertyPath: runSound.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: 83e12fcd809c9444192c377fe18a65e5, type: 3}
+    - target: {fileID: 4124271952115489820, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
+      propertyPath: runSound.Array.data[5]
+      value: 
+      objectReference: {fileID: 8300000, guid: 6056a660bb0897e4ea25a31889075437, type: 3}
+    - target: {fileID: 4124271952115489820, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
+      propertyPath: runSound.Array.data[6]
+      value: 
+      objectReference: {fileID: 8300000, guid: af104ebdf73bf7a4ba6013021dd458cb, type: 3}
+    - target: {fileID: 4124271952115489820, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
+      propertyPath: runSound.Array.data[7]
+      value: 
+      objectReference: {fileID: 8300000, guid: e968240fec458e24a862c16541a528c6, type: 3}
+    - target: {fileID: 4124271952115489820, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
+      propertyPath: runSound.Array.data[8]
+      value: 
+      objectReference: {fileID: 8300000, guid: 72854b6a8fde5e54eb8ae2eb10155f45, type: 3}
+    - target: {fileID: 4124271952115489820, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
+      propertyPath: runSound.Array.data[9]
+      value: 
+      objectReference: {fileID: 8300000, guid: 22dffeeb60f8846499a8c08a2c0e6f80, type: 3}
+    - target: {fileID: 4124271952115489820, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
+      propertyPath: runSound.Array.data[10]
+      value: 
+      objectReference: {fileID: 8300000, guid: 642f9eb7b8ea3f14e9fc48dff8f8e34b, type: 3}
+    - target: {fileID: 4124271952115489820, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
+      propertyPath: runSound.Array.data[11]
+      value: 
+      objectReference: {fileID: 8300000, guid: 90754431c63071d48b2bfa8dc2472b9d, type: 3}
+    - target: {fileID: 4124271952115489820, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
+      propertyPath: runSound.Array.data[12]
+      value: 
+      objectReference: {fileID: 8300000, guid: d51df139d4e50794993d2130348b08d9, type: 3}
+    - target: {fileID: 4124271952115489820, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
+      propertyPath: runSound.Array.data[13]
+      value: 
+      objectReference: {fileID: 8300000, guid: 39ca7e88dc461e8458d02a2284708c0d, type: 3}
+    - target: {fileID: 4124271952115489820, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
+      propertyPath: runSound.Array.data[14]
+      value: 
+      objectReference: {fileID: 8300000, guid: d772d1b334ef5f148bf1308d5fb3e4b0, type: 3}
     - target: {fileID: 7626751395310930653, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -4716,6 +4804,18 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 3.6
       objectReference: {fileID: 0}
+    - target: {fileID: 4429203391368561979, guid: 0c5bd3f026fb65345a9a73eb1c4ee421, type: 3}
+      propertyPath: m_ShapeLightFalloffOffset.y
+      value: -3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4429203391368561979, guid: 0c5bd3f026fb65345a9a73eb1c4ee421, type: 3}
+      propertyPath: m_ShapePath.Array.data[0].x
+      value: -5.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4429203391368561979, guid: 0c5bd3f026fb65345a9a73eb1c4ee421, type: 3}
+      propertyPath: m_ShapePath.Array.data[1].x
+      value: 61.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c5bd3f026fb65345a9a73eb1c4ee421, type: 3}
 --- !u!1 &1334052963
@@ -5249,7 +5349,7 @@ GameObject:
   - component: {fileID: 1526331273}
   - component: {fileID: 1526331272}
   m_Layer: 0
-  m_Name: Global Volume
+  m_Name: Post Process Volume
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15735,7 +15835,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2180337878646852575}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.49335, y: 1.8678474, z: -10}
+  m_LocalPosition: {x: -2.511712, y: 1.8675766, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2180337879970840860}
@@ -15838,6 +15938,7 @@ GameObject:
   - component: {fileID: 2180337878646852572}
   - component: {fileID: 2180337878646852574}
   - component: {fileID: 2180337878646852573}
+  - component: {fileID: 2180337878646852576}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -15845,6 +15946,39 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &2180337878646852576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2180337878646852575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 1
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
 --- !u!4 &2180337878656399960
 Transform:
   m_ObjectHideFlags: 0

@@ -4984,7 +4984,7 @@ GameObject:
   - component: {fileID: 561782114}
   - component: {fileID: 561782113}
   m_Layer: 0
-  m_Name: Global Volume
+  m_Name: Post Process Volume
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7948,11 +7948,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2180337878329059541, guid: 566aeeb4345d6e645b78c405d0baafda, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -14.138108
+      value: -14.130969
       objectReference: {fileID: 0}
     - target: {fileID: 2180337878329059541, guid: 566aeeb4345d6e645b78c405d0baafda, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.7338476
+      value: -1.7337227
       objectReference: {fileID: 0}
     - target: {fileID: 2180337878336690601, guid: 566aeeb4345d6e645b78c405d0baafda, type: 3}
       propertyPath: m_BoundingShape2D
@@ -8071,6 +8071,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1588149837, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -31.78003
+      objectReference: {fileID: 0}
     - target: {fileID: 3325663435733232467, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -8127,6 +8131,10 @@ PrefabInstance:
       propertyPath: showText
       value: 
       objectReference: {fileID: 742453596}
+    - target: {fileID: 4124271952115489820, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
+      propertyPath: globalVolume
+      value: 
+      objectReference: {fileID: 561782113}
     - target: {fileID: 5926897400305530001, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
       propertyPath: m_Camera
       value: 

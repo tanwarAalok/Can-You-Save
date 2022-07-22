@@ -58,10 +58,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Sprite emptyVessel = null;
     bool callDeathCount = false;
 
-    // [SerializeField] GameObject globalVolume = null;
+    [Header("Global Volume")]
+    [SerializeField] Volume globalVolume;
+    Vignette vignette;
 
     private void Awake() 
-    {   
+    {
+        
         audioSource = GetComponent<AudioSource>();
         attackEnemy = FindObjectOfType<AttackEnemy>();
         gameManager = FindObjectOfType<GameManager>();
@@ -221,10 +224,17 @@ public class PlayerController : MonoBehaviour
      public void DecreaseHealth(int damage)
     {
         currHealth -= damage;
-        // if(globalVolume.GetComponent<Volume>().profile.TryGet<Vignette>(out var vig)){
-        //     vig.color.Override(Color.red);
-        // }
-        
+        if (globalVolume.GetComponent<Volume>().profile.TryGet<Vignette>(out vignette))
+        {
+            vignette.color.value = new Color(1, 0, 0);
+            StartCoroutine(VignetteOriginalSettings());
+        }
+
+    }
+    IEnumerator VignetteOriginalSettings()
+    {
+        yield return new WaitForSeconds(1f);
+        vignette.color.value = new Color(0, 0, 0);
     }
     public void LevelHealth(int health)
     {
