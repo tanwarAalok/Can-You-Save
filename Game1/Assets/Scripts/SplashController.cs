@@ -32,6 +32,7 @@ public class SplashController : MonoBehaviour
                 {
                     Instantiate(splat[Random.Range(0, splat.Length)], enemies[i].transform.position + offset, transform.rotation);
                     enemies.Remove(enemies[i]);
+                    break;
                 }
                 if(enemies[i].GetComponent<ZombieController>().callMakeSplat && !enemies[i].GetComponent<ZombieController>().isDead)
                 {

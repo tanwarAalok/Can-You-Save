@@ -23,11 +23,11 @@ public class PostProcessController : MonoBehaviour
     }
     IEnumerator OrignalVignetteColor()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         vignette.color.value = new Color(0, 0, 0);
     }
-    public void VignetteIntensity(float health, float maxHealth)
+    public void VignetteIntensity(float intensity)
     {
-        // vignette.intensity.value;
+        vignette.intensity.value = Mathf.Min(intensity, 0.9f);
     }
 }

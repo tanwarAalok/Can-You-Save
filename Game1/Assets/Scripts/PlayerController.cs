@@ -62,8 +62,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Volume globalVolume;
     Vignette vignette;
 
+    float currIntensity;
+
     private void Awake() 
     {
+        currIntensity = 0.3f;
         audioSource = GetComponent<AudioSource>();
         attackEnemy = FindObjectOfType<AttackEnemy>();
         gameManager = FindObjectOfType<GameManager>();
@@ -86,6 +89,7 @@ public class PlayerController : MonoBehaviour
     {
         if(!gameOver)
         {
+            
             float horizontalInput = Input.GetAxis("Horizontal");
 
             body.velocity = new Vector2(horizontalInput * runSpeed, body.velocity.y);
@@ -226,7 +230,16 @@ public class PlayerController : MonoBehaviour
         if (globalVolume.GetComponent<Volume>().profile.TryGet<Vignette>(out vignette))
         {
             PostProcessController.instance.VignetteColor();
-            PostProcessController.instance.VignetteIntensity(currHealth, maxHealth);
+
+            float percentageDecrease = (damage * 100) / maxHealth;
+
+            // percentageDecrease /= 2;
+
+            float change = (percentageDecrease * 1) / 100;
+
+            currIntensity += change;
+
+            PostProcessController.instance.VignetteIntensity(currIntensity);
         }
     }
 
