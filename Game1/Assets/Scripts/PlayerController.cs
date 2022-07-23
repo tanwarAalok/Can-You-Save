@@ -230,15 +230,9 @@ public class PlayerController : MonoBehaviour
         if (globalVolume.GetComponent<Volume>().profile.TryGet<Vignette>(out vignette))
         {
             PostProcessController.instance.VignetteColor();
-
             float percentageDecrease = (damage * 100) / maxHealth;
-
-            // percentageDecrease /= 2;
-
             float change = (percentageDecrease * 1) / 100;
-
             currIntensity += change;
-
             PostProcessController.instance.VignetteIntensity(currIntensity);
         }
     }
