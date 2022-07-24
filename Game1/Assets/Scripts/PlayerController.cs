@@ -30,15 +30,12 @@ public class PlayerController : MonoBehaviour
     [Header("Game Manager")]
     GameManager gameManager;
     [SerializeField] bool gameOver = false;
-    bool canOpenDoor = false;
+    public bool canOpenDoor = false;
+    public bool isSwitchOn = true;
 
     [Header("Attack")]
     [SerializeField] float waitBetweenAttack;
     [SerializeField] float startWaitBetweenAttack;
-
-    [Header("Text Field")]
-    [SerializeField] GameObject textBox = null;
-    [SerializeField] TextMeshProUGUI showText = null;
 
     [Header("Sounds")]
     [SerializeField] AudioClip attackSound = null;
@@ -59,9 +56,8 @@ public class PlayerController : MonoBehaviour
     bool callDeathCount = false;
 
     [Header("Global Volume")]
-    [SerializeField] Volume globalVolume;
-    Vignette vignette;
     float currIntensity;
+
 
     private void Awake() 
     {
@@ -133,19 +129,6 @@ public class PlayerController : MonoBehaviour
             {
                 LevelHealth(currHealth);
                 gameManager.OpenDoorState(true);
-            }
-            else
-            {
-                if(textBox!=null)
-                {
-                    textBox.SetActive(true);
-                    showText.color = new Color(1, 0.1f, 0.2f);
-                    showText.text = "All Zombies are not Dead! You cannot get through";
-                }
-                else
-                {
-                    return;
-                }
             }
         }
     }
@@ -226,59 +209,16 @@ public class PlayerController : MonoBehaviour
      public void DecreaseHealth(int damage)
     {
         currHealth -= damage;
-        if (globalVolume.GetComponent<Volume>().profile.TryGet<Vignette>(out vignette))
-        {
-            PostProcessController.instance.VignetteColor();
-            float percentageDecrease = (damage * 100) / levelHealth;
-            float change = (percentageDecrease * 1) / 100;
-            currIntensity += change;
-            PostProcessController.instance.VignetteIntensity(currIntensity);
-        }
+        PostProcessController.instance.VignetteColor();
+        float percentageDecrease = (damage * 100) / levelHealth;
+        float change = (percentageDecrease * 1) / 100;
+        currIntensity += change;
+        PostProcessController.instance.VignetteIntensity(currIntensity);
     }
 
     public void LevelHealth(int health)
     {
         levelHealth = health;
-    }
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        Color orignalColor = new Color(0.724f, 1, 0, 1);
-        if(textBox!=null)
-        {
-            showText.color = orignalColor;
-            if(collision.CompareTag("Orignal_Player"))
-            {
-                textBox.SetActive(true);
-                showText.text = "Orignal Character Sprite";
-            }
-            else if(collision.CompareTag("Switch"))
-            {
-                textBox.SetActive(true);
-                showText.text = "Press 'X' to Switch On";
-            }
-            else if (collision.CompareTag("Door"))
-            {
-                canOpenDoor = true;
-                textBox.SetActive(true);
-                showText.text = "Press 'V' to Open Door";
-            }
-            else
-            {
-                return;
-            }
-        }
-        else
-        {
-            return;
-        }
-    }
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if(textBox!=null)
-        {
-            textBox.SetActive(false);
-            canOpenDoor = false;
-        }
     }
 
     private void OnTriggerEnter2D(Collider2D other) {

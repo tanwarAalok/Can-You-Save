@@ -1358,8 +1358,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e644f38bb5b2ec468b95767cccce26e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isSwitchOn: 0
   addBox: {fileID: 146791328}
-  player: {fileID: 0}
   GreenSwitch: {fileID: 21300000, guid: e48c75c5386b2464380b808f9456f174, type: 3}
   removeBoxes: []
   isBossZombiePresent: 0
@@ -1663,17 +1663,25 @@ PrefabInstance:
       propertyPath: TrailModule.colorOverLifetime.maxColor.r
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1554352570030026746, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
+      propertyPath: textBox
+      value: 
+      objectReference: {fileID: 52918647}
+    - target: {fileID: 1554352570030026746, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
+      propertyPath: showText
+      value: 
+      objectReference: {fileID: 783770517}
     - target: {fileID: 3325663435733232467, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3325663435733232467, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.64
+      value: -8.13
       objectReference: {fileID: 0}
     - target: {fileID: 3325663435733232467, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.66
+      value: -7.68
       objectReference: {fileID: 0}
     - target: {fileID: 3325663435733232467, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3199,7 +3207,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2180337878329059541, guid: 566aeeb4345d6e645b78c405d0baafda, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.4606724
+      value: 6.4408407
       objectReference: {fileID: 0}
     - target: {fileID: 2180337878329059541, guid: 566aeeb4345d6e645b78c405d0baafda, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3211,19 +3219,19 @@ PrefabInstance:
       objectReference: {fileID: 1558496426}
     - target: {fileID: 2180337878336690606, guid: 566aeeb4345d6e645b78c405d0baafda, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.25
+      value: 2.7599993
       objectReference: {fileID: 0}
     - target: {fileID: 2180337878336690606, guid: 566aeeb4345d6e645b78c405d0baafda, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.28955078
+      value: 0.26955032
       objectReference: {fileID: 0}
     - target: {fileID: 2180337878349762762, guid: 566aeeb4345d6e645b78c405d0baafda, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.2500005
+      value: 2.7600002
       objectReference: {fileID: 0}
     - target: {fileID: 2180337878349762762, guid: 566aeeb4345d6e645b78c405d0baafda, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.08955002
+      value: 0.069550514
       objectReference: {fileID: 0}
     - target: {fileID: 2180337878349762805, guid: 566aeeb4345d6e645b78c405d0baafda, type: 3}
       propertyPath: m_BoundingShape2D
@@ -12682,7 +12690,7 @@ GameObject:
   - component: {fileID: 1544711890}
   - component: {fileID: 1544711889}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Text Box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42973,7 +42981,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2060454490}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.770002, y: 17.220001, z: 0}
+  m_LocalPosition: {x: 41.95, y: 19.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1751391223}
@@ -42991,8 +42999,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e644f38bb5b2ec468b95767cccce26e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isSwitchOn: 0
   addBox: {fileID: 0}
-  player: {fileID: 0}
   GreenSwitch: {fileID: 21300000, guid: e48c75c5386b2464380b808f9456f174, type: 3}
   removeBoxes:
   - {fileID: 1352967141}

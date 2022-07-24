@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class BoxController : MonoBehaviour
+public class SwitchController : MonoBehaviour
 {
+    public bool isSwitchOn = false;
     [SerializeField] GameObject addBox = null;
-    [SerializeField] GameObject player;
     bool canSwitchOn = false;
     [SerializeField] Sprite GreenSwitch = null;
     [SerializeField] GameObject[] removeBoxes = null;
@@ -43,6 +43,7 @@ public class BoxController : MonoBehaviour
             if(GreenSwitch!=null)
             {
                 transform.GetComponent<SpriteRenderer>().sprite = GreenSwitch;
+                isSwitchOn = true;
             }
         }
     }

@@ -5007,7 +5007,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: f18f5caa244236343aca7a2119e858f8, type: 2}
+  sharedProfile: {fileID: 11400000, guid: 5ed4ae2a12c93114dbba08723a5c6bef, type: 2}
 --- !u!4 &561782114
 Transform:
   m_ObjectHideFlags: 0
@@ -5119,7 +5119,7 @@ GameObject:
   - component: {fileID: 683931267}
   - component: {fileID: 683931266}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Text Box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7961,11 +7961,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2180337878329059541, guid: 566aeeb4345d6e645b78c405d0baafda, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.976983
+      value: -9.996808
       objectReference: {fileID: 0}
     - target: {fileID: 2180337878329059541, guid: 566aeeb4345d6e645b78c405d0baafda, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.6611567
+      value: -1.6615038
       objectReference: {fileID: 0}
     - target: {fileID: 2180337878336690601, guid: 566aeeb4345d6e645b78c405d0baafda, type: 3}
       propertyPath: m_BoundingShape2D
@@ -8088,6 +8088,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -31.78003
       objectReference: {fileID: 0}
+    - target: {fileID: 1554352570030026746, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
+      propertyPath: textBox
+      value: 
+      objectReference: {fileID: 2031965328}
+    - target: {fileID: 1554352570030026746, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
+      propertyPath: showText
+      value: 
+      objectReference: {fileID: 742453596}
     - target: {fileID: 3325663435733232467, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
       propertyPath: m_RootOrder
       value: 2

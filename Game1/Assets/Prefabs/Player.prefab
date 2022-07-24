@@ -5076,6 +5076,7 @@ GameObject:
   - component: {fileID: 7404700593150031482}
   - component: {fileID: 6886827980709949579}
   - component: {fileID: 1080097739448258596}
+  - component: {fileID: 1554352570030026746}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -5169,10 +5170,10 @@ MonoBehaviour:
   healthBar: {fileID: 6280638789044906617}
   maxHealth: 200
   gameOver: 0
+  canOpenDoor: 0
+  isSwitchOn: 1
   waitBetweenAttack: 0
   startWaitBetweenAttack: 0.47
-  textBox: {fileID: 0}
-  showText: {fileID: 0}
   attackSound: {fileID: 8300000, guid: 19dcdf1f6c9bc3f4cb7306e25a130f8d, type: 3}
   runSound:
   - {fileID: 8300000, guid: 9a30499e47789df48aa9bdb1ec7b0982, type: 3}
@@ -5391,6 +5392,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1554352570030026746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3325663435733232471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 382f26294ec572944ab6aee375699dd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textBox: {fileID: 0}
+  showText: {fileID: 0}
 --- !u!1 &3905815362212179590
 GameObject:
   m_ObjectHideFlags: 0
