@@ -61,7 +61,6 @@ public class PlayerController : MonoBehaviour
     [Header("Global Volume")]
     [SerializeField] Volume globalVolume;
     Vignette vignette;
-
     float currIntensity;
 
     private void Awake() 
@@ -230,7 +229,7 @@ public class PlayerController : MonoBehaviour
         if (globalVolume.GetComponent<Volume>().profile.TryGet<Vignette>(out vignette))
         {
             PostProcessController.instance.VignetteColor();
-            float percentageDecrease = (damage * 100) / maxHealth;
+            float percentageDecrease = (damage * 100) / levelHealth;
             float change = (percentageDecrease * 1) / 100;
             currIntensity += change;
             PostProcessController.instance.VignetteIntensity(currIntensity);
