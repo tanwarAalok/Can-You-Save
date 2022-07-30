@@ -700,12 +700,14 @@ MonoBehaviour:
   hasWalkingSpeed: 0
   isDead: 0
   bossZombie: 0
+  callMakeSplat: 0
   waitBetweenAttack: 0
   nextAttack: 0.8
   takeDamage: 20
   attackSound: {fileID: 8300000, guid: 5ce6bb262e363834db2b5cdef8a21155, type: 3}
   attackVolme: 0.3
   blood: {fileID: 3599884777929644186}
+  healthCapsule: {fileID: 725169704451139260, guid: a1c1d8b535db47744901525093d4196c, type: 3}
 --- !u!61 &7089401543131595402
 BoxCollider2D:
   m_ObjectHideFlags: 0

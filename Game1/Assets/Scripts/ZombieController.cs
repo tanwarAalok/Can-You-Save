@@ -45,6 +45,7 @@ public class ZombieController : MonoBehaviour
     [SerializeField] float attackVolme = 0.3f;
     [Header("Particles")]
     public ParticleSystem blood = null;
+    [SerializeField] GameObject healthCapsule = null;
 
     void Start()
     {
@@ -151,15 +152,19 @@ public class ZombieController : MonoBehaviour
     {
         yield return new WaitForSeconds(1.5f);
         attackPlayer.hasGivenDamage = false;
-        if (!bossZombie)
-        {
-            PlayerController.currHealth += 5;
-        }
-        else
-        {
-            PlayerController.currHealth += 10;
-        }
+        // if (!bossZombie)
+        // {
+        //     PlayerController.currHealth += 5;
+        // }
+        // else
+        // {
+        //     PlayerController.currHealth += 10;
+        // }
+
+        Instantiate(healthCapsule, transform.position, transform.rotation);
+
         Destroy(gameObject);
+
         gameManager.totalEnemy -= 1;
 
     }

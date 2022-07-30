@@ -11,6 +11,7 @@ TagManager:
   - Door
   - Box
   - Collectiable
+  - Capsule
   layers:
   - Default
   - TransparentFX

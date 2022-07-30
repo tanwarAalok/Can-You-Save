@@ -232,6 +232,11 @@ public class PlayerController : MonoBehaviour
             Destroy(other.gameObject);
         }
 
+        if(other.CompareTag("Capsule")){
+            currHealth += 10;
+            Destroy(other.gameObject);
+        }
+
     }
 
     

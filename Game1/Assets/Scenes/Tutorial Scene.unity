@@ -7961,11 +7961,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2180337878329059541, guid: 566aeeb4345d6e645b78c405d0baafda, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.996808
+      value: -14.133016
       objectReference: {fileID: 0}
     - target: {fileID: 2180337878329059541, guid: 566aeeb4345d6e645b78c405d0baafda, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.6615038
+      value: -1.733758
       objectReference: {fileID: 0}
     - target: {fileID: 2180337878336690601, guid: 566aeeb4345d6e645b78c405d0baafda, type: 3}
       propertyPath: m_BoundingShape2D
@@ -8366,6 +8366,10 @@ PrefabInstance:
     - target: {fileID: 7089401543131595403, guid: 7c1e33856a7b8834888837824996b86d, type: 3}
       propertyPath: m_Name
       value: Zombie
+      objectReference: {fileID: 0}
+    - target: {fileID: 7089401543131595403, guid: 7c1e33856a7b8834888837824996b86d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7089401543170994109, guid: 7c1e33856a7b8834888837824996b86d, type: 3}
       propertyPath: m_AnchorMax.x

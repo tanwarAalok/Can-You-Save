@@ -1887,8 +1887,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e644f38bb5b2ec468b95767cccce26e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isSwitchOn: 0
   addBox: {fileID: 0}
-  player: {fileID: 0}
   GreenSwitch: {fileID: 0}
   removeBoxes:
   - {fileID: 2060024984}
@@ -14551,6 +14551,7 @@ MonoBehaviour:
   attackSound: {fileID: 8300000, guid: 8b9826c915109c446be0c38d54721a2d, type: 3}
   attackVolme: 0.3
   blood: {fileID: 1481811172}
+  healthCapsule: {fileID: 725169704451139260, guid: a1c1d8b535db47744901525093d4196c, type: 3}
 --- !u!70 &2101176500
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -15258,6 +15259,7 @@ MonoBehaviour:
   attackSound: {fileID: 8300000, guid: 8b9826c915109c446be0c38d54721a2d, type: 3}
   attackVolme: 0.3
   blood: {fileID: 623685242}
+  healthCapsule: {fileID: 725169704451139260, guid: a1c1d8b535db47744901525093d4196c, type: 3}
 --- !u!50 &1358187113674103083
 Rigidbody2D:
   serializedVersion: 4
@@ -15854,7 +15856,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2180337878646852575}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.511714, y: 1.8656597, z: -10}
+  m_LocalPosition: {x: -2.511712, y: 1.8675747, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2180337879970840860}
