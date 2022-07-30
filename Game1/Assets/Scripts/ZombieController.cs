@@ -151,6 +151,14 @@ public class ZombieController : MonoBehaviour
     {
         yield return new WaitForSeconds(1.5f);
         attackPlayer.hasGivenDamage = false;
+        if (!bossZombie)
+        {
+            PlayerController.currHealth += 5;
+        }
+        else
+        {
+            PlayerController.currHealth += 10;
+        }
         Destroy(gameObject);
         gameManager.totalEnemy -= 1;
 
