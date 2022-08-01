@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ZombieController : MonoBehaviour
 {
-    int count = 0;
     AttackPlayer attackPlayer;
     GameManager gameManager;
     [Header("Health")]
@@ -31,7 +30,6 @@ public class ZombieController : MonoBehaviour
     [SerializeField] bool deadEnd = false;
     [SerializeField] bool hasWalkingSpeed = false;
     public bool isDead = false;
-    [SerializeField] bool bossZombie = false;
     public bool callMakeSplat = false;
 
     [Header("Attack")]
@@ -133,7 +131,6 @@ public class ZombieController : MonoBehaviour
     {
         if (currentHealth <= 0)
         {
-            count++;
             zombieCanvas.enabled = false;
             zombieAnimator.Play("dead");
             isDead = true;
@@ -152,29 +149,15 @@ public class ZombieController : MonoBehaviour
     {
         yield return new WaitForSeconds(1.5f);
         attackPlayer.hasGivenDamage = false;
-        // if (!bossZombie)
-        // {
-        //     PlayerController.currHealth += 5;
-        // }
-        // else
-        // {
-        //     PlayerController.currHealth += 10;
-        // }
-
         Instantiate(healthCapsule, transform.position, transform.rotation);
-
         Destroy(gameObject);
-
         gameManager.totalEnemy -= 1;
 
     }
-    public bool IsThisABossZombie()
-    {
-        return bossZombie;
-    }
     void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player") || collision.CompareTag("Enemy") || collision.CompareTag("range") || collision.CompareTag("Box")) return;
+        Debug.Log(collision);
+        if (collision.CompareTag("Player") || collision.CompareTag("Enemy") || collision.CompareTag("range") || collision.CompareTag("Box") || GetComponent<BoxCollider2D>().IsTouchingLayers(LayerMask.GetMask("groundLayer"))) return;
         moveSpeed = 0;
         deadEnd = true;
     }

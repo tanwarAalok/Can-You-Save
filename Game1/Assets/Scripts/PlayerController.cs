@@ -233,7 +233,9 @@ public class PlayerController : MonoBehaviour
         }
 
         if(other.CompareTag("Capsule")){
+            Debug.Log(currHealth);
             currHealth += 10;
+            Debug.Log(currHealth);
             Destroy(other.gameObject);
         }
 

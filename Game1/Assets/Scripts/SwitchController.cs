@@ -10,27 +10,13 @@ public class SwitchController : MonoBehaviour
     bool canSwitchOn = false;
     [SerializeField] Sprite GreenSwitch = null;
     [SerializeField] GameObject[] removeBoxes = null;
-    [SerializeField] bool isBossZombiePresent = false;
-    [SerializeField] bool wasBossZombieEverPresent = false;
     private void Update() {
-        if(FindObjectOfType<ZombieController>()!=null)
-        {
-            isBossZombiePresent = FindObjectOfType<ZombieController>().IsThisABossZombie();
-            if(isBossZombiePresent ==true)
-            {
-                wasBossZombieEverPresent = true;
-            }
-        }
-        else
-        {
-            isBossZombiePresent = false;
-        }
         ButtonTrigger();
     }
 
     void ButtonTrigger()
     {
-        if(canSwitchOn && Input.GetKeyDown(KeyCode.X) || (!isBossZombiePresent && wasBossZombieEverPresent))
+        if(canSwitchOn && Input.GetKeyDown(KeyCode.X))
         {
             if(addBox!=null)
             {
