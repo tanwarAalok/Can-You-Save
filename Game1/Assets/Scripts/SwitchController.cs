@@ -10,7 +10,22 @@ public class SwitchController : MonoBehaviour
     bool canSwitchOn = false;
     [SerializeField] Sprite GreenSwitch = null;
     [SerializeField] GameObject[] removeBoxes = null;
+    [SerializeField] GameObject[] finalBoxes = null;
+    [SerializeField] bool isBossZombiePresent = false;
+    [SerializeField] bool wasBossZombieEverPresent = false;
     private void Update() {
+        if (FindObjectOfType<ZombieController>() != null)
+        {
+            isBossZombiePresent = FindObjectOfType<ZombieController>().IsThisABossZombie();
+            if (isBossZombiePresent == true)
+            {
+                wasBossZombieEverPresent = true;
+            }
+        }
+        else
+        {
+            isBossZombiePresent = false;
+        }
         ButtonTrigger();
     }
 
@@ -30,6 +45,13 @@ public class SwitchController : MonoBehaviour
             {
                 transform.GetComponent<SpriteRenderer>().sprite = GreenSwitch;
                 isSwitchOn = true;
+            }
+        }
+        if(!isBossZombiePresent && wasBossZombieEverPresent)
+        {
+            for (int i = 0; i < finalBoxes.Length; i++)
+            {
+                finalBoxes[i].SetActive(false);
             }
         }
     }

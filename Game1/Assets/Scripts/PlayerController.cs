@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering.Universal;
-using UnityEngine.Rendering;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
@@ -233,9 +231,11 @@ public class PlayerController : MonoBehaviour
         }
 
         if(other.CompareTag("Capsule")){
-            Debug.Log(currHealth);
-            currHealth += 10;
-            Debug.Log(currHealth);
+            if(currHealth>maxHealth)
+            {
+                currHealth = maxHealth;
+            }
+            currHealth += 5;
             Destroy(other.gameObject);
         }
 

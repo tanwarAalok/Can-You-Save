@@ -6,6 +6,7 @@ public class ZombieController : MonoBehaviour
 {
     AttackPlayer attackPlayer;
     GameManager gameManager;
+    [SerializeField] bool bossZombie = false;
     [Header("Health")]
     int maxHealth = 100;
     [SerializeField] int currentHealth;
@@ -153,6 +154,10 @@ public class ZombieController : MonoBehaviour
         Destroy(gameObject);
         gameManager.totalEnemy -= 1;
 
+    }
+    public bool IsThisABossZombie()
+    {
+        return bossZombie;
     }
     void OnTriggerExit2D(Collider2D collision)
     {
