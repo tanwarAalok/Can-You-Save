@@ -12,6 +12,7 @@ TagManager:
   - Box
   - Collectiable
   - Capsule
+  - Faulty
   layers:
   - Default
   - TransparentFX

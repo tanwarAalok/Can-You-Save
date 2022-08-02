@@ -13,6 +13,11 @@ public class TextController : MonoBehaviour
         
         if (textBox != null)
         {
+            if(collision.CompareTag("Faulty")){
+                textBox.SetActive(true);
+                showText.text = "Opps!! Looks like, this switch is not working properly \n These boxes are disappearing....";
+            }
+
             if (collision.CompareTag("Orignal_Player"))
             {
                 textBox.SetActive(true);
