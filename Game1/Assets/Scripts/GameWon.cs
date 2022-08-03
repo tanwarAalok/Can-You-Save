@@ -9,11 +9,11 @@ public class GameWon : MonoBehaviour
     void Start()
     {
         text = GetComponent<Text>();
-        if(PlayerController.deathCount <= 3)
+        if(PlayerController.deathCount <= 5)
         {
             text.text = "Congratulations!! You are the Savior. \n You avoided the Zombie Apocalypse";
         }
-        else if(PlayerController.deathCount <= 5)
+        else if(PlayerController.deathCount <= 10)
         {
             text.text = "You ran out in time ! Only one antitode was left. \n You saved yourself.";
         }
