@@ -161,7 +161,6 @@ public class ZombieController : MonoBehaviour
     }
     void OnTriggerExit2D(Collider2D collision)
     {
-        Debug.Log(collision);
         if (collision.CompareTag("Player") || collision.CompareTag("Enemy") || collision.CompareTag("range") || collision.CompareTag("Box") || GetComponent<BoxCollider2D>().IsTouchingLayers(LayerMask.GetMask("groundLayer"))) return;
         moveSpeed = 0;
         deadEnd = true;

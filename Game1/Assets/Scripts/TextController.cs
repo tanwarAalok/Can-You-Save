@@ -11,8 +11,11 @@ public class TextController : MonoBehaviour
     [SerializeField] GameObject dialogueBox = null;
     bool setText = false;
     bool isVPressed = false;
+    [SerializeField] AudioSource sparksSound = null;
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        
+
         if (dialogueBox != null)
         {
             if (collision.CompareTag("Faulty") && !setText)
@@ -27,6 +30,7 @@ public class TextController : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
+        if(collision.CompareTag("faultySwitchRange") && !sparksSound.isPlaying) sparksSound.Play();
         
         if (textBox != null)
         {
@@ -87,6 +91,7 @@ public class TextController : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
+        sparksSound.Stop();
         if (textBox != null)
         {
             textBox.SetActive(false);

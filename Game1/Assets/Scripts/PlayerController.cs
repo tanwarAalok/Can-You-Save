@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     AttackEnemy attackEnemy;
 
     [Header("Speed")]
-    public static float playerMoveSpeed = 5;
+    public static float playerMoveSpeed = 9;
     [SerializeField] float jumpSpeed = 10;
     private Animator anim;
     SpriteRenderer sprite;

@@ -13,6 +13,7 @@ TagManager:
   - Collectiable
   - Capsule
   - Faulty
+  - faultySwitchRange
   layers:
   - Default
   - TransparentFX
