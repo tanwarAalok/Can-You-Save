@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     AttackEnemy attackEnemy;
 
     [Header("Speed")]
-    [SerializeField] float runSpeed = 5;
+    public static float playerMoveSpeed = 5;
     [SerializeField] float jumpSpeed = 10;
     private Animator anim;
     SpriteRenderer sprite;
@@ -82,10 +82,8 @@ public class PlayerController : MonoBehaviour
     {
         if(!gameOver)
         {
-            
             float horizontalInput = Input.GetAxis("Horizontal");
-
-            body.velocity = new Vector2(horizontalInput * runSpeed, body.velocity.y);
+            body.velocity = new Vector2(horizontalInput * playerMoveSpeed, body.velocity.y);
             Run();
             Jump();
             FlipSprite();

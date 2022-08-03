@@ -7,17 +7,29 @@ public class TextController : MonoBehaviour
     [Header("Text Field")]
     [SerializeField] GameObject textBox = null;
     [SerializeField] TextMeshProUGUI showText = null;
+    [SerializeField] TextMeshProUGUI dialogueText = null;
+    [SerializeField] GameObject dialogueBox = null;
+    bool setText = false;
     bool isVPressed = false;
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (dialogueBox != null)
+        {
+            if (collision.CompareTag("Faulty") && !setText)
+            {
+                dialogueBox.SetActive(true);
+                string sentence = "Looks like this switch is not working properly \n These boxes are disappearing....";
+                int sentenceLength = sentence.Length;
+                StartCoroutine(TypeSentence(sentence, sentenceLength));
+                setText = true;
+            }
+        }
+    }
     private void OnTriggerStay2D(Collider2D collision)
     {
         
         if (textBox != null)
         {
-            if(collision.CompareTag("Faulty")){
-                textBox.SetActive(true);
-                showText.text = "Opps!! Looks like, this switch is not working properly \n These boxes are disappearing....";
-            }
-
             if (collision.CompareTag("Orignal_Player"))
             {
                 textBox.SetActive(true);
@@ -64,6 +76,15 @@ public class TextController : MonoBehaviour
             return;
         }
     }
+    IEnumerator TypeSentence(string sentence,int sentenceLength)
+    {
+        dialogueText.text = "";
+        for (int item = 0; item < sentence.Length; item++)
+        {
+            dialogueText.text += sentence[item];
+            yield return new WaitForSeconds(0.02f);
+        }
+    }
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (textBox != null)
@@ -72,6 +93,16 @@ public class TextController : MonoBehaviour
             FindObjectOfType<PlayerController>().canOpenDoor = false;
             isVPressed = false;
         }
+        if(dialogueBox!=null)
+        {
+            dialogueBox.SetActive(false);
+        }
+        StartCoroutine(SetTextState());
+    }
+    IEnumerator SetTextState()
+    {
+        yield return new WaitForSeconds(1);
+        setText = false;
     }
 
 }
