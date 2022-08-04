@@ -14,7 +14,8 @@ public class PlayerController : MonoBehaviour
     AttackEnemy attackEnemy;
 
     [Header("Speed")]
-    public static float playerMoveSpeed = 9;
+    float currSpeed;
+    public float playerMoveSpeed = 9;
     [SerializeField] float jumpSpeed = 10;
     private Animator anim;
     SpriteRenderer sprite;
@@ -59,6 +60,7 @@ public class PlayerController : MonoBehaviour
 
     private void Awake() 
     {
+        currSpeed = playerMoveSpeed;
         currIntensity = 0.3f;
         audioSource = GetComponent<AudioSource>();
         attackEnemy = FindObjectOfType<AttackEnemy>();
@@ -80,9 +82,10 @@ public class PlayerController : MonoBehaviour
 
     private void Update() 
     {
-        if(!gameOver)
+        if(!gameOver && !FindObjectOfType<TextController>().dialogeRunning)
         {
             float horizontalInput = Input.GetAxis("Horizontal");
+            playerMoveSpeed = currSpeed;
             body.velocity = new Vector2(horizontalInput * playerMoveSpeed, body.velocity.y);
             Run();
             Jump();
@@ -99,6 +102,11 @@ public class PlayerController : MonoBehaviour
                 transform.position = new Vector2(transform.position.x + moveALitte, transform.position.y);
             }
             
+        }
+        if (FindObjectOfType<TextController>().dialogeRunning)
+        {
+            body.velocity = new Vector2(0,0);
+            anim.SetBool("Run", false);
         }
         ChangeColor();
         if (currHealth <= 0 || feetCollider.IsTouchingLayers(LayerMask.GetMask("Obstacle")))
