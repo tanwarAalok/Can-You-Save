@@ -90,7 +90,10 @@ public class TextController : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        sparksSound.Stop();
+        if(sparksSound!=null)
+        {
+            sparksSound.Stop();
+        }
         if (textBox != null)
         {
             textBox.SetActive(false);
