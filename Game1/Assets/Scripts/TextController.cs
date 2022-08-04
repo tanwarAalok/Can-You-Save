@@ -9,22 +9,20 @@ public class TextController : MonoBehaviour
     [SerializeField] TextMeshProUGUI showText = null;
     [SerializeField] TextMeshProUGUI dialogueText = null;
     [SerializeField] GameObject dialogueBox = null;
-    bool setText = false;
+    bool dialogeRunning = false;
     bool isVPressed = false;
     [SerializeField] AudioSource sparksSound = null;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
-
         if (dialogueBox != null)
         {
-            if (collision.CompareTag("Faulty") && !setText)
+            if (collision.CompareTag("Faulty") && !dialogeRunning)
             {
+                dialogeRunning = true;
                 dialogueBox.SetActive(true);
                 string sentence = "Looks like this switch is not working properly \n These boxes are disappearing....";
                 int sentenceLength = sentence.Length;
                 StartCoroutine(TypeSentence(sentence, sentenceLength));
-                setText = true;
             }
         }
     }
@@ -83,11 +81,12 @@ public class TextController : MonoBehaviour
     IEnumerator TypeSentence(string sentence,int sentenceLength)
     {
         dialogueText.text = "";
-        for (int item = 0; item < sentence.Length; item++)
+        for (int item = 0; item < sentenceLength; item++)
         {
             dialogueText.text += sentence[item];
-            yield return new WaitForSeconds(0.02f);
+            yield return new WaitForSeconds(0.025f);
         }
+        dialogeRunning = false;
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
@@ -102,12 +101,7 @@ public class TextController : MonoBehaviour
         {
             dialogueBox.SetActive(false);
         }
-        StartCoroutine(SetTextState());
     }
-    IEnumerator SetTextState()
-    {
-        yield return new WaitForSeconds(1);
-        setText = false;
-    }
+
 
 }
