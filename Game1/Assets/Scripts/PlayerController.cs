@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Speed")]
     float currSpeed;
-    public float playerMoveSpeed = 9;
+    [SerializeField] float playerMoveSpeed = 9;
     [SerializeField] float jumpSpeed = 10;
     private Animator anim;
     SpriteRenderer sprite;

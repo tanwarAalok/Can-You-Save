@@ -88,10 +88,12 @@ public class GameManager : MonoBehaviour
 
     public void MainMenu()
     {
+        //Reset all the settings
         isPaused = false;
         gameWon = false;
         FindObjectOfType<PlayerController>().LevelHealth(200);
         PlayerController.deathCount = 0;
+        TextController.totalDialoguesCompleted = 0;
         if(AudioManager.instance!=null)
         {
             AudioManager.instance.StopAudio(true);

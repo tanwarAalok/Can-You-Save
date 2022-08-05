@@ -5165,7 +5165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72ec09372022b9844b97a8fb5fcc9fac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runSpeed: 10
+  playerMoveSpeed: 10
   jumpSpeed: 21
   healthBar: {fileID: 6280638789044906617}
   maxHealth: 200
@@ -5406,6 +5406,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textBox: {fileID: 0}
   showText: {fileID: 0}
+  dialogueBox: {fileID: 0}
+  dialogueText: {fileID: 0}
+  dialogueSentences:
+  - 'Welcome brave warrior,
+
+    You have been chosen to defend mankind from the
+
+    ZOMBIE
+    APOCALPYSE'
+  - 'Looks like this switch is not working properly
+
+    These boxes are disappearing....'
+  dialogeRunning: 0
+  sparksSound: {fileID: 0}
 --- !u!1 &3905815362212179590
 GameObject:
   m_ObjectHideFlags: 0

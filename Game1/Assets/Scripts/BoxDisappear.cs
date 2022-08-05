@@ -17,6 +17,4 @@ public class BoxDisappear : MonoBehaviour
         transform.gameObject.SetActive(trigger);
         trigger = !trigger;
     }
-
-
 }

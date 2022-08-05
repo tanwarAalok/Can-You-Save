@@ -5,42 +5,35 @@ using TMPro;
 using UnityEngine.SceneManagement;
 public class TextController : MonoBehaviour
 {
-    GameManager gameManager;
     [Header("Text Field")]
     [SerializeField] GameObject textBox = null;
     [SerializeField] TextMeshProUGUI showText = null;
-    [SerializeField] TextMeshProUGUI dialogueText = null;
     [SerializeField] GameObject dialogueBox = null;
+    [SerializeField] TextMeshProUGUI dialogueText = null;
+
+    [Header("Dialogue Field")]
+    [TextArea(2, 6)]
+    [SerializeField] List<string> dialogueSentences = new List<string>();
     public bool dialogeRunning = false;
     bool isVPressed = false;
-    static int dialogueRunCount = 0;
-    static int levelDialogueCount = 0;
+    public static int totalDialoguesCompleted = 0;
+
+    [Header("Sound Field")]
     [SerializeField] AudioSource sparksSound = null;
     private void Start()
     {
-        gameManager = FindObjectOfType<GameManager>();
-        dialogueRunCount = levelDialogueCount;
-        if(SceneManager.GetActiveScene().buildIndex == 1)
+        if(SceneManager.GetActiveScene().buildIndex == 1 && totalDialoguesCompleted == 0)
         {
-            Dialogues("Welcome brave warrior,\n You have been chosen to defend mankind from the\n ZOMBIE APOCALPYSE");
-        }
-        Debug.Log(dialogueRunCount);
-    }
-    private void Update()
-    {
-        if(gameManager.GetPlayerDeadState())
-        {
-            TotalDialoguesCompleted(dialogueRunCount);
-            Debug.Log(dialogueRunCount);
+            Dialogues(dialogueSentences[totalDialoguesCompleted]);
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (dialogueBox != null)
         {
-            if (collision.CompareTag("Faulty") && !dialogeRunning && dialogueRunCount == 1)
+            if (collision.CompareTag("Faulty") && !dialogeRunning && totalDialoguesCompleted == 1)
             {
-                Dialogues("Looks like this switch is not working properly \n These boxes are disappearing....");
+                Dialogues(dialogueSentences[totalDialoguesCompleted]);
             }
         }
     }
@@ -125,17 +118,10 @@ public class TextController : MonoBehaviour
     }
     public void Dialogues(string sentence)
     {
-        dialogueRunCount++;
-        TotalDialoguesCompleted(dialogueRunCount);
+        totalDialoguesCompleted++;
         dialogeRunning = true;
         dialogueBox.SetActive(true);
         int sentenceLength = sentence.Length;
         StartCoroutine(TypeSentence(sentence, sentenceLength));
     }
-    public void TotalDialoguesCompleted(int dialogueRunCount)
-    {
-        levelDialogueCount = dialogueRunCount;
-    }
-
-
 }
