@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine.SceneManagement;
 public class TextController : MonoBehaviour
 {
+    [SerializeField] GameObject playerUI;
     [Header("Text Field")]
     [SerializeField] GameObject textBox = null;
     [SerializeField] TextMeshProUGUI showText = null;
@@ -32,6 +33,14 @@ public class TextController : MonoBehaviour
         if(totalDialoguesCompleted == 3)
         {
             CancelInvoke();
+        }
+        if(dialogueBox.activeSelf)
+        {
+            playerUI.SetActive(false);
+        }
+        else if(!dialogueBox.activeSelf)
+        {
+            playerUI.SetActive(true);
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
