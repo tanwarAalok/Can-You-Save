@@ -15352,9 +15352,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delayTime: 2
   frequencyTime: 1.5
-  onSwitchSprite: {fileID: 0}
-  offSwitchSprite: {fileID: 0}
-  switchGameobject: {fileID: 0}
 --- !u!61 &1103318414
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -38958,9 +38955,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delayTime: 1
   frequencyTime: 2
-  onSwitchSprite: {fileID: 0}
-  offSwitchSprite: {fileID: 0}
-  switchGameobject: {fileID: 0}
 --- !u!1 &1880024132
 GameObject:
   m_ObjectHideFlags: 0
@@ -39207,9 +39201,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delayTime: 1
   frequencyTime: 4
-  onSwitchSprite: {fileID: 0}
-  offSwitchSprite: {fileID: 0}
-  switchGameobject: {fileID: 0}
 --- !u!1 &1943912452
 GameObject:
   m_ObjectHideFlags: 0
@@ -39652,9 +39643,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delayTime: 1
   frequencyTime: 3
-  onSwitchSprite: {fileID: 0}
-  offSwitchSprite: {fileID: 0}
-  switchGameobject: {fileID: 0}
 --- !u!1 &2060024984
 GameObject:
   m_ObjectHideFlags: 0
@@ -41749,9 +41737,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2180337878339626912}
   - component: {fileID: 2180337878339626917}
-  - component: {fileID: 2180337878339626918}
   - component: {fileID: 2180337878339626919}
   - component: {fileID: 2180337878339626914}
+  - component: {fileID: 2180337878339626915}
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -41776,19 +41764,7 @@ MonoBehaviour:
   m_AmplitudeGain: 0
   m_FrequencyGain: 5
   mNoiseOffsets: {x: 0, y: 0, z: 0}
---- !u!114 &2180337878339626917
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2180337878339626913}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2180337878339626918
+--- !u!114 &2180337878339626915
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41815,6 +41791,18 @@ MonoBehaviour:
   m_BiasX: 0
   m_BiasY: 0
   m_CenterOnActivate: 1
+--- !u!114 &2180337878339626917
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2180337878339626913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2180337878339626919
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -41951,7 +41939,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2180337878646852575}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.2695541, y: 0.24116898, z: -10}
+  m_LocalPosition: {x: 1.4074497, y: 0.24004745, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2180337879970840860}
@@ -42103,7 +42091,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2180337878656399962}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.4534082, y: 0.27955055, z: -10}
+  m_LocalPosition: {x: -3.4534073, y: 0.27955055, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2180337878339626912}

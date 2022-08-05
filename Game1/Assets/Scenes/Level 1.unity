@@ -1773,6 +1773,10 @@ PrefabInstance:
       propertyPath: dialogueText
       value: 
       objectReference: {fileID: 83156983}
+    - target: {fileID: 1554352570030026746, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
+      propertyPath: dialogueClickSound
+      value: 
+      objectReference: {fileID: 8300000, guid: feb1884fb56261c4fa5e4e7c7f7a12fc, type: 3}
     - target: {fileID: 3325663435733232467, guid: 453ffb2d042116d4f9ff6621323b8cc0, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -3175,7 +3179,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2180337878329059541, guid: 566aeeb4345d6e645b78c405d0baafda, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.559621
+      value: 6.59225
       objectReference: {fileID: 0}
     - target: {fileID: 2180337878329059541, guid: 566aeeb4345d6e645b78c405d0baafda, type: 3}
       propertyPath: m_LocalPosition.y
@@ -43093,7 +43097,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!223 &6409458112620457664
 Canvas:
   m_ObjectHideFlags: 0

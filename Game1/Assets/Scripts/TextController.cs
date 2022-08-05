@@ -22,18 +22,25 @@ public class TextController : MonoBehaviour
     [SerializeField] AudioSource sparksSound = null;
     private void Start()
     {
-        if(SceneManager.GetActiveScene().buildIndex == 1 && totalDialoguesCompleted == 0)
+        if (SceneManager.GetActiveScene().buildIndex == 1)
         {
-            Dialogues(dialogueSentences[totalDialoguesCompleted]);
+            InvokeRepeating("Dialogues", 0, 4);
+        }
+    }
+    private void Update()
+    {
+        if(totalDialoguesCompleted == 3)
+        {
+            CancelInvoke();
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (dialogueBox != null)
         {
-            if (collision.CompareTag("Faulty") && !dialogeRunning && totalDialoguesCompleted == 1)
+            if (collision.CompareTag("Faulty") && !dialogeRunning && totalDialoguesCompleted == 3)
             {
-                Dialogues(dialogueSentences[totalDialoguesCompleted]);
+                Dialogues();
             }
         }
     }
@@ -116,12 +123,13 @@ public class TextController : MonoBehaviour
             dialogueBox.SetActive(false);
         }
     }
-    public void Dialogues(string sentence)
+    public void Dialogues()
     {
-        totalDialoguesCompleted++;
+        string sentence = dialogueSentences[totalDialoguesCompleted];
         dialogeRunning = true;
         dialogueBox.SetActive(true);
         int sentenceLength = sentence.Length;
         StartCoroutine(TypeSentence(sentence, sentenceLength));
+        totalDialoguesCompleted++;
     }
 }

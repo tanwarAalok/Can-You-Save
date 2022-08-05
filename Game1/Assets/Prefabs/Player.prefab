@@ -5409,17 +5409,18 @@ MonoBehaviour:
   dialogueBox: {fileID: 0}
   dialogueText: {fileID: 0}
   dialogueSentences:
-  - 'Welcome brave warrior,
+  - "Welcome brave warrior,\nYou have been chosen to save mankind from the \nZOMBIE
+    APOCALPYSE......\n\n"
+  - 'Mankind is doomed
 
-    You have been chosen to defend mankind from the
-
-    ZOMBIE
-    APOCALPYSE'
+    as everyone is affected by the Zombie Virus'
+  - "Get to the antidote with least amount of deaths \nTo save the earth"
   - 'Looks like this switch is not working properly
 
     These boxes are disappearing....'
   dialogeRunning: 0
   sparksSound: {fileID: 0}
+  dialogueClickSound: {fileID: 8300000, guid: feb1884fb56261c4fa5e4e7c7f7a12fc, type: 3}
 --- !u!1 &3905815362212179590
 GameObject:
   m_ObjectHideFlags: 0
