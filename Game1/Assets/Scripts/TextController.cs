@@ -25,7 +25,7 @@ public class TextController : MonoBehaviour
     [SerializeField] AudioSource sparksSound = null;
     private void Start()
     {
-        if (SceneManager.GetActiveScene().buildIndex == 1 && totalDialoguesCompleted<3)
+        if (SceneManager.GetActiveScene().buildIndex == 1 && totalDialoguesCompleted<3 && dialogueBox!=null)
         {
             numberOfDialoguesToRun = 3;
             Dialogues(numberOfDialoguesToRun);
@@ -130,10 +130,6 @@ public class TextController : MonoBehaviour
             FindObjectOfType<PlayerController>().canOpenDoor = false;
             isVPressed = false;
         }
-        if(dialogueBox!=null)
-        {
-            dialogueBox.SetActive(false);
-        }
     }
     public void Dialogues(int k)
     {
@@ -152,6 +148,7 @@ public class TextController : MonoBehaviour
         if(k==0)
         {
             dialogeRunning = false;
+            dialogueBox.SetActive(false);
         }
     }
 }
