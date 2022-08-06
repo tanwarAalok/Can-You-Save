@@ -18,22 +18,21 @@ public class TextController : MonoBehaviour
     public bool dialogeRunning = false;
     bool isVPressed = false;
     public static int totalDialoguesCompleted = 0;
+    [SerializeField] float waitToChangeDialogue = 2.5f;
+    int numberOfDialoguesToRun = 0;
 
     [Header("Sound Field")]
     [SerializeField] AudioSource sparksSound = null;
     private void Start()
     {
-        if (SceneManager.GetActiveScene().buildIndex == 1)
+        if (SceneManager.GetActiveScene().buildIndex == 1 && totalDialoguesCompleted<3)
         {
-            InvokeRepeating("Dialogues", 0, 4);
+            numberOfDialoguesToRun = 3;
+            Dialogues(numberOfDialoguesToRun);
         }
     }
     private void Update()
     {
-        if(totalDialoguesCompleted == 3)
-        {
-            CancelInvoke();
-        }
         if(dialogueBox.activeSelf)
         {
             playerUI.SetActive(false);
@@ -49,7 +48,8 @@ public class TextController : MonoBehaviour
         {
             if (collision.CompareTag("Faulty") && !dialogeRunning && totalDialoguesCompleted == 3)
             {
-                Dialogues();
+                numberOfDialoguesToRun = 1;
+                Dialogues(numberOfDialoguesToRun);
             }
         }
     }
@@ -105,7 +105,7 @@ public class TextController : MonoBehaviour
             return;
         }
     }
-    IEnumerator TypeSentence(string sentence,int sentenceLength)
+    IEnumerator TypeSentence(string sentence,int sentenceLength, int k)
     {
         dialogueText.text = "";
         for (int item = 0; item < sentenceLength; item++)
@@ -113,7 +113,10 @@ public class TextController : MonoBehaviour
             dialogueText.text += sentence[item];
             yield return new WaitForSeconds(0.025f);
         }
+        k--;
+        yield return new WaitForSeconds(waitToChangeDialogue);
         dialogeRunning = false;
+        Dialogues(k);
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
@@ -132,13 +135,23 @@ public class TextController : MonoBehaviour
             dialogueBox.SetActive(false);
         }
     }
-    public void Dialogues()
+    public void Dialogues(int k)
     {
-        string sentence = dialogueSentences[totalDialoguesCompleted];
-        dialogeRunning = true;
-        dialogueBox.SetActive(true);
-        int sentenceLength = sentence.Length;
-        StartCoroutine(TypeSentence(sentence, sentenceLength));
-        totalDialoguesCompleted++;
+        for (int i = 0; i < k; i++)
+        {
+            if(!dialogeRunning)
+            {
+                string sentence = dialogueSentences[totalDialoguesCompleted];
+                totalDialoguesCompleted++;
+                dialogeRunning = true;
+                dialogueBox.SetActive(true);
+                int sentenceLength = sentence.Length;
+                StartCoroutine(TypeSentence(sentence, sentenceLength, k));
+            }
+        }
+        if(k==0)
+        {
+            dialogeRunning = false;
+        }
     }
 }
