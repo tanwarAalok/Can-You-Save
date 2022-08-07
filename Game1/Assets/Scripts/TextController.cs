@@ -133,18 +133,16 @@ public class TextController : MonoBehaviour
     }
     public void Dialogues(int k)
     {
-        for (int i = 0; i < k; i++)
+        if(!dialogeRunning && k!=0)
         {
-            if(!dialogeRunning)
-            {
-                string sentence = dialogueSentences[totalDialoguesCompleted];
-                totalDialoguesCompleted++;
-                dialogeRunning = true;
-                dialogueBox.SetActive(true);
-                int sentenceLength = sentence.Length;
-                StartCoroutine(TypeSentence(sentence, sentenceLength, k));
-            }
+            string sentence = dialogueSentences[totalDialoguesCompleted];
+            totalDialoguesCompleted++;
+            dialogeRunning = true;
+            dialogueBox.SetActive(true);
+            int sentenceLength = sentence.Length;
+            StartCoroutine(TypeSentence(sentence, sentenceLength, k));
         }
+        
         if(k==0)
         {
             dialogeRunning = false;
